@@ -1,6 +1,8 @@
 ﻿namespace AgileCourseAssignment.Client.Pages
 {
-    public class Homepage
+    public partial class Homepage
     {
+
+
     }
 }
