@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileCourseAssignment.Server", "AgileCourseAssignment\Server\AgileCourseAssignment.Server.csproj", "{398E1C4E-A8D0-41DC-9A00-A76EAD891CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileCourseAssignment.Server", "AgileCourseAssignment\Server\AgileCourseAssignment.Server.csproj", "{398E1C4E-A8D0-41DC-9A00-A76EAD891CBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileCourseAssignment.Client", "AgileCourseAssignment\Client\AgileCourseAssignment.Client.csproj", "{52161ADC-83A2-4963-9AD5-AD88231CA848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileCourseAssignment.Client", "AgileCourseAssignment\Client\AgileCourseAssignment.Client.csproj", "{52161ADC-83A2-4963-9AD5-AD88231CA848}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileCourseAssignment.Shared", "AgileCourseAssignment\Shared\AgileCourseAssignment.Shared.csproj", "{E8D79DA6-CC6A-4C82-947A-6C341D55CF5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileCourseAssignment.Shared", "AgileCourseAssignment\Shared\AgileCourseAssignment.Shared.csproj", "{E8D79DA6-CC6A-4C82-947A-6C341D55CF5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
