@@ -1,4 +1,6 @@
+using AgileCourseAssignment.Server.Data;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+var ConnectionString = builder.Configuration.GetConnectionString("FlagScapeConnection") ?? throw new InvalidOperationException("Connection string 'FlagScapeConnection' not found.");
+builder.Services.AddDbContext<FlagScapeDb>(options =>
+    options.UseSqlServer(ConnectionString));
 
 var app = builder.Build();
 
