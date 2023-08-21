@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgileCourseAssignment.Server.Migrations
 {
     [DbContext(typeof(FlagScapeDb))]
-    [Migration("20230821140939_FlagUpdate")]
-    partial class FlagUpdate
+    [Migration("20230821141447_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
