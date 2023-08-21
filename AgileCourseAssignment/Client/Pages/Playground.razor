@@ -1,4 +1,9 @@
 ﻿@page "/playground"
+@using AgileCourseAssignment.Shared;
+@using AgileCourseAssignment.Client.Services;
+@using AgileCourseAssignment.Client.Pages
+@using AgileCourseAssignment.Shared.Models
+@inject IFlagService flagService;
 
 
 <div class="background-container">
@@ -20,7 +25,16 @@
 
    <div class="answer-container">
 
+
+        @foreach(var item in flags)
+        {
+            <h1>@item.CountryName</h1>
+        }
+
+       
+
        <button @onclick="EndTimer">Flag</button>
+
         <button>Flag</button>
         <button>Flag</button>
 
