@@ -1,75 +1,40 @@
 ﻿@page "/"
+@inject NavigationManager Navigation;
+@inject IModalService Modal
+@using Blazored.Modal
 
 <PageTitle>Homepage</PageTitle>
 
 
 <div class="background-container">
-    <div class="header">
-        <h1 class="logo">Flagscape</h1>
-        <h2 class="slogan">Guess to success</h2>
-        <button class="btn-play">Play</button>
-        <h3 class="text">Guess the flag as fast as you can, the faster you clear it the more points!</h3>
-       
-        <button class="btn-info">Info</button>
+    <!-- Left column -->
+    <div class="left-column">
+        <img src="/Images/Gif/world_flags.gif" alt="World Flags">
     </div>
 
+    <!-- Right column -->
+    <div class="right-column">
+        <div class="header">
+            <h1 class="logo">Flagscape</h1>
+            <h2 class="slogan">Guess to success</h2>
+            <button class="btn-play" @onclick="NavigateToPlayground">Play</button>
+            <h3 class="text">Guess the flag as fast as you can, the faster you clear it the more points!</h3>
+            <div class="button-container">
+                <button class="btn-info" @onclick="@(()=>Modal.Show<InfoFlagscapeModal>())">Info</button>
+                <button class="btn-about" @onclick="@(()=>Modal.Show<AboutFlagscapeModal>())">About</button>
+            </div>
+            
+        </div>
+    </div>
 </div>
 
+@code {
 
-<style>
-    .background-container {
-        background-color: cornflowerblue;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+    private void NavigateToPlayground()
+    {
+        Navigation.NavigateTo("/playground");
     }
-
-    .header {
-        text-align: center;
-        padding: 60px 0 20px;
-        
-    }
-
-    .logo {
-        color: white;
-        font-size: 36px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        
-    }
-
-    .slogan{
-    color:white;
-    font-size: 26px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 100px;
-    }
-
-    .btn-play{
-    color:gray;
-    font-size: 15px;
-    width:120px;
-    margin:40px;
-    cursor:pointer;
-        background-color: #f2f2f2;
-    }
-
-   .btn-info{
-        color: gray;
-        font-size: 15px;
-        width: 50px;
-        padding: 8px 12px;
-        background-color: #f2f2f2;
-        border: 1px solid gray;
-        cursor: pointer;
-   }
-
-   .text{
-   color: white;
-        font-size: 16px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        padding: 100px;
-   }
-</style>
+}
 
 
 

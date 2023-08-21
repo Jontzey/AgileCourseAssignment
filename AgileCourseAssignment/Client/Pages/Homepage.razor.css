@@ -1,11 +1,130 @@
 ﻿body {
 }
 
-#hp-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    background-color:blue;
-    height:100vh;
+.background-container {
+    background-color: cornflowerblue;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+}
+
+.logo {
+    color: white;
+    font-size: 80px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slogan {
+    font-size: 35px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+
+}
+
+.btn-play {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    margin: 20px;
+    cursor: pointer;
+    background-color: red;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 0; 
+}
+
+.btn-info {
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 80px;
+    height: 40px;
+    background-color: red;
+    border: 1px solid gray;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-about {
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 80px;
+    height: 40px;
+    background-color: yellowgreen;
+    border: 1px solid gray;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+}
+
+
+/* Left column */
+.left-column {
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+/* Right column  */
+.right-column {
+    margin-left: 100px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+.left-column img {
+    width: 300px;
+    max-width: 100%;
+}
+
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 768px) {
+   
+    .background-container {
+        flex-direction: row; 
+    }
+    .left-column img {
+        width: 600px;
+    }
+
+    .text {
+        font-size: 20px; 
+    }
+    .button-container {
+        justify-content: space-between;
+    }
+    .btn-info, .btn-about {
+        font-size: 12px;
+        font-weight: bold;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+
 }

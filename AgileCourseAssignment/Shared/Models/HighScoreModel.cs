@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace AgileCourseAssignment.Shared.Models
 {
-    public class FlagsModel
+    public class HighScoreModel
     {
+
         [Key]
 
         public int Id { get; set; }
 
-        public string CountryName { get; set; } = null!;
+        public string Name { get; set; } = null!;
 
-        public string Image { get; set; }
+        public int Score { get; set; } 
 
-        public bool IsUsed { get; set; }
+        public int Time { get; set; }
     }
 }
