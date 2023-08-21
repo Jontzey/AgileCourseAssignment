@@ -8,7 +8,7 @@ namespace AgileCourseAssignment.Client.Pages
 
         private int remainingTime = 180;
         private bool countdownComplete = false;
-        private List<FlagsModel> flags;
+        private List<FlagsModel> flags = new();
 
         private System.Timers.Timer countdownTimer;
 
@@ -40,6 +40,7 @@ namespace AgileCourseAssignment.Client.Pages
             countdownTimer.Elapsed += CountdownTick;
             countdownTimer.Enabled = true;
             flags = await flagService.GetAllFlags();
+            Console.WriteLine(flags.ToString());
         }
         public void Dispose()
         {
