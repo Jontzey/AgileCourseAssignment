@@ -3,7 +3,16 @@
     public partial class Homepage
     {
 
-        
 
+
+
+
+
+
+
+        private void NavigateToPlayground()
+        {
+            Navigation.NavigateTo("/playground");
+        }
     }
 }
