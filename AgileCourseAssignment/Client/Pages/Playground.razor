@@ -25,12 +25,16 @@
 
    <div class="answer-container">
 
+
         @foreach(var item in flags)
         {
             <h1>@item.CountryName</h1>
         }
 
-       <button>Flag</button>
+       
+
+       <button @onclick="EndTimer">Flag</button>
+
         <button>Flag</button>
         <button>Flag</button>
 
