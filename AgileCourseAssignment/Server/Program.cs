@@ -1,4 +1,5 @@
 using AgileCourseAssignment.Server.Data;
+using AgileCourseAssignment.Server.Repo;
 using Blazored.Modal;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,7 @@ builder.Services.AddBlazoredModal();
 var ConnectionString = builder.Configuration.GetConnectionString("FlagScapeConnection") ?? throw new InvalidOperationException("Connection string 'FlagScapeConnection' not found.");
 builder.Services.AddDbContext<FlagScapeDb>(options =>
     options.UseSqlServer(ConnectionString));
-
+builder.Services.AddScoped<IFlagRepo, FlagRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
