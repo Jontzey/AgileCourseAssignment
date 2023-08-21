@@ -9,8 +9,9 @@ namespace AgileCourseAssignment.Server.Controllers
     public class FlagsController : Controller
     {
         // Loading the data to webserver(json) to accsess write following
-        //url path should be /flags, like 
+        //url path should be /flags, like /playground.
 
+        //field variables
         private readonly IFlagRepo _flagRepo;
 
         public FlagsController(IFlagRepo flagRepo) {
@@ -18,6 +19,7 @@ namespace AgileCourseAssignment.Server.Controllers
             this._flagRepo = flagRepo;
         }
 
+        // upload data to json
         [HttpGet]
         public async Task<List<FlagsModel>?> GetTestFlagsAsync()
         {

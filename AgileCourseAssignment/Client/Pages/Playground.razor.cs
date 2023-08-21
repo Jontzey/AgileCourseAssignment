@@ -11,8 +11,15 @@ namespace AgileCourseAssignment.Client.Pages
         private System.Timers.Timer countdownTimer;
 
 
+        private async Task EndTimer()
+        {
+            countdownTimer.Enabled = false;
+            Console.WriteLine(remainingTime);
+        }
+
         private void CountdownTick(object sender, ElapsedEventArgs e)
         {
+            // decrease by 1
             remainingTime--;
 
             if (remainingTime <= 0)
