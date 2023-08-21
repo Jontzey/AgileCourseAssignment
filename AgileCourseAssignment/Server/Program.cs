@@ -1,4 +1,5 @@
 using AgileCourseAssignment.Server.Data;
+using Blazored.Modal;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddBlazoredModal();
 
 var ConnectionString = builder.Configuration.GetConnectionString("FlagScapeConnection") ?? throw new InvalidOperationException("Connection string 'FlagScapeConnection' not found.");
 builder.Services.AddDbContext<FlagScapeDb>(options =>
