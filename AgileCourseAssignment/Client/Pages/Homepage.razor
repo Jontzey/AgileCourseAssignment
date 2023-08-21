@@ -1,6 +1,7 @@
 ﻿@page "/"
-@using Blazored.Modal
+@inject NavigationManager Navigation;
 @inject IModalService Modal
+@using Blazored.Modal
 
 <PageTitle>Homepage</PageTitle>
 
@@ -16,7 +17,7 @@
         <div class="header">
             <h1 class="logo">Flagscape</h1>
             <h2 class="slogan">Guess to success</h2>
-            <button class="btn-play">Play</button>
+            <button class="btn-play" @onclick="NavigateToPlayground">Play</button>
             <h3 class="text">Guess the flag as fast as you can, the faster you clear it the more points!</h3>
             <div class="button-container">
                 <button class="btn-info" @onclick="@(()=>Modal.Show<InfoFlagscapeModal>())">Info</button>
@@ -27,6 +28,13 @@
     </div>
 </div>
 
+@code {
+
+    private void NavigateToPlayground()
+    {
+        Navigation.NavigateTo("/playground");
+    }
+}
 
 
 
