@@ -13,5 +13,22 @@ namespace AgileCourseAssignment.Server.Data
         }
 
         public DbSet<FlagsModel> Flags { get; set; }
+        public DbSet<HighScoreModel> HighScore { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FlagsModel>().HasData(
+                new FlagsModel()
+                {
+                    Id = 1,
+                    CountryName = "Germany",
+                    Image = "Germany.jpg",
+                    IsUsed = false,
+
+
+                }
+                );
+        }
+
     }
 }
