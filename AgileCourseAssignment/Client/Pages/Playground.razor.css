@@ -1,2 +1,11 @@
 ﻿body {
 }
+
+
+.background-container {
+    background-color: cornflowerblue;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
