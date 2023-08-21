@@ -1,9 +1,15 @@
-﻿namespace AgileCourseAssignment.Client.Services
+﻿using AgileCourseAssignment.Shared.Models;
+
+namespace AgileCourseAssignment.Client.Services
 {
-    public class IFlagService
+    public interface IFlagService
     {
 
+        public Task<List<FlagsModel>> GetAllFlags();
 
+        public Task<FlagsModel> GetSingleFlag(int Id);
+
+                
       
 
 

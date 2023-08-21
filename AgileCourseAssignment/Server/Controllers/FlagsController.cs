@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AgileCourseAssignment.Server.Controllers
 {
      [ApiController]
-     [Route("[controller]")]
+     [Route("api/[controller]")]
     public class FlagsController : Controller
     {
         // Loading the data to webserver(json) to accsess write following

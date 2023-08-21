@@ -1,3 +1,4 @@
+using AgileCourseAssignment.Client.Services;
 using AgileCourseAssignment.Server.Data;
 using AgileCourseAssignment.Server.Repo;
 using Blazored.Modal;
@@ -16,6 +17,7 @@ var ConnectionString = builder.Configuration.GetConnectionString("FlagScapeConne
 builder.Services.AddDbContext<FlagScapeDb>(options =>
     options.UseSqlServer(ConnectionString));
 builder.Services.AddScoped<IFlagRepo, FlagRepo>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
