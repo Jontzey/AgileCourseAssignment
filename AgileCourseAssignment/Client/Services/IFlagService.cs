@@ -7,10 +7,10 @@ namespace AgileCourseAssignment.Client.Services
 
         public Task<List<FlagsModel>> GetAllFlags();
 
-        public Task<FlagsModel> GetSingleFlag(int Id);
+        public Task<List<FlagsModel>> GetRandomFlag();
 
-                
-      
+
+
 
 
     }

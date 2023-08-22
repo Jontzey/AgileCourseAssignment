@@ -39,8 +39,8 @@ namespace AgileCourseAssignment.Client.Pages
             countdownTimer = new System.Timers.Timer(1000);
             countdownTimer.Elapsed += CountdownTick;
             countdownTimer.Enabled = true;
-            flags = await flagService.GetAllFlags();
-            Console.WriteLine(flags.ToString());
+            flags = await flagService.GetRandomFlag();
+            
         }
         public void Dispose()
         {
