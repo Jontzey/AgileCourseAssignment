@@ -1,8 +1,4 @@
-﻿
-
-
-using AgileCourseAssignment.Client.Services;
-using AgileCourseAssignment.Shared.Models;
+﻿using AgileCourseAssignment.Shared.Models;
 
 namespace AgileCourseAssignment.Client.Pages
 {
