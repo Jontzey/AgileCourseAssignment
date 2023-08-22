@@ -231,6 +231,16 @@ namespace AgileCourseAssignment.Server.Data
 
 
                 ) ;
+
+            modelBuilder.Entity<HighScoreModel>().HasData(
+               new HighScoreModel()
+               {
+                   Id = 1,
+                   Name = "Test",
+                   Score = 150,
+                   Time = 100,
+               }
+               );
         }
 
     }
