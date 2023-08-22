@@ -9,9 +9,9 @@ namespace AgileCourseAssignment.Client.Services
 
         public List<HighScoreModel> Score { get; set; } = new();
 
-        public HighScoreService(HttpClient httpClient)
+        public HighScoreService(HttpClient _httpClient)
         {
-            this.httpClient = httpClient;
+            this.httpClient = _httpClient;
         }
         public async Task<List<HighScoreModel>> GetAllScore()
         {
@@ -24,6 +24,11 @@ namespace AgileCourseAssignment.Client.Services
             }
 
             return null;
+        }
+
+        public Task<HighScoreModel> GetScoreId(int Id)
+        {
+            throw new NotImplementedException();
         }
 
 
