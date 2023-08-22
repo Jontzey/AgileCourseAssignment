@@ -46,3 +46,9 @@
 .time{
     margin-top:5px;
 }
+
+.game-test{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}

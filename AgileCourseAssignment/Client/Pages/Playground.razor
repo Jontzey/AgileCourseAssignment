@@ -19,26 +19,29 @@
    </div>
 
    <div class="quest-container">
-       <h1>Japan</h1>
-        <h2>What flag does this country belong to?</h2>
+       <h1></h1>
+        <h2>@question</h2>
    </div>
-
+   <h2>@isCorrect</h2>
    <div class="answer-container">
 
 
-       
+            <div class="game-test">
+        @foreach (var flag in CompletedList)
+        {
+
+                <button @onclick="() => CheckAnswer(flag)">@flag.CountryName</button>
+
+        }
+            </div>
        
 
-       <button @onclick="EndTimer">Flag</button>
+   @*     <button @onclick="EndTimer">Flag</button>
 
         <button>Flag</button>
         <button>Flag</button>
-
+ *@
    </div>
 
-
-
-
-    
 
 </div>
