@@ -7,7 +7,7 @@ namespace AgileCourseAssignment.Client.Pages
     {
         FlagsModel theFlag;
         //gameVariables
-        string currentCountryName;
+        string currentCountryName = "";
         string question = "What flag does this country belong to?";
         private int currentQuestionIndex = 0;
         private int currentQuestionNumber = 1;
@@ -60,7 +60,7 @@ namespace AgileCourseAssignment.Client.Pages
 
         private void CheckAnswer(FlagsModel selectedFlag)
         {
-            currentCountryName = selectedFlag.CountryName;
+           
             if (selectedFlag.Id == CompletedList[currentQuestionIndex].Id)
             {
                 // Handle correct answer logic
