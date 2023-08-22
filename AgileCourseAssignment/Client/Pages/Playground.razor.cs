@@ -46,6 +46,7 @@ namespace AgileCourseAssignment.Client.Pages
             countdownTimer = new System.Timers.Timer(1000);
             countdownTimer.Elapsed += CountdownTick;
             countdownTimer.Enabled = true;
+
             flags = await flagService.GetAllFlags();
 
             // Shuffle the list to get a random order of items
@@ -87,6 +88,7 @@ namespace AgileCourseAssignment.Client.Pages
 
             //// Update the UI
             //await InvokeAsync(() => StateHasChanged());
+
         }
         public void Dispose()
         {
