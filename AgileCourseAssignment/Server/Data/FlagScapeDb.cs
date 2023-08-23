@@ -236,10 +236,40 @@ namespace AgileCourseAssignment.Server.Data
                new HighScoreModel()
                {
                    Id = 1,
-                   Name = "Test",
-                   Score = 150,
-                   Time = 100,
+                   Name = "Player1",
+                   Score = 250,
+                   Time = 120
+               },
+               new HighScoreModel()
+               {
+                   Id = 2,
+                   Name = "Player2",
+                   Score = 180,
+                   Time = 90
+               },
+
+               new HighScoreModel()
+               {
+                   Id = 3,
+                   Name = "Player3",
+                   Score = 320,
+                   Time = 150
+               },
+               new HighScoreModel()
+               {
+                   Id = 4,
+                   Name = "Player4",
+                   Score = 200,
+                   Time = 110
+               },
+               new HighScoreModel()
+               {
+                   Id = 5,
+                   Name = "Player5",
+                   Score = 280,
+                   Time = 130
                }
+
                );
         }
 
