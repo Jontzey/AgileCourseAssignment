@@ -7,33 +7,22 @@
 
 
 <div class="background-container">
-    <!-- Left column -->
-    <div class="left-column">
-        <img src="/Images/Gif/world_flags.gif" alt="World Flags">
-    </div>
 
-    <!-- Right column -->
-    <div class="right-column">
-        <div class="header">
+    <div class="header-container">
             <h1 class="logo">Flagscape</h1>
             <h2 class="slogan">Guess to success</h2>
-            <button class="btn-play" @onclick="NavigateToPlayground">Play</button>
-            <h3 class="text">Guess the flag as fast as you can, the faster you clear it the more points!</h3>
+            <button class="btn-play" @onclick="NavigateToPlayground">Let's go!</button>
+        </div>
+        <div class="info-container">
+            <h3 class="text">Guess the flag as fast as you can,<br> the faster you clear it the more points!</h3>
             <div class="button-container">
                 <button class="btn-info" @onclick="@(()=>Modal.Show<InfoFlagscapeModal>())">Info</button>
                 <button class="btn-about" @onclick="@(()=>Modal.Show<AboutFlagscapeModal>())">About</button>
             </div>
-            
         </div>
+
+
+    <div class="img-container">
+        <img src="/Images/Gif/world_flags.gif" alt="World Flags">
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-

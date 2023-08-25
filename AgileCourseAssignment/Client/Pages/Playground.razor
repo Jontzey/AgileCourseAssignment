@@ -8,41 +8,40 @@
 
 <div class="background-container">
 
-   <div class="information-container">
-       <div class="time-container" >
+    <div class="information-container">
+        <div class="time-container">
             <img src="https://i.gifer.com/QX6b.gif" class="timer-icon" />
             <h2 class="time">Time: @remainingTime seconds</h2>
-       </div>
-       <div>
-           <h3>1 of 25</h3>
-       </div>
-   </div>
+        </div>
+        <div>
+            <h3>@currentQuestionNumber of 25</h3>
+        </div>
+    </div>
 
-   <div class="quest-container">
-       <h1>Japan</h1>
-        <h2>What flag does this country belong to?</h2>
-   </div>
+    <div class="quest-container">
 
-   <div class="answer-container">
+        <h1>@currentCountryName</h1>
+        <h2>@question</h2>
+
+    </div>
+    <h2>@isCorrect</h2>
+
+    <div class="answer-container">
+        <div class="grid-container">
+            @foreach (var flag in CompletedList)
+            {
+                <button class="grid-item" @onclick="() => CheckAnswer(flag)">@flag.CountryName</button>
+            }
+        </div>
+    </div>
 
 
-        @foreach(var item in flags)
-        {
-            <h1>@item.CountryName</h1>
-        }
-
-       
-
-       <button @onclick="EndTimer">Flag</button>
+        @*     <button @onclick="EndTimer">Flag</button>
 
         <button>Flag</button>
         <button>Flag</button>
-
-   </div>
-
-
+        *@
+    </div>
 
 
-    
 
-</div>
