@@ -1,4 +1,4 @@
-﻿/* Apply a background color and some basic styling to the entire page */
+﻿
 .background-container {
     background-image: url('../Images/HomePageImage/quizbackground1.jpg');
     background-size: cover;
@@ -10,7 +10,6 @@
     align-items: center;
 }
 
-/* Style the container for time information */
 .information-container {
     background-color: #fff;
     padding: 20px;
@@ -38,7 +37,6 @@
     font-weight: bold;
 }
 
-/* Style the question container */
 .quest-container {
     background-color: #fff;
     padding: 20px;
@@ -57,15 +55,13 @@ h1 {
 h2 {
     font-size: 24px;
 }
-
-/* Style the answer buttons */
 .answer-container {
     margin-top: 20px;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 10px;
 }
 
@@ -80,9 +76,9 @@ h2 {
     transition: background-color 0.3s;
 }
 
-    .grid-item:hover {
+.grid-item:hover {
         background-color: #0056b3;
-    }
+}
 
 /* Style for the isCorrect element */
 h2#isCorrect {

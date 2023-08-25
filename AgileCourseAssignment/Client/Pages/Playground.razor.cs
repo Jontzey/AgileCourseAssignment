@@ -45,7 +45,6 @@ namespace AgileCourseAssignment.Client.Pages
         {
             countdownTimer = new System.Timers.Timer(1000);
             countdownTimer.Elapsed += CountdownTick;
-            countdownTimer.Enabled = true;
 
             flags = await flagService.GetAllFlags();
 
@@ -56,6 +55,13 @@ namespace AgileCourseAssignment.Client.Pages
             List<FlagsModel> randomFlags = shuffledFlags.Take(25).ToList();
 
             CompletedList = randomFlags;
+
+            if (currentQuestionIndex < CompletedList.Count)
+            {
+                currentCountryName = CompletedList[currentQuestionIndex].CountryName;
+            }
+
+            countdownTimer.Enabled = true;
         }
 
         private void CheckAnswer(FlagsModel selectedFlag)
