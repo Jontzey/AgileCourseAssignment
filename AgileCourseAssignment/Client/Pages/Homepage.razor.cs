@@ -12,7 +12,7 @@
 
         private void NavigateToPlayground()
         {
-            Navigation.NavigateTo("/playground");
+            Navigation.NavigateTo("/Menu");
         }
     }
 }

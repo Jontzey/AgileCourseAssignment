@@ -66,7 +66,7 @@ namespace AgileCourseAssignment.Client.Pages
             // also we need index to get where we are at the moment in the list and the standard value 0
             CurrentQuestion = CompletedList[currentQuestionIndex];
 
-            
+            Console.WriteLine(CompletedList.Count);
         }
 
         // This method is connected to button with the "Onclick"
@@ -93,7 +93,7 @@ namespace AgileCourseAssignment.Client.Pages
                 currentQuestionIndex++;
                 CurrentQuestion = CompletedList[currentQuestionIndex];
             }
-            else if(currentQuestionNumber == 26)
+            else if(currentQuestionNumber == 25)
             {
                 
                     EndTimer();
