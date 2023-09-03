@@ -13,7 +13,7 @@
 .button-container{
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:20px;
 }
 
 
@@ -24,4 +24,16 @@
 
 .button-style:hover{
     background-color:lightgreen;
+}
+
+.menu-holder{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+}
+
+.test{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
 }
