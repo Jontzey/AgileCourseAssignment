@@ -8,31 +8,19 @@
 
     <div class="menu-holder">
 
-        <div class="button-container">
-            @if (isMouseOn)
-            {
-                <div class="test">
-                    <img width="50px" height="50px" src="UI_images/image_processing20200511-15721-algpaw.png" />
-                    <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(1)" @onmouseleave="DeactivateImg">Guess the Flag</button>
-                </div>
+
+        <div>
+            @if (isImg == true){
+                // top : 55px
+                <img width="50px" height="50px" style="position: fixed; top: @imgTop; left: 700px; " src="UI_images/image_processing20200511-15721-algpaw.png" />
                 
             }
-            else
-            {
-                <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(1)" @onmouseleave="DeactivateImg">Guess the Flag</button>
-            }
-            @if (isMouseOn2)
-            {
-                <div class="test">
-                    <img width="50px" height="50px" src="UI_images/image_processing20200511-15721-algpaw.png" />
-                    <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(2)" @onmouseleave="DeactivateImg">Guess the Country</button>
-                </div>
+        </div>
+        <div class="button-container">
 
-            }
-            else
-            {
-                <button style="margin-top 10px" class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(2)" @onmouseleave="DeactivateImg">Guess the Country</button>
-            }
+                <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(1)" @onmouseleave="DeactivateImg">Guess the Flag</button>
+                <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(2)" @onmouseleave="DeactivateImg">Guess the Country</button>
+           
             
         </div>
     </div>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Xml.Serialization;
 
 namespace AgileCourseAssignment.Client.Pages
 {
@@ -9,12 +10,13 @@ namespace AgileCourseAssignment.Client.Pages
 
         }
 
-        private bool isMouseOn;
-        private bool isMouseOn2;
+ 
+
+
+        //TEST
+        private bool isImg;
+        private string imgTop = "0px";
         
-
-
-
 
 
 
@@ -27,21 +29,23 @@ namespace AgileCourseAssignment.Client.Pages
         private void ActivateImg(int currentButon)
         {
             if(currentButon == 1) {
-                isMouseOn = true;
-                isMouseOn2 = false;
+                isImg = true;
+                imgTop = "55px";
+               
             }
             else if(currentButon == 2)
             {
-                isMouseOn2 = true;
-                isMouseOn = false;
+              
+                isImg = true;
+                imgTop = "110px";
             }
            
         }
 
         private void DeactivateImg()
         {
-            isMouseOn = false;
-            isMouseOn2 = false;
+            isImg = false;
         }
+
     }
 }
