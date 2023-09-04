@@ -34,7 +34,8 @@ namespace AgileCourseAssignment.Client.Pages
         //test
         List<FlagsModel> ButtonShuffle = new();
         private int pressed = new();
-
+        private int test = new Random().Next(1, 25);
+        private FlagsModel randomTestFlag = new();
         // TODO flowchart
         // 1. Get data from server and save in List variable
         // 2. Make the order in list random
@@ -45,9 +46,6 @@ namespace AgileCourseAssignment.Client.Pages
 
         protected override async void OnInitialized()
         {
-            countdownTimer = new System.Timers.Timer(1000);
-            countdownTimer.Elapsed += CountdownTick;
-            countdownTimer.Enabled = true;
 
             //  Gets data from service that gets its data from Api and then we save it in a list
             List<FlagsModel> flags = new();
@@ -66,7 +64,21 @@ namespace AgileCourseAssignment.Client.Pages
             // also we need index to get where we are at the moment in the list and the standard value 0
             CurrentQuestion = CompletedList[currentQuestionIndex];
 
+            
+
+            
+            while (currentQuestionIndex == test)
+            {
+                test = new Random().Next(1,25);
+            }
+            randomTestFlag = CompletedList[test];
+
+
             Console.WriteLine(CompletedList.Count);
+
+            countdownTimer = new System.Timers.Timer(1000);
+            countdownTimer.Elapsed += CountdownTick;
+            countdownTimer.Enabled = true;
         }
 
         // This method is connected to button with the "Onclick"
@@ -103,10 +115,15 @@ namespace AgileCourseAssignment.Client.Pages
                 
 
             }
+            ////
+                test = new Random().Next(1, 25);
+            while (currentQuestionIndex == test)
+            {
+                test = new Random().Next(1, 25);
+            }
+            randomTestFlag = CompletedList[test];
 
-            
-
-
+            /////
             randomFlag1 = new Random().Next(1,25);
             pressed++;
             Console.WriteLine($"pressed {pressed}");
