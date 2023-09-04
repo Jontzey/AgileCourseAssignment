@@ -25,19 +25,27 @@ namespace AgileCourseAssignment.Client.Pages
             Navigation.NavigateTo("/playground");
         }
 
-
+        private void NavigateToHome()
+        {
+            Navigation.NavigateTo("/");
+        }
         private void ActivateImg(int currentButon)
         {
-            if(currentButon == 1) {
+            if (currentButon == 1) {
                 isImg = true;
                 imgTop = "-5px";
-               
+
             }
-            else if(currentButon == 2)
+            else if (currentButon == 2)
             {
-              
+
                 isImg = true;
                 imgTop = "45px";
+            }
+            else if (currentButon == 3)
+            {
+                isImg = true;
+                imgTop = "95px";
             }
            
         }
