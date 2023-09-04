@@ -3,18 +3,23 @@
 @inject NavigationManager Navigation;
 
 <div class="menu-container">
+    <div style="">
 
-    <h1> Select Quiz</h1>
+        <h1 style="font-family:'Times New Roman', Times, serif;"> Select Quiz</h1>
+
+    </div>
 
     <div class="menu-holder">
 
 
-        <div>
+        <div class="test">
+
+            
             @if (isImg == true){
-                // top : 55px
-                <img width="50px" height="50px" style="position: fixed; top: @imgTop; left: 700px; " src="UI_images/image_processing20200511-15721-algpaw.png" />
+                <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:5px;" src="UI_images/image_processing20200511-15721-algpaw.png" />
                 
             }
+            
         </div>
         <div class="button-container">
 
