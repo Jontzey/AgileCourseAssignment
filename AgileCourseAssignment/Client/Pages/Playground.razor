@@ -30,8 +30,28 @@
         <div class="answer-container">
 
 
-            <button @onclick="() => CheckAnswer(currentQuestionIndex)">@CurrentQuestion.CountryName</button>
-            <button @onclick="() => CheckAnswer(test)">@randomTestFlag.CountryName</button>
+            <div class="question-card">
+                <div class="picture-container">
+                    <img class="question-image" src="/Images/Flags/@CurrentQuestion.Image">
+                </div>
+                <div class="clickTxt-container">
+                    <h1>Click the correct flag!</h1>
+                </div>
+                <div class="submit-container">
+                    <button @onclick="() => CheckAnswer(currentQuestionIndex)">Awnser</button>
+
+                </div>
+                
+            </div>
+
+            <div class="question-card">
+                <img class="question-image" src="/Images/Flags/@randomTestFlag.Image">
+                <h1>Click the correct flag!</h1>
+                <button @onclick="() => CheckAnswer(test)">Awnser</button>
+
+            </div>
+
+            
             <div class="game-test">
             </div>
 

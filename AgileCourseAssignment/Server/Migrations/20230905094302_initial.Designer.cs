@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgileCourseAssignment.Server.Migrations
 {
     [DbContext(typeof(FlagScapeDb))]
-    [Migration("20230905083817_inital")]
-    partial class inital
+    [Migration("20230905094302_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,203 +52,203 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 1,
                             CountryName = "Germany",
-                            Image = "Germany.jpg",
+                            Image = "Germany.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 2,
                             CountryName = "Austria",
-                            Image = "Austria.jpg",
+                            Image = "Austria.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 3,
                             CountryName = "Spain",
-                            Image = "Bandera_de_España.jpg",
+                            Image = "spain.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 4,
                             CountryName = "Belgium",
-                            Image = "Flag_of_Belgium_(civil).jpg",
+                            Image = "Belgium.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 5,
                             CountryName = "Bulgaria",
-                            Image = "Flag_of_Bulgaria.jpg",
+                            Image = "Bulgaria.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 6,
                             CountryName = "Croatia",
-                            Image = "Flag_of_Croatia.jpg",
+                            Image = "Croatia.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 7,
                             CountryName = "Denmark",
-                            Image = "Flag_of_Denmark.svg.jpg",
+                            Image = "Denmark.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 8,
                             CountryName = "Estonia",
-                            Image = "Flag_of_Estonia.svg.jpg",
+                            Image = "Estonia.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 9,
                             CountryName = "Finland",
-                            Image = "Flag_of_Finland_(bordered).jpg",
+                            Image = "Finland.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 10,
                             CountryName = "Iceland",
-                            Image = "Flag_of_Iceland.jpg",
+                            Image = "Iceland.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 11,
                             CountryName = "Italy",
-                            Image = "Flag_of_Italy.jpg",
+                            Image = "Italy.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 12,
                             CountryName = "Lithuania",
-                            Image = "Flag_of_Lithuania.svg.jpg",
+                            Image = "Lithuania.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 13,
                             CountryName = "Poland",
-                            Image = "Flag_of_Poland.jpg",
+                            Image = "Poland.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 14,
                             CountryName = "Slovakia",
-                            Image = "Flag_of_Slovakia.svg.jpg",
+                            Image = "Slovakia.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 15,
                             CountryName = "Slovenia",
-                            Image = "Flag_of_Slovenia.jpg",
+                            Image = "Slovenia.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 16,
                             CountryName = "Sweden",
-                            Image = "Flag_of_Sweden.svg.jpg",
+                            Image = "Sweden.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 17,
                             CountryName = "Turkey",
-                            Image = "Flag_of_Turkey.svg.jpg",
+                            Image = "Turkey.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 18,
                             CountryName = "Albania",
-                            Image = "Flag-Albania.jpg",
+                            Image = "Albania.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 19,
                             CountryName = "Czech Republic",
-                            Image = "flag-czech-vector-illustration_514344-268.jpg",
+                            Image = "Czech.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 20,
                             CountryName = "Hungary",
-                            Image = "Flag-Hungary.jpg",
+                            Image = "Hungary.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 21,
                             CountryName = "Ireland",
-                            Image = "FLAG-Ireland.jpg",
+                            Image = "Ireland.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 22,
                             CountryName = "Latvia",
-                            Image = "Flag-Latvia.jpg",
+                            Image = "Latvia.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 23,
                             CountryName = "Norway",
-                            Image = "Flag-Norway.jpg",
+                            Image = "Norway.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 24,
                             CountryName = "Ukraine",
-                            Image = "Flag-Ukraine.jpg",
+                            Image = "Ukraine.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 25,
                             CountryName = "France",
-                            Image = "france-151928_640.jpg",
+                            Image = "France.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 26,
                             CountryName = "Greece",
-                            Image = "greece.jpg",
+                            Image = "Greece.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 27,
                             CountryName = "Portugal",
-                            Image = "portugals-flagga.jpg",
+                            Image = "Portugal.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 28,
                             CountryName = "Netherlands",
-                            Image = "iStock-471776245.jpg",
+                            Image = "Netherlands.png",
                             IsUsed = false
                         },
                         new
                         {
                             Id = 29,
                             CountryName = "Switzerland",
-                            Image = "Switzerland-Flag.jpg",
+                            Image = "Switzerland.png",
                             IsUsed = false
                         });
                 });
