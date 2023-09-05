@@ -3,13 +3,16 @@
 
 
 .menu-container {
-    display:flex;
-    flex-direction:column;
-    height:100vh;
-    gap:30px;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
     background-color: cornflowerblue;
+    background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+    background-size: cover;
+    background-repeat: round;
 }
 
 .button-container{
