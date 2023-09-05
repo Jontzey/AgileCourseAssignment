@@ -204,8 +204,8 @@ namespace AgileCourseAssignment.Client.Pages
                     Score = finalResult 
                 };
 
-                bool success = await HighScoreService.RegisterScoreAsync(playerScore);
-                if (success)
+                HighScoreModel addScore = await HighScoreService.AddScoreAsync(playerScore);
+                if (addScore != null)
                 {
                     // Handle success
                     // playerName = "";

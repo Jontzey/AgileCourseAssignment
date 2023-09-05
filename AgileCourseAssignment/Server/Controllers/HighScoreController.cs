@@ -14,6 +14,18 @@ namespace AgileCourseAssignment.Server.Controllers
         {
             this._highScoreRepo = highScoreRepo;
         }
+        [HttpPost]
+        public async Task<ActionResult<HighScoreModel>> AddScoreAsync([FromBody] HighScoreModel highscore)
+        {
+            var highscoreWasAdded = await _highScoreRepo.AddScoreAsync(highscore);
+
+            if (highscoreWasAdded)
+            {
+                return Ok(highscore);
+            }
+
+            return BadRequest();
+        }
 
         [HttpGet]
 

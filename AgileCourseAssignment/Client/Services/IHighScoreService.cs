@@ -6,7 +6,7 @@ namespace AgileCourseAssignment.Client.Services
     {
         public Task<List<HighScoreModel>> GetAllScore();
         public Task<HighScoreModel> GetScoreId(int Id);
-        Task<bool> RegisterScoreAsync(HighScoreModel playerScore);
+        Task<HighScoreModel> AddScoreAsync(HighScoreModel playerScore);
 
     }
 }
