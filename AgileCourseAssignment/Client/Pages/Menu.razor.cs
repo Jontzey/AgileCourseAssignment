@@ -24,6 +24,11 @@ namespace AgileCourseAssignment.Client.Pages
         {
             Navigation.NavigateTo("/playground");
         }
+        private void NavigateToPlayground2()
+        {
+
+            Navigation.NavigateTo("/playground2");
+        }
 
         private void NavigateToHome()
         {
