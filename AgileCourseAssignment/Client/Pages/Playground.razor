@@ -8,40 +8,48 @@
 
 <div class="background-container">
 
-    <div class="information-container">
-        <div class="time-container">
-            <img src="https://i.gifer.com/QX6b.gif" class="timer-icon" />
-            <h2 class="time">Time: @remainingTime seconds</h2>
+    @if (isGameOver == false)
+    {
+        <div class="information-container">
+            <div class="time-container">
+                <img src="https://i.gifer.com/QX6b.gif" class="timer-icon" />
+                <h2 class="time">Time: @remainingTime seconds</h2>
+            </div>
+            <div>
+                <h3>@currentQuestionNumber of 25</h3>
+            </div>
         </div>
-        <div>
-            <h3>@currentQuestionNumber of 25</h3>
+
+        <div class="quest-container">
+
+            <h1>@CurrentQuestion.CountryName</h1>
+            <h2>@question</h2>
+
         </div>
-    </div>
+        <h2>@isCorrect</h2>
+        <div class="answer-container">
 
-    <div class="quest-container">
 
-        <h1>@currentCountryName</h1>
-        <h2>@question</h2>
+            <button @onclick="() => CheckAnswer(currentQuestionIndex)">@CurrentQuestion.CountryName</button>
+            <button @onclick="() => CheckAnswer(test)">@randomTestFlag.CountryName</button>
+            <div class="game-test">
+            </div>
 
-    </div>
-    <h2>@isCorrect</h2>
-
-    <div class="answer-container">
-        <div class="grid-container">
-            @foreach (var flag in CompletedList)
-            {
-                <button class="grid-item" @onclick="() => CheckAnswer(flag)">@flag.CountryName</button>
-            }
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="scoreBoard">
+
+            <h1>Game is over</h1>
+            <h2>Points for each correct flag: @flagPoints</h2>
+            <h2>Time remaining points: @convertedToTimePonts</h2>
+            <h2>Summary of points: @finalResult </h2>
+
+        </div>
+    }
 
 
-        @*     <button @onclick="EndTimer">Flag</button>
 
-        <button>Flag</button>
-        <button>Flag</button>
-        *@
-    </div>
-
-
+</div>
 
