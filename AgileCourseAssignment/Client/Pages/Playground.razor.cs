@@ -37,7 +37,11 @@ namespace AgileCourseAssignment.Client.Pages
         List<FlagsModel> ButtonShuffle = new();
         private int pressed = new();
         private int test = new Random().Next(1, 25);
+        private int test2 = new Random().Next(1, 25);
         private FlagsModel randomTestFlag = new();
+        private FlagsModel randomTestFlag2 = new();
+
+        List<FlagsModel> playListCompleted = new List<FlagsModel>();
         // TODO flowchart
         // 1. Get data from server and save in List variable
         // 2. Make the order in list random
@@ -70,15 +74,37 @@ namespace AgileCourseAssignment.Client.Pages
 
 
 
+            test = new Random().Next(1, 25);
+
             while (currentQuestionIndex == test)
             {
                 test = new Random().Next(1, 25);
-
             }
             randomTestFlag = CompletedList[test];
 
+            test2 = new Random().Next(1, 25);
+            while (currentQuestionIndex == test2 || test == test2)
+            {
+                if (test2 == test)
+                {
 
-            Console.WriteLine(CompletedList.Count);
+                    test2 = new Random().Next(1, 25);
+                }
+                if (test2 == currentQuestionIndex)
+                {
+
+                    test2 = new Random().Next(1, 25);
+                }
+            }
+            randomTestFlag2 = CompletedList[test2];
+
+            List<FlagsModel> shuffleThePlayList = new List<FlagsModel>();
+            shuffleThePlayList.Add(CurrentQuestion);
+            shuffleThePlayList.Add(randomTestFlag);
+            shuffleThePlayList.Add(randomTestFlag2);
+
+            List<FlagsModel> randomizePlayList = shuffleThePlayList.OrderBy(x => Guid.NewGuid()).ToList();
+            playListCompleted = randomizePlayList;
 
             countdownTimer = new System.Timers.Timer(1000);
             countdownTimer.Elapsed += CountdownTick;
@@ -89,15 +115,16 @@ namespace AgileCourseAssignment.Client.Pages
         private void CheckAnswer(int getAnswer)
         {
             // each time a button is pressed increase the currents question number
-
+            playListCompleted.Clear();
+            List<FlagsModel> shuffleThePlayList = new List<FlagsModel>();
             currentQuestionNumber++;
-
+            
             // if statement to to make sure the index of currentquestionIndex does not go out of bounds
             if (currentQuestionNumber < 25)
 
             {
 
-                if (getAnswer == currentQuestionIndex)
+                if (getAnswer == CurrentQuestion.Id)
                 {
                     Console.WriteLine($"Correct answer {randomFlag1}");
                     // each time we guess correctly add current flagpoint to itself
@@ -110,6 +137,7 @@ namespace AgileCourseAssignment.Client.Pages
                 }
                 currentQuestionIndex++;
                 CurrentQuestion = CompletedList[currentQuestionIndex];
+                shuffleThePlayList.Add(CurrentQuestion);
             }
 
             else if (currentQuestionNumber == 25)
@@ -131,10 +159,30 @@ namespace AgileCourseAssignment.Client.Pages
             }
             randomTestFlag = CompletedList[test];
 
-            /////
+            test2 = new Random().Next(1, 25);
+            while (currentQuestionIndex == test2 || test == test2)
+            {
+                if (test2 == test)
+                {
 
-            randomFlag1 = new Random().Next(1, 25);
+                    test2 = new Random().Next(1, 25);
+                }
+                if (test2 == currentQuestionIndex)
+                {
 
+                    test2 = new Random().Next(1, 25);
+                }
+            }
+            randomTestFlag2 = CompletedList[test2];
+
+            
+            shuffleThePlayList.Add(randomTestFlag);
+            shuffleThePlayList.Add(randomTestFlag2);
+
+            List<FlagsModel> randomizePlayList = shuffleThePlayList.OrderBy(x => Guid.NewGuid()).ToList();
+            playListCompleted = randomizePlayList;
+
+            Console.WriteLine(playListCompleted.Count);
             pressed++;
             Console.WriteLine($"pressed {pressed}");
         }
