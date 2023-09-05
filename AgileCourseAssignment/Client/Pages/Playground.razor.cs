@@ -213,7 +213,7 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine($"Current time remaining {remainingTime}seconds || converted to points = ({convertedToTimePonts}Points)");
             Console.WriteLine($"Correct flagspoints = {flagPoints}points");
         }
-
+        //
 
     }
 }
