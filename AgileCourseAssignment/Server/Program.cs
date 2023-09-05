@@ -4,6 +4,7 @@ using AgileCourseAssignment.Server.Repo;
 using Blazored.Modal;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ var ConnectionString = builder.Configuration.GetConnectionString("FlagScapeConne
 builder.Services.AddDbContext<FlagScapeDb>(options =>
     options.UseSqlServer(ConnectionString));
 builder.Services.AddScoped<IFlagRepo, FlagRepo>();
+builder.Services.AddScoped<IHighScoreRepo, HighScoreRepo>();
 
 var app = builder.Build();
 

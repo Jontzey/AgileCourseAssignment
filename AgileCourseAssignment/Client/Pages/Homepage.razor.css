@@ -1,8 +1,8 @@
-﻿body {
-}
-
+﻿
 .background-container {
-    background-color: cornflowerblue;
+    background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+    background-size: cover;
+    background-repeat: round;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,125 +10,111 @@
     align-items: center;
 }
 
-.header {
+.header-container {
     text-align: center;
 }
 
-.logo {
+.header-container .logo{
     color: white;
-    font-size: 80px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 100px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
 }
 
-.slogan {
+.header-container .slogan {
+    color: #000;
     font-size: 35px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 65%);
     padding: 10px;
-
 }
 
-.btn-play {
+.header-container .btn-play {
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    width: 150px;
-    margin: 20px;
+    width: 200px;
     cursor: pointer;
-    background-color: red;
+    background-color: rgb(108 117 125 / 61%);
     border: 1px solid gray;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s;
-}
-.btn-play:hover{
-    transform:translateY(-5px);
+
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+    animation: pulse 1s infinite alternate; /* Use an animation called "pulse" */
+    }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.5); /* Start with the normal size */
+    }
+
+    100% {
+        transform: scale(1.1); /* Grow to 1.1 times the normal size */
+    }
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding: 0; 
-}
-
-.btn-info {
-    color: white;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0 10px;
-    width: 80px;
-    height: 40px;
-    background-color: red;
-    border: 1px solid gray;
-    cursor: pointer;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.btn-about {
-    color: white;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0 10px;
-    width: 80px;
-    height: 40px;
-    background-color: yellowgreen;
-    border: 1px solid gray;
-    cursor: pointer;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.info-container {
+    text-align: center;
 }
 
 .text {
     color: white;
-    font-size: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 25px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
     margin-top: 30px;
+
 }
 
-
-/* Left column */
-.left-column {
-    margin-left: 100px;
-    margin-right: 50px;
+.info-container .button-container {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin-bottom: 20px;
 }
 
-/* Right column  */
-.right-column {
-    margin-left: 100px;
-    margin-right: 50px;
-    text-align: center;
+.info-container .btn-info {
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    background-color: red;
+    border: 1px solid gray;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
 }
 
-.left-column img {
-    width: 300px;
-    max-width: 100%;
+.info-container .btn-about {
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    background-color: yellowgreen;
+    border: 1px solid gray;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
 }
 
-
-/* Media queries for responsiveness */
-@media screen and (min-width: 768px) {
-   
-    .background-container {
-        flex-direction: row; 
+.img-container img {
+    width: 250px;
+}
+/* Media query for screens with a maximum width of 480px (typical for mobile phones) */
+@media screen and (max-width: 480px) {
+    .header-container .logo {
+        font-size: 50px;
     }
-    .left-column img {
-        width: 600px;
+
+    .header-container .slogan {
+        font-size: 30px;
     }
 
     .text {
         font-size: 20px; 
     }
-    .button-container {
-        justify-content: space-between;
+    .img-container img  {
+        width: 200px;
     }
-    .btn-info, .btn-about {
-        font-size: 12px;
-        font-weight: bold;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
 
 }

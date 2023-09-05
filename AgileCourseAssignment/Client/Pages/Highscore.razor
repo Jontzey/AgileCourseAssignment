@@ -1,1 +1,20 @@
 ﻿@page "/Highscore"
+@inject NavigationManager Navigation;
+
+@using AgileCourseAssignment.Shared;
+@using AgileCourseAssignment.Client.Services;
+@using AgileCourseAssignment.Client.Pages
+@using AgileCourseAssignment.Shared.Models
+@inject IHighScoreService scoreService;
+
+
+<div>
+    <h1>HighScore List:</h1>
+    <div>
+        @foreach (var score in highscorelist)
+        {
+            <h1>@score.Name</h1>
+        }
+    </div>
+</div>
+

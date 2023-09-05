@@ -3,6 +3,7 @@ using AgileCourseAssignment.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgileCourseAssignment.Server.Migrations
 {
     [DbContext(typeof(FlagScapeDb))]
-    partial class FlagScapeDbModelSnapshot : ModelSnapshot
+    [Migration("20230822135119_HighScoreUpdate")]
+    partial class HighScoreUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -276,37 +279,9 @@ namespace AgileCourseAssignment.Server.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Player1",
-                            Score = 250,
-                            Time = 120
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Player2",
-                            Score = 180,
-                            Time = 90
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Player3",
-                            Score = 320,
-                            Time = 150
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Player4",
-                            Score = 200,
-                            Time = 110
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Player5",
-                            Score = 280,
-                            Time = 130
+                            Name = "Test",
+                            Score = 150,
+                            Time = 100
                         });
                 });
 #pragma warning restore 612, 618
