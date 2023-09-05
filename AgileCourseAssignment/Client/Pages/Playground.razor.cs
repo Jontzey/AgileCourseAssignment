@@ -22,7 +22,9 @@ namespace AgileCourseAssignment.Client.Pages
         private int convertedToTimePonts;
         private int finalResult;
 
+
         private int randomFlag1 = new Random().Next(1, 25);
+
         //time
         private int remainingTime = 180;
         private bool countdownComplete = false;
@@ -67,9 +69,11 @@ namespace AgileCourseAssignment.Client.Pages
 
 
 
+
             while (currentQuestionIndex == test)
             {
                 test = new Random().Next(1, 25);
+
             }
             randomTestFlag = CompletedList[test];
 
@@ -85,10 +89,12 @@ namespace AgileCourseAssignment.Client.Pages
         private void CheckAnswer(int getAnswer)
         {
             // each time a button is pressed increase the currents question number
+
             currentQuestionNumber++;
 
             // if statement to to make sure the index of currentquestionIndex does not go out of bounds
             if (currentQuestionNumber < 25)
+
             {
 
                 if (getAnswer == currentQuestionIndex)
@@ -105,6 +111,7 @@ namespace AgileCourseAssignment.Client.Pages
                 currentQuestionIndex++;
                 CurrentQuestion = CompletedList[currentQuestionIndex];
             }
+
             else if (currentQuestionNumber == 25)
             {
 
@@ -117,6 +124,7 @@ namespace AgileCourseAssignment.Client.Pages
             }
             ////
             test = new Random().Next(1, 25);
+
             while (currentQuestionIndex == test)
             {
                 test = new Random().Next(1, 25);
@@ -124,7 +132,9 @@ namespace AgileCourseAssignment.Client.Pages
             randomTestFlag = CompletedList[test];
 
             /////
+
             randomFlag1 = new Random().Next(1, 25);
+
             pressed++;
             Console.WriteLine($"pressed {pressed}");
         }

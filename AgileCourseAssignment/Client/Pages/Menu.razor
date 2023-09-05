@@ -1,0 +1,45 @@
+﻿
+@page "/Menu"
+@inject NavigationManager Navigation;
+
+<div class="menu-container">
+    <div class="menu-containerV2">
+            <div style="">
+
+            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> Select Quiz</h1>
+
+            </div>
+        <img src="https://media.giphy.com/media/rcSLJHmBdAMfRJ67bs/giphy.gif" width="300px" style="margin:0px;" />
+
+            <div class="menu-holder">
+
+
+                    <div class="test">
+
+
+                        @if (isImg == true)
+                        {
+                            <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:5px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
+
+                        }
+
+                    </div>
+
+                    <div class="button-container">
+
+                        <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(1)" @onmouseleave="DeactivateImg">Guess the Flag</button>
+                        <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(2)" @onmouseleave="DeactivateImg">Guess the Country</button>
+                        <button class="button-style" @onclick="NavigateToHome" @onmouseover="() => ActivateImg(3)" @onmouseleave="DeactivateImg">Back to Home</button>
+
+                    </div>
+            </div>
+    </div>
+    
+
+</div>
+
+
+
+@code {
+
+}

@@ -23,7 +23,7 @@ namespace AgileCourseAssignment.Server.Controllers
         [HttpGet]
         public async Task<List<FlagsModel>?> GetTestFlagsAsync()
         {
-            return await _flagRepo.GetFlagAsync();
+            return await _flagRepo.GetFlagsAsync();
         }
     }
 }

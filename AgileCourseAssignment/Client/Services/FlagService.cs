@@ -26,9 +26,16 @@ namespace AgileCourseAssignment.Client.Services
             return null;
         }
 
-        public Task<FlagsModel> GetSingleFlag(int Id)
+        public async Task<List<FlagsModel>> GetRandomFlag()
         {
-            throw new NotImplementedException();
+            var response = await httpClient.GetAsync("api/Flags");
+            if(response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadFromJsonAsync<List<FlagsModel>>();
+
+            }
+            return null;
+
         }
     }
 }
