@@ -1,4 +1,5 @@
-﻿using AgileCourseAssignment.Shared.Models;
+﻿using AgileCourseAssignment.Client.Services;
+using AgileCourseAssignment.Shared.Models;
 using Microsoft.AspNetCore.Components;
 using System.Timers;
 
@@ -45,7 +46,7 @@ namespace AgileCourseAssignment.Client.Pages
         // 4. To Use a object in list we need the single version of the object the class of the list, so we have the index and can iterate through it with each button press
         // 5. 
 
-
+       
         protected override async void OnInitialized()
         {
 
@@ -166,6 +167,56 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine($"Correct flagspoints = {flagPoints}points");
         }
 
+        /// <summary> Mihaela </summary>
+
+        private string playerName = "";
+        private string errorMessageDisplay = "none"; 
+        private string succesfullyMessageDisplay = "none";
+
+        //private HighScoreModel score { get; set; }
+        private bool IsInputValid()
+        {
+            // Check if the input is empty, is less than 3 characters long or or contains special characters like "#@" 
+            if (string.IsNullOrWhiteSpace(playerName) ||  playerName.Length < 3 || playerName.Contains("@") || playerName.Contains("#"))
+            {
+                errorMessageDisplay = "block"; // Show the error message
+                succesfullyMessageDisplay = "none";
+                return false; // Invalid input
+            }
+            else
+            {
+                succesfullyMessageDisplay = "block"; // Show the message
+                errorMessageDisplay = "none";
+                return true; // Valid input
+            }
+        }
+        [Inject]
+        private IHighScoreService HighScoreService { get; set; }
+
+        private async Task RegisterScoreAsync()
+        {
+            if (IsInputValid())
+            {
+                var playerScore = new HighScoreModel
+                {
+                    Name = playerName,
+                    Time = remainingTime, 
+                    Score = finalResult 
+                };
+
+                bool success = await HighScoreService.RegisterScoreAsync(playerScore);
+                if (success)
+                {
+                    // Handle success
+                    // playerName = "";
+                }
+                else
+                {
+                    // Handle failure
+                    // playerName = "";
+                }
+            }
+        }
 
     }
 }
