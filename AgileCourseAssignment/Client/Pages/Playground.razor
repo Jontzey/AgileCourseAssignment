@@ -30,7 +30,7 @@
         <div class="answer-container">
 
 
-            <div class="question-card">
+           @*  <div class="question-card">
                 <div class="picture-container">
                     <img class="question-image" src="/Images/Flags/@CurrentQuestion.Image">
                 </div>
@@ -42,14 +42,21 @@
 
                 </div>
                 
-            </div>
-
-            <div class="question-card">
+            </div> *@
+            @foreach(FlagsModel gameList in playListCompleted)
+            {
+                <div class="question-card">
+                    <img class="question-image" src="/Images/Flags/@gameList.Image" />
+                    <h1>Click the correct flag!</h1>
+                    <button @onclick="() => CheckAnswer(gameList.Id)">Answer</button>
+                </div>
+            }
+          @*   <div class="question-card">
                 <img class="question-image" src="/Images/Flags/@randomTestFlag.Image">
                 <h1>Click the correct flag!</h1>
                 <button @onclick="() => CheckAnswer(test)">Awnser</button>
 
-            </div>
+            </div> *@
 
             
             <div class="game-test">
