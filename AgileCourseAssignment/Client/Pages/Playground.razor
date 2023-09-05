@@ -57,7 +57,15 @@
                  <div style="color: green; display: @succesfullyMessageDisplay">Registration successful!</div>
 
                 <!-- Registration button -->
-                <button @onclick="RegisterScoreAsync">Register</button>
+                
+                @if(isRegistred == false)
+                {
+                    <button @onclick="RegisterScoreAsync">Register</button>
+                }
+                else if(isRegistred == true)
+                {
+                    
+                }
             </div>
 
         </div>

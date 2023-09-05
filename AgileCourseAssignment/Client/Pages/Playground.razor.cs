@@ -39,6 +39,10 @@ namespace AgileCourseAssignment.Client.Pages
         private int pressed = new();
         private int test = new Random().Next(1, 25);
         private FlagsModel randomTestFlag = new();
+
+        bool isRegistred = false;
+        private string responsemessage;
+        private string nameAlreadyExist;
         // TODO flowchart
         // 1. Get data from server and save in List variable
         // 2. Make the order in list random
@@ -46,7 +50,7 @@ namespace AgileCourseAssignment.Client.Pages
         // 4. To Use a object in list we need the single version of the object the class of the list, so we have the index and can iterate through it with each button press
         // 5. 
 
-       
+
         protected override async void OnInitialized()
         {
 
@@ -197,6 +201,7 @@ namespace AgileCourseAssignment.Client.Pages
         {
             if (IsInputValid())
             {
+            }
                 var playerScore = new HighScoreModel
                 {
                     Name = playerName,
@@ -204,18 +209,16 @@ namespace AgileCourseAssignment.Client.Pages
                     Score = finalResult 
                 };
 
-                HighScoreModel addScore = await HighScoreService.AddScoreAsync(playerScore);
-                if (addScore != null)
+                
+                if (await HighScoreService.AddScoreAsync(playerScore) != null)
                 {
-                    // Handle success
-                    // playerName = "";
+                     responsemessage = "The score has been successfully added!";
+                    isRegistred = true;
                 }
                 else
                 {
-                    // Handle failure
-                    // playerName = "";
+                     nameAlreadyExist = "Sorry that name already exist";
                 }
-            }
         }
 
     }
