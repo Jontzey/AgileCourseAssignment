@@ -7,7 +7,7 @@
 namespace AgileCourseAssignment.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class inital : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -47,35 +47,35 @@ namespace AgileCourseAssignment.Server.Migrations
                 columns: new[] { "Id", "CountryName", "Image", "IsUsed" },
                 values: new object[,]
                 {
-                    { 1, "Germany", "Germany.jpg", false },
-                    { 2, "Austria", "Austria.jpg", false },
-                    { 3, "Spain", "Bandera_de_España.jpg", false },
-                    { 4, "Belgium", "Flag_of_Belgium_(civil).jpg", false },
-                    { 5, "Bulgaria", "Flag_of_Bulgaria.jpg", false },
-                    { 6, "Croatia", "Flag_of_Croatia.jpg", false },
-                    { 7, "Denmark", "Flag_of_Denmark.svg.jpg", false },
-                    { 8, "Estonia", "Flag_of_Estonia.svg.jpg", false },
-                    { 9, "Finland", "Flag_of_Finland_(bordered).jpg", false },
-                    { 10, "Iceland", "Flag_of_Iceland.jpg", false },
-                    { 11, "Italy", "Flag_of_Italy.jpg", false },
-                    { 12, "Lithuania", "Flag_of_Lithuania.svg.jpg", false },
-                    { 13, "Poland", "Flag_of_Poland.jpg", false },
-                    { 14, "Slovakia", "Flag_of_Slovakia.svg.jpg", false },
-                    { 15, "Slovenia", "Flag_of_Slovenia.jpg", false },
-                    { 16, "Sweden", "Flag_of_Sweden.svg.jpg", false },
-                    { 17, "Turkey", "Flag_of_Turkey.svg.jpg", false },
-                    { 18, "Albania", "Flag-Albania.jpg", false },
-                    { 19, "Czech Republic", "flag-czech-vector-illustration_514344-268.jpg", false },
-                    { 20, "Hungary", "Flag-Hungary.jpg", false },
-                    { 21, "Ireland", "FLAG-Ireland.jpg", false },
-                    { 22, "Latvia", "Flag-Latvia.jpg", false },
-                    { 23, "Norway", "Flag-Norway.jpg", false },
-                    { 24, "Ukraine", "Flag-Ukraine.jpg", false },
-                    { 25, "France", "france-151928_640.jpg", false },
-                    { 26, "Greece", "greece.jpg", false },
-                    { 27, "Portugal", "portugals-flagga.jpg", false },
-                    { 28, "Netherlands", "iStock-471776245.jpg", false },
-                    { 29, "Switzerland", "Switzerland-Flag.jpg", false }
+                    { 1, "Germany", "Germany.png", false },
+                    { 2, "Austria", "Austria.png", false },
+                    { 3, "Spain", "spain.png", false },
+                    { 4, "Belgium", "Belgium.png", false },
+                    { 5, "Bulgaria", "Bulgaria.png", false },
+                    { 6, "Croatia", "Croatia.png", false },
+                    { 7, "Denmark", "Denmark.png", false },
+                    { 8, "Estonia", "Estonia.png", false },
+                    { 9, "Finland", "Finland.png", false },
+                    { 10, "Iceland", "Iceland.png", false },
+                    { 11, "Italy", "Italy.png", false },
+                    { 12, "Lithuania", "Lithuania.png", false },
+                    { 13, "Poland", "Poland.png", false },
+                    { 14, "Slovakia", "Slovakia.png", false },
+                    { 15, "Slovenia", "Slovenia.png", false },
+                    { 16, "Sweden", "Sweden.png", false },
+                    { 17, "Turkey", "Turkey.png", false },
+                    { 18, "Albania", "Albania.png", false },
+                    { 19, "Czech Republic", "Czech.png", false },
+                    { 20, "Hungary", "Hungary.png", false },
+                    { 21, "Ireland", "Ireland.png", false },
+                    { 22, "Latvia", "Latvia.png", false },
+                    { 23, "Norway", "Norway.png", false },
+                    { 24, "Ukraine", "Ukraine.png", false },
+                    { 25, "France", "France.png", false },
+                    { 26, "Greece", "Greece.png", false },
+                    { 27, "Portugal", "Portugal.png", false },
+                    { 28, "Netherlands", "Netherlands.png", false },
+                    { 29, "Switzerland", "Switzerland.png", false }
                 });
 
             migrationBuilder.InsertData(
