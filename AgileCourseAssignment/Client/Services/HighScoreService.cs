@@ -1,5 +1,9 @@
 ﻿using AgileCourseAssignment.Shared.Models;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.Json.Serialization;
 
 namespace AgileCourseAssignment.Client.Services
 {
@@ -24,6 +28,20 @@ namespace AgileCourseAssignment.Client.Services
             }
 
             return null;
+        }
+        public async Task<HighScoreModel> AddScoreAsync(HighScoreModel playerScore)
+        {
+         
+                var response = await httpClient.PostAsJsonAsync("api/HighScore", playerScore);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<HighScoreModel>(json); 
+                }
+           
+                    Console.WriteLine($"HTTP Error: {response.StatusCode}");
+                    return null;
         }
 
         public Task<HighScoreModel> GetScoreId(int Id)

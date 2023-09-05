@@ -1,4 +1,5 @@
-﻿using AgileCourseAssignment.Shared.Models;
+﻿using AgileCourseAssignment.Client.Services;
+using AgileCourseAssignment.Shared.Models;
 using Microsoft.AspNetCore.Components;
 using System.Timers;
 
@@ -39,9 +40,15 @@ namespace AgileCourseAssignment.Client.Pages
         private int test = new Random().Next(1, 25);
         private int test2 = new Random().Next(1, 25);
         private FlagsModel randomTestFlag = new();
+
+
+        bool isRegistred = false;
+        private string responsemessage;
+
         private FlagsModel randomTestFlag2 = new();
 
         List<FlagsModel> playListCompleted = new List<FlagsModel>();
+
         // TODO flowchart
         // 1. Get data from server and save in List variable
         // 2. Make the order in list random
@@ -214,6 +221,55 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine($"Correct flagspoints = {flagPoints}points");
         }
 
+        /// <summary> Mihaela </summary>
+
+        private string playerName = "";
+        private string errorMessageDisplay = "none"; 
+        private string succesfullyMessageDisplay = "none";
+
+        //private HighScoreModel score { get; set; }
+        private bool IsInputValid()
+        {
+            // Check if the input is empty, is less than 3 characters long or or contains special characters like "#@" 
+            if (string.IsNullOrWhiteSpace(playerName) ||  playerName.Length < 3 || playerName.Contains("@") || playerName.Contains("#"))
+            {
+                errorMessageDisplay = "block"; // Show the error message
+                succesfullyMessageDisplay = "none";
+                return false; // Invalid input
+            }
+            else
+            {
+                succesfullyMessageDisplay = "block"; // Show the message
+                errorMessageDisplay = "none";
+                return true; // Valid input
+            }
+        }
+        [Inject]
+        private IHighScoreService HighScoreService { get; set; }
+
+        private async Task RegisterScoreAsync()
+        {
+            if (IsInputValid())
+            {
+            }
+                var playerScore = new HighScoreModel
+                {
+                    Name = playerName,
+                    Time = remainingTime, 
+                    Score = finalResult 
+                };
+
+                
+                if (await HighScoreService.AddScoreAsync(playerScore) != null)
+                {
+                     responsemessage = "The score has been successfully added!";
+                    isRegistred = true;
+                }
+                else
+                {
+                     nameAlreadyExist = "Sorry that name already exist";
+                }
+        }
 
     }
 }
