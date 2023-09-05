@@ -6,7 +6,6 @@ namespace AgileCourseAssignment.Client.Pages
     {
         private List<HighScoreModel> highscorelist;
         protected override async void OnInitialized()
-
         {
             highscorelist = await scoreService.GetAllScore();
         }

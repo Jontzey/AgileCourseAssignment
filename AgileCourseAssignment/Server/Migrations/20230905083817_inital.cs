@@ -7,7 +7,7 @@
 namespace AgileCourseAssignment.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class inital : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -76,6 +76,18 @@ namespace AgileCourseAssignment.Server.Migrations
                     { 27, "Portugal", "portugals-flagga.jpg", false },
                     { 28, "Netherlands", "iStock-471776245.jpg", false },
                     { 29, "Switzerland", "Switzerland-Flag.jpg", false }
+                });
+
+            migrationBuilder.InsertData(
+                table: "HighScore",
+                columns: new[] { "Id", "Name", "Score", "Time" },
+                values: new object[,]
+                {
+                    { 1, "Player1", 250, 120 },
+                    { 2, "Player2", 180, 90 },
+                    { 3, "Player3", 320, 150 },
+                    { 4, "Player4", 200, 110 },
+                    { 5, "Player5", 280, 130 }
                 });
         }
 
