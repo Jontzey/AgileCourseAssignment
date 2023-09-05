@@ -1,12 +1,15 @@
-﻿using AgileCourseAssignment.Shared.Models;
+﻿using AgileCourseAssignment.Client.Services;
+using AgileCourseAssignment.Shared.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Timers;
 
 namespace AgileCourseAssignment.Client.Pages
 {
-    public partial class Playground
+    public partial class Playground2
     {
-
+        [Inject]
+        private IHighScoreService HighScoreService { get; set; }
         // Ui Variables
         string question = "What flag does this country belong to?";
         string isCorrect = "";
@@ -21,7 +24,6 @@ namespace AgileCourseAssignment.Client.Pages
         private int flagPoints = 0;
         private int convertedToTimePonts;
         private int finalResult;
-
 
         private int randomFlag1 = new Random().Next(1, 25);
 
@@ -40,6 +42,13 @@ namespace AgileCourseAssignment.Client.Pages
         private int test2 = new Random().Next(1, 25);
         private FlagsModel randomTestFlag = new();
         private FlagsModel randomTestFlag2 = new();
+
+        private bool failedToRegister = false;
+        private bool isRegistred = false;
+        private string responsemessage;
+        private string nameAlreadyExist;
+        private bool wrongRegisterTypo = false;
+
 
         List<FlagsModel> playListCompleted = new List<FlagsModel>();
         // TODO flowchart
@@ -61,7 +70,7 @@ namespace AgileCourseAssignment.Client.Pages
             List<FlagsModel> shuffledFlags = flags.OrderBy(x => Guid.NewGuid()).ToList();
 
             // Get the first 25 items (randomly selected)
-            List<FlagsModel> randomFlags = shuffledFlags.Take(25).ToList();
+            List<FlagsModel> randomFlags = shuffledFlags.Take(26).ToList();
 
             // Save the changes to a list that will have accsess everywhere in the file
             CompletedList = randomFlags;
@@ -69,7 +78,6 @@ namespace AgileCourseAssignment.Client.Pages
             // Take out a single object from the list and convert it to the class assiociated with
             // also we need index to get where we are at the moment in the list and the standard value 0
             CurrentQuestion = CompletedList[currentQuestionIndex];
-
 
             test = new Random().Next(1, 25);
 
@@ -117,10 +125,8 @@ namespace AgileCourseAssignment.Client.Pages
             currentQuestionNumber++;
             
             // if statement to to make sure the index of currentquestionIndex does not go out of bounds
-            if (currentQuestionNumber < 25)
-
+            if (currentQuestionNumber < 26)
             {
-
                 if (getAnswer == CurrentQuestion.Id)
                 {
                     Console.WriteLine($"Correct answer {randomFlag1}");
@@ -137,14 +143,13 @@ namespace AgileCourseAssignment.Client.Pages
                 shuffleThePlayList.Add(CurrentQuestion);
             }
 
-            else if (currentQuestionNumber == 25)
+            else if (currentQuestionNumber == 26)
             {
 
                 EndTimer();
                 isGameOver = true;
                 // re renders ui
                 StateHasChanged();
-
 
             }
             ////
@@ -211,21 +216,19 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine($"Correct flagspoints = {flagPoints}points");
         }
 
-
         private string playerName = "";
         private string errorMessageDisplay = "";
-       
         private async Task RegisterScoreAsync()
         {
             wrongRegisterTypo = false;
 
-                var playerScore = new HighScoreModel
-                {
-                    Name = playerName,
-                    Time = remainingTime, 
-                    Score = finalResult 
-                };
-            if(string.IsNullOrWhiteSpace(playerName))
+            var playerScore = new HighScoreModel
+            {
+                Name = playerName,
+                Time = remainingTime,
+                Score = finalResult
+            };
+            if (string.IsNullOrWhiteSpace(playerName))
             {
                 wrongRegisterTypo = true;
                 errorMessageDisplay = "Name cant be null";
@@ -235,7 +238,7 @@ namespace AgileCourseAssignment.Client.Pages
                 wrongRegisterTypo = true;
                 errorMessageDisplay = "Must be more than three characters!";
             }
-            else if(playerName.Contains("@") || playerName.Contains("#"))
+            else if (playerName.Contains("@") || playerName.Contains("#"))
             {
                 wrongRegisterTypo = true;
                 errorMessageDisplay = "Cant contain special characters";
@@ -243,24 +246,22 @@ namespace AgileCourseAssignment.Client.Pages
             else
             {
 
-                if (await HighScoreService.AddScoreAsync(playerScore) != null)
+                if (await HighScoreService.(playerScore) != null)
                 {
-                     responsemessage = "The score has been successfully added!";
+                    responsemessage = "The score has been successfully added!";
                     isRegistred = true;
                 }
                 else
                 {
-                     nameAlreadyExist = "Sorry that name already exist";
+                    nameAlreadyExist = "Sorry that name already exist";
                 }
             }
-                
         }
 
         private void ToMenu()
         {
             navigation.NavigateTo("/Menu");
         }
-
 
     }
 }

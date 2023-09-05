@@ -1,11 +1,10 @@
-﻿@page "/playground"
+﻿@page "/playground2"
 @using AgileCourseAssignment.Shared;
 @using AgileCourseAssignment.Client.Services;
 @using AgileCourseAssignment.Client.Pages
 @using AgileCourseAssignment.Shared.Models
-@inject IFlagService flagService;
-@inject IFlagService scoreService;
 @inject NavigationManager navigation;
+@inject IFlagService flagService;
 
 
 <div class="background-container">
@@ -24,8 +23,8 @@
 
         <div class="quest-container">
 
-            <h1>@CurrentQuestion.CountryName</h1>
-            <h2>@question</h2>
+            <h2 style="font-weight:bold; margin-top:10px;">What flag does this country belong to?</h2>
+            <img class="question-image" src="/Images/Flags/@CurrentQuestion.Image" />
 
         </div>
         <h2>@isCorrect</h2>
@@ -35,24 +34,21 @@
             @foreach(FlagsModel gameList in playListCompleted)
             {
                 <div class="question-card">
-                    <img class="question-image" src="/Images/Flags/@gameList.Image" />
+                    <h1>@gameList.CountryName</h1>
                     <button class="btn-submit" @onclick="() => CheckAnswer(gameList.Id)">Answer</button>
                 </div>
             }
-          
         </div>
     }
     else
     {
-
             <div class="scoreBoard">
                 <h1>Game is over</h1>
                 <h2>Points for each correct flag: @flagPoints</h2>
                 <h2>Time remaining points: @convertedToTimePonts</h2>
                 <h2>Summary of points: @finalResult </h2>
             <div>
-                
-            <input type="text" @bind="playerName" />
+                <input type="text" @bind="playerName" />
                 
                 <!-- Registration button -->
                 @if (isRegistred == false)
@@ -78,11 +74,8 @@
                     <button @onclick=" ToMenu">Go back to Menu</button>
                 }
             </div>
-
->>>>>>> ce2a2ddeee3b3acb8318765e52d13d8332ba4ae1
         </div>
     }
-
 
 
    </div>
