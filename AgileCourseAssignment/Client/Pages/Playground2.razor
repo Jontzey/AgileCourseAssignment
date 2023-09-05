@@ -1,0 +1,67 @@
+﻿@page "/playground2"
+@using AgileCourseAssignment.Shared;
+@using AgileCourseAssignment.Client.Services;
+@using AgileCourseAssignment.Client.Pages
+@using AgileCourseAssignment.Shared.Models
+@inject IFlagService flagService;
+
+
+<div class="background-container">
+
+    @if (isGameOver == false)
+    {
+        <div class="information-container">
+            <div class="time-container">
+                <img src="https://i.gifer.com/QX6b.gif" class="timer-icon" />
+                <h2 class="time">Time: @remainingTime seconds</h2>
+            </div>
+            <div>
+                <h3>@currentQuestionNumber of 25</h3>
+            </div>
+        </div>
+
+        <div class="quest-container">
+
+            <h2 style="font-weight:bold; margin-top:10px;">What flag does this country belong to?</h2>
+            <img class="question-image" src="/Images/Flags/@CurrentQuestion.Image" />
+
+        </div>
+        <h2>@isCorrect</h2>
+        <div class="answer-container">
+
+
+            @foreach(FlagsModel gameList in playListCompleted)
+            {
+                <div class="question-card">
+                    <h1>@gameList.CountryName</h1>
+                    <button class="btn-submit" @onclick="() => CheckAnswer(gameList.Id)">Answer</button>
+                </div>
+            }
+          
+
+           
+
+        </div>
+    }
+    else
+    {
+        <div class="scoreBoard">
+
+
+            <h1>Game is over</h1>
+            <h2>Points for each correct flag: @flagPoints</h2>
+            <h2>Time remaining points: @convertedToTimePonts</h2>
+            <h2>Summary of points: @finalResult </h2>
+
+
+        </div>
+    }
+
+
+
+   </div>
+    
+
+
+
+
