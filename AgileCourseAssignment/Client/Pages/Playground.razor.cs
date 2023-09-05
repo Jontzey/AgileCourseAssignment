@@ -1,6 +1,7 @@
 ﻿using AgileCourseAssignment.Client.Services;
 using AgileCourseAssignment.Shared.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Timers;
 
 namespace AgileCourseAssignment.Client.Pages
@@ -43,7 +44,9 @@ namespace AgileCourseAssignment.Client.Pages
 
 
         bool isRegistred = false;
-        private string responsemessage;
+        /// <summary>
+        /// private string responsemessage;
+        /// </summary>
         private string nameAlreadyExist;
         private FlagsModel randomTestFlag2 = new();
 
@@ -56,7 +59,10 @@ namespace AgileCourseAssignment.Client.Pages
         // 4. To Use a object in list we need the single version of the object the class of the list, so we have the index and can iterate through it with each button press
         // 5. 
 
-
+        private void NavigateToMenu()
+        {
+            Navigation.NavigateTo("/Menu");
+        }
         protected override async void OnInitialized()
         {
 
@@ -224,51 +230,55 @@ namespace AgileCourseAssignment.Client.Pages
         /// <summary> Mihaela </summary>
 
         private string playerName = "";
-        private string errorMessageDisplay = "none"; 
-        private string succesfullyMessageDisplay = "none";
+        private bool isRegistered = false;
+        private string errorMessage = "";
+        private string nameAlreadyExistsMessage = "";
+        private string successMessage = "";
 
-        //private HighScoreModel score { get; set; }
-        private bool IsInputValid()
-        {
-            // Check if the input is empty, is less than 3 characters long or or contains special characters like "#@" 
-            if (string.IsNullOrWhiteSpace(playerName) ||  playerName.Length < 3 || playerName.Contains("@") || playerName.Contains("#"))
-            {
-                errorMessageDisplay = "block"; // Show the error message
-                succesfullyMessageDisplay = "none";
-                return false; // Invalid input
-            }
-            else
-            {
-                succesfullyMessageDisplay = "block"; // Show the message
-                errorMessageDisplay = "none";
-                return true; // Valid input
-            }
-        }
         [Inject]
         private IHighScoreService HighScoreService { get; set; }
+
+        private bool IsInputValid()
+        {
+
+            if (string.IsNullOrWhiteSpace(playerName))
+            {
+                errorMessage = "Please fill in the name";
+                return false;
+            }
+
+            if (playerName.Length < 3 || playerName.Contains("@") || playerName.Contains("#"))
+            {
+                errorMessage = "Name must be at least 3 characters and should not contain '@' or '#'";
+                return false;
+            }
+            errorMessage = "";
+            return true;
+        }
 
         private async Task RegisterScoreAsync()
         {
             if (IsInputValid())
             {
-            }
                 var playerScore = new HighScoreModel
                 {
                     Name = playerName,
-                    Time = remainingTime, 
-                    Score = finalResult 
+                    Time = remainingTime,
+                    Score = finalResult
                 };
 
-                
-                if (await HighScoreService.AddScoreAsync(playerScore) != null)
+                var addedScore = await HighScoreService.AddScoreAsync(playerScore);
+
+                if (addedScore != null)
                 {
-                     responsemessage = "The score has been successfully added!";
-                    isRegistred = true;
+                    successMessage = "Your score has been successfully registred!";
+                    isRegistered = true;
                 }
                 else
                 {
-                     nameAlreadyExist = "Sorry that name already exist";
+                    nameAlreadyExistsMessage = "Sorry, that name already exists";
                 }
+            }
         }
 
     }
