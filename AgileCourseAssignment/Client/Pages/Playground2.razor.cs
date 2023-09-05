@@ -246,7 +246,7 @@ namespace AgileCourseAssignment.Client.Pages
             else
             {
 
-                if (await HighScoreService.(playerScore) != null)
+                if (await HighScoreService.AddScoreAsync(playerScore) != null)
                 {
                     responsemessage = "The score has been successfully added!";
                     isRegistred = true;
@@ -254,7 +254,7 @@ namespace AgileCourseAssignment.Client.Pages
                 else
                 {
                     nameAlreadyExist = "Sorry that name already exist";
-                }
+                };
             }
         }
 

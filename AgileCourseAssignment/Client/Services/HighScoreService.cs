@@ -1,5 +1,7 @@
 ﻿using AgileCourseAssignment.Shared.Models;
+using Newtonsoft.Json;
 using System.Net.Http.Json;
+using System.Text.Json.Serialization;
 
 namespace AgileCourseAssignment.Client.Services
 {
@@ -17,12 +19,26 @@ namespace AgileCourseAssignment.Client.Services
         {
             var response = await httpClient.GetAsync("api/HighScore");
 
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 return await response.Content.ReadFromJsonAsync<List<HighScoreModel>>();
 
             }
 
+            return null;
+        }
+        public async Task<HighScoreModel> AddScoreAsync(HighScoreModel playerScore)
+        {
+
+            var response = await httpClient.PostAsJsonAsync("api/HighScore", playerScore);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<HighScoreModel>(json);
+            }
+
+            Console.WriteLine($"HTTP Error: {response.StatusCode}");
             return null;
         }
 
