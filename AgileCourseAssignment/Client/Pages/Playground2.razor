@@ -53,7 +53,30 @@
             <h2>Time remaining points: @convertedToTimePonts</h2>
             <h2>Summary of points: @finalResult </h2>
 
+            <div>
+                <!-- Your input field for playerName -->
+                <input type="text" @bind="playerName" />
+                <!-- Display error message if input is invalid -->
+                <div style="color: red; display: @errorMessageDisplay">Invalid input!</div>
+                <!-- Display success message if input is valid -->
+                @* <div style="color: green; display: @succesfullyMessageDisplay">Registration successful!</div> *@
 
+                <!-- Registration button -->
+                @if (isRegistred == false)
+                {
+                    <button @onclick="RegisterScoreAsync">Register</button>
+                }
+                else if (isRegistred == true)
+                {
+                    <div style="color: green; display: @responsemessage">Registration successful!</div>
+
+                    if(failedToRegister == true)
+                    {
+                        
+                    }
+
+                }
+            </div>
         </div>
     }
 

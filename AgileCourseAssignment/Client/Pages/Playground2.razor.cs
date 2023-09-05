@@ -1,4 +1,5 @@
-﻿using AgileCourseAssignment.Shared.Models;
+﻿using AgileCourseAssignment.Client.Services;
+using AgileCourseAssignment.Shared.Models;
 using Microsoft.AspNetCore.Components;
 using System.Timers;
 
@@ -6,7 +7,8 @@ namespace AgileCourseAssignment.Client.Pages
 {
     public partial class Playground2
     {
-
+        [Inject]
+        private IHighScoreService HighScoreService { get; set; }
         // Ui Variables
         string question = "What flag does this country belong to?";
         string isCorrect = "";
@@ -41,6 +43,18 @@ namespace AgileCourseAssignment.Client.Pages
         private FlagsModel randomTestFlag = new();
         private FlagsModel randomTestFlag2 = new();
 
+
+
+        private bool failedToRegister = false;
+        private bool isRegistred = false;
+        private string responsemessage;
+        private string nameAlreadyExist;
+        private bool wrongRegisterTypo = false;
+
+        private string playerName = "";
+        private string errorMessageDisplay = "none";
+        private string succesfullyMessageDisplay = "none";
+
         List<FlagsModel> playListCompleted = new List<FlagsModel>();
         // TODO flowchart
         // 1. Get data from server and save in List variable
@@ -61,7 +75,7 @@ namespace AgileCourseAssignment.Client.Pages
             List<FlagsModel> shuffledFlags = flags.OrderBy(x => Guid.NewGuid()).ToList();
 
             // Get the first 25 items (randomly selected)
-            List<FlagsModel> randomFlags = shuffledFlags.Take(25).ToList();
+            List<FlagsModel> randomFlags = shuffledFlags.Take(26).ToList();
 
             // Save the changes to a list that will have accsess everywhere in the file
             CompletedList = randomFlags;
@@ -120,7 +134,7 @@ namespace AgileCourseAssignment.Client.Pages
             currentQuestionNumber++;
             
             // if statement to to make sure the index of currentquestionIndex does not go out of bounds
-            if (currentQuestionNumber < 25)
+            if (currentQuestionNumber < 26)
 
             {
 
@@ -140,7 +154,7 @@ namespace AgileCourseAssignment.Client.Pages
                 shuffleThePlayList.Add(CurrentQuestion);
             }
 
-            else if (currentQuestionNumber == 25)
+            else if (currentQuestionNumber == 26)
             {
 
                 EndTimer();
@@ -214,7 +228,30 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine($"Correct flagspoints = {flagPoints}points");
         }
 
+        private async Task RegisterScoreAsync()
+        {
+            //if (IsInputValid())
+            //{
+            //}
+            var playerScore = new HighScoreModel
+            {
+                Name = playerName,
+                Time = remainingTime,
+                Score = finalResult
+            };
 
+
+            if (await HighScoreService.AddScoreAsync(playerScore) != null)
+            {
+                responsemessage = "The score has been successfully added!";
+                isRegistred = true;
+            }
+            else
+            {
+                failedToRegister = true;
+                nameAlreadyExist = "Sorry that name already exist";
+            }
+        }
     }
 }
 

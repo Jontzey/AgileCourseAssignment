@@ -5,6 +5,7 @@
 @using AgileCourseAssignment.Shared.Models
 @inject IFlagService flagService;
 @inject IFlagService scoreService;
+@inject NavigationManager navigation;
 
 
 <div class="background-container">
@@ -55,22 +56,32 @@
             <h2>Summary of points: @finalResult </h2>
 
             <div>
-                <!-- Your input field for playerName -->
+                
                 <input type="text" @bind="playerName" />
-                <!-- Display error message if input is invalid -->
-                <div style="color: red; display: @errorMessageDisplay">Invalid input!</div>
-                <!-- Display success message if input is valid -->
-                 <div style="color: green; display: @succesfullyMessageDisplay">Registration successful!</div>
+                
 
                 <!-- Registration button -->
-                
-                @if(isRegistred == false)
+                @if (isRegistred == false)
                 {
                     <button @onclick="RegisterScoreAsync">Register</button>
+                    if(wrongRegisterTypo == true)
+                    {
+                        <div style="display:flex; flex-direction:row; margin-top:15px; align-items:center; justify-content:center; width:320px; gap:10px; background-color:blanchedalmond; border-radius:20px; ">
+
+                            <h2 style="margin-top:10px;">@errorMessageDisplay</h2>
+                            <img width="50px" height="50px" style="border-radius:30px; border:solid;" src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" />
+                        </div>
+                    }
+                    if (failedToRegister == true)
+                    {
+                        
+                    }
                 }
-                else if(isRegistred == true)
+                else if (isRegistred == true)
                 {
-                    
+                    <div style="color: green; display: @responsemessage">Registration successful!</div>
+
+                    <button @onclick=" ToMenu">Go back to Menu</button>
                 }
             </div>
 

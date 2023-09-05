@@ -7,7 +7,8 @@ namespace AgileCourseAssignment.Client.Pages
 {
     public partial class Playground
     {
-
+        [Inject]
+        private IHighScoreService HighScoreService { get; set; }
         // Ui Variables
         string question = "What flag does this country belong to?";
         string isCorrect = "";
@@ -40,12 +41,13 @@ namespace AgileCourseAssignment.Client.Pages
         private int test = new Random().Next(1, 25);
         private int test2 = new Random().Next(1, 25);
         private FlagsModel randomTestFlag = new();
+        private FlagsModel randomTestFlag2 = new();
 
-
-        bool isRegistred = false;
+        private bool failedToRegister = false;
+        private bool isRegistred = false;
         private string responsemessage;
         private string nameAlreadyExist;
-        private FlagsModel randomTestFlag2 = new();
+        private bool wrongRegisterTypo = false;
 
         List<FlagsModel> playListCompleted = new List<FlagsModel>();
 
@@ -68,7 +70,7 @@ namespace AgileCourseAssignment.Client.Pages
             List<FlagsModel> shuffledFlags = flags.OrderBy(x => Guid.NewGuid()).ToList();
 
             // Get the first 25 items (randomly selected)
-            List<FlagsModel> randomFlags = shuffledFlags.Take(25).ToList();
+            List<FlagsModel> randomFlags = shuffledFlags.Take(26).ToList();
 
             // Save the changes to a list that will have accsess everywhere in the file
             CompletedList = randomFlags;
@@ -127,7 +129,7 @@ namespace AgileCourseAssignment.Client.Pages
             currentQuestionNumber++;
             
             // if statement to to make sure the index of currentquestionIndex does not go out of bounds
-            if (currentQuestionNumber < 25)
+            if (currentQuestionNumber < 26)
 
             {
 
@@ -147,7 +149,7 @@ namespace AgileCourseAssignment.Client.Pages
                 shuffleThePlayList.Add(CurrentQuestion);
             }
 
-            else if (currentQuestionNumber == 25)
+            else if (currentQuestionNumber == 26)
             {
 
                 EndTimer();
@@ -224,42 +226,58 @@ namespace AgileCourseAssignment.Client.Pages
         /// <summary> Mihaela </summary>
 
         private string playerName = "";
-        private string errorMessageDisplay = "none"; 
+        private string errorMessageDisplay = "";
         private string succesfullyMessageDisplay = "none";
 
         //private HighScoreModel score { get; set; }
-        private bool IsInputValid()
-        {
-            // Check if the input is empty, is less than 3 characters long or or contains special characters like "#@" 
-            if (string.IsNullOrWhiteSpace(playerName) ||  playerName.Length < 3 || playerName.Contains("@") || playerName.Contains("#"))
-            {
-                errorMessageDisplay = "block"; // Show the error message
-                succesfullyMessageDisplay = "none";
-                return false; // Invalid input
-            }
-            else
-            {
-                succesfullyMessageDisplay = "block"; // Show the message
-                errorMessageDisplay = "none";
-                return true; // Valid input
-            }
-        }
-        [Inject]
-        private IHighScoreService HighScoreService { get; set; }
+        //private bool IsInputValid()
+        //{
+        //    // Check if the input is empty, is less than 3 characters long or or contains special characters like "#@" 
+        //    if (string.IsNullOrWhiteSpace(playerName) ||  playerName.Length < 3 || playerName.Contains("@") || playerName.Contains("#"))
+        //    {
+        //        errorMessageDisplay = "block"; // Show the error message
+        //        succesfullyMessageDisplay = "none";
+        //        return false; // Invalid input
+        //    }
+        //    else
+        //    {
+        //        succesfullyMessageDisplay = "block"; // Show the message
+        //        errorMessageDisplay = "none";
+        //        return true; // Valid input
+        //    }
+        //}
+       
 
         private async Task RegisterScoreAsync()
         {
-            if (IsInputValid())
-            {
-            }
+            wrongRegisterTypo = false;
+            //if (IsInputValid())
+            //{
+            //}
                 var playerScore = new HighScoreModel
                 {
                     Name = playerName,
                     Time = remainingTime, 
                     Score = finalResult 
                 };
+            if(string.IsNullOrWhiteSpace(playerName))
+            {
+                wrongRegisterTypo = true;
+                errorMessageDisplay = "Name cant be null";
+            }
+            else if (playerName.Length < 3)
+            {
+                wrongRegisterTypo = true;
+                errorMessageDisplay = "Must be more than three characters!";
+            }
+            else if(playerName.Contains("@") || playerName.Contains("#"))
+            {
+                wrongRegisterTypo = true;
+                errorMessageDisplay = "Cant contain special characters";
+            }
+            else
+            {
 
-                
                 if (await HighScoreService.AddScoreAsync(playerScore) != null)
                 {
                      responsemessage = "The score has been successfully added!";
@@ -269,6 +287,13 @@ namespace AgileCourseAssignment.Client.Pages
                 {
                      nameAlreadyExist = "Sorry that name already exist";
                 }
+            }
+                
+        }
+
+        private void ToMenu()
+        {
+            navigation.NavigateTo("/Menu");
         }
 
     }
