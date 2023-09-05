@@ -33,19 +33,19 @@ namespace AgileCourseAssignment.Client.Pages
         {
             if (currentButon == 1) {
                 isImg = true;
-                imgTop = "-5px";
+                imgTop = "-10px";
 
             }
             else if (currentButon == 2)
             {
 
                 isImg = true;
-                imgTop = "45px";
+                imgTop = "35px";
             }
             else if (currentButon == 3)
             {
                 isImg = true;
-                imgTop = "95px";
+                imgTop = "85px";
             }
            
         }
