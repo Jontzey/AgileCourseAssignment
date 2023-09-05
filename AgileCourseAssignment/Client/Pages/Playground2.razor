@@ -1,10 +1,9 @@
-﻿@page "/playground"
+﻿@page "/playground2"
 @using AgileCourseAssignment.Shared;
 @using AgileCourseAssignment.Client.Services;
 @using AgileCourseAssignment.Client.Pages
 @using AgileCourseAssignment.Shared.Models
 @inject IFlagService flagService;
-@inject IFlagService scoreService;
 
 
 <div class="background-container">
@@ -23,8 +22,8 @@
 
         <div class="quest-container">
 
-            <h1>@CurrentQuestion.CountryName</h1>
-            <h2>@question</h2>
+            <h2 style="font-weight:bold; margin-top:10px;">What flag does this country belong to?</h2>
+            <img class="question-image" src="/Images/Flags/@CurrentQuestion.Image" />
 
         </div>
         <h2>@isCorrect</h2>
@@ -34,7 +33,7 @@
             @foreach(FlagsModel gameList in playListCompleted)
             {
                 <div class="question-card">
-                    <img class="question-image" src="/Images/Flags/@gameList.Image" />
+                    <h1>@gameList.CountryName</h1>
                     <button class="btn-submit" @onclick="() => CheckAnswer(gameList.Id)">Answer</button>
                 </div>
             }
@@ -54,25 +53,6 @@
             <h2>Time remaining points: @convertedToTimePonts</h2>
             <h2>Summary of points: @finalResult </h2>
 
-            <div>
-                <!-- Your input field for playerName -->
-                <input type="text" @bind="playerName" />
-                <!-- Display error message if input is invalid -->
-                <div style="color: red; display: @errorMessageDisplay">Invalid input!</div>
-                <!-- Display success message if input is valid -->
-                 <div style="color: green; display: @succesfullyMessageDisplay">Registration successful!</div>
-
-                <!-- Registration button -->
-                
-                @if(isRegistred == false)
-                {
-                    <button @onclick="RegisterScoreAsync">Register</button>
-                }
-                else if(isRegistred == true)
-                {
-                    
-                }
-            </div>
 
         </div>
     }
