@@ -44,7 +44,7 @@ namespace AgileCourseAssignment.Client.Pages
 
         bool isRegistred = false;
         private string responsemessage;
-
+        private string nameAlreadyExist;
         private FlagsModel randomTestFlag2 = new();
 
         List<FlagsModel> playListCompleted = new List<FlagsModel>();
