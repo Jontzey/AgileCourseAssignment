@@ -144,11 +144,11 @@ h2#isCorrect {
     border-radius: 10px;
 }
 
-    .btn-submit:hover, btn-submit:focus {
-        background-color: #e91e63;
-        color: #fff;
-        transform: translateY(-4px);
-    }
+.btn-submit:hover, btn-submit:focus {
+    background-color: #e91e63;
+    color: #fff;
+    transform: translateY(-4px);
+}
 
 #time-clock {
     margin-bottom: 10px;
@@ -199,26 +199,173 @@ h2#isCorrect {
     }
 }
 
+#playerName {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#registerButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.scoreBoard {
+    text-align: center;
+    margin-top: 50px;
+    padding: 75px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    height: 70vh auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: azure;
+    align-items: center;
+    justify-content: center;
+}
+
+
+    .scoreBoard .Quiz-Completed {
+        color: #0b192e;
+        font-weight: bold;
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgb(249 239 239 / 85%);
+    }
+
+    .scoreBoard .Points {
+        margin-top: 40px;
+        color: #0b192e;
+        font-weight: bold;
+        font-size: 20px;
+        /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
+    }
+
+    .scoreBoard .Time {
+        text-align: center;
+        color: #0b192e;
+        font-weight: bold;
+        font-size: 20px;
+        /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
+    }
+
+    .scoreBoard .Summary {
+        text-align: center;
+        color: #1b286d;
+        font-weight: bold;
+        font-size: 25px;
+        text-shadow: 2px 2px 4px rgb(249 239 239 / 85%);
+    }
+
+/* Style for score-registration container - Mihaela */
+
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgb(249 239 239 / 85%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.playername-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.registration-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #1b286d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-message, .success-message {
+    display: flex;
+    border-radius: 10px;
+}
+
+.error-message {
+    font-size: 15px;
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    /*background-color: #007bff;*/
+}
+
+.error-message img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.success-message {
+    font-size: 15px;
+    margin-top: 10px;
+    color: darkgreen;
+    font-weight: bold;
+    /*background-color: #007bff;*/
+}
+
+.success-message img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+ }
+
+.backtomenu-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1b286d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
 @media only screen and (max-width: 650px) {
-    .answer-container {
+.answer-container {
         align-items: center;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         text-align: center;
-        width: 433px;
-    }
+        width: 433px;}
 
-    .question-card {
+.question-card {
         width: 300px;
         height: 120px;
         gap: 5px;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
         margin-top: 5px;
         border-radius: 40px;
-    }
+}
 
-    .information-container {
+.information-container {
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
@@ -229,5 +376,5 @@ h2#isCorrect {
         width: 80%;
         margin-top: 30px;
         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    }
+ }
 }

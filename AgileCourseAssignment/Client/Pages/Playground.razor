@@ -48,7 +48,10 @@
 
             <div class="registration-container">
                 <h2 class=""> Do you want to record your score?</h2>
-                <input type="text" class="playername-input" @bind="playerName" placeholder="Type your name...." />
+                @if (!isRegistred)
+                {
+                    <input type="text" class="playername-input" @bind="playerName" placeholder="Type your name...." />
+                }
                 @if (isRegistred == false)
                 {
                     @if (wrongRegisterTypo)

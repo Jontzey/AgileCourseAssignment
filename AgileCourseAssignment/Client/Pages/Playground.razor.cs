@@ -234,7 +234,7 @@ namespace AgileCourseAssignment.Client.Pages
             if (string.IsNullOrWhiteSpace(playerName))
             {
                 wrongRegisterTypo = true;
-                errorMessageDisplay = "Name cant be null";
+                errorMessageDisplay = "Name can't be null";
             }
             else if (playerName.Length < 3)
             {
@@ -244,7 +244,7 @@ namespace AgileCourseAssignment.Client.Pages
             else if (playerName.Contains("@") || playerName.Contains("#"))
             {
                 wrongRegisterTypo = true;
-                errorMessageDisplay = "Cant contain special characters";
+                errorMessageDisplay = "Can't contain special characters";
             }
             else
             {
@@ -256,7 +256,7 @@ namespace AgileCourseAssignment.Client.Pages
                 }
                 else
                 {
-                    nameAlreadyExist = true; // Set the flag to true if the name already exists.
+                    nameAlreadyExist = true; 
                     responsemessage = "Sorry, that name already exists.";
 
                 }
