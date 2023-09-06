@@ -9,7 +9,6 @@
 
 
 <div class="background-container">
-    //
     @if (isGameOver == false)
     {
         <div class="information-container">
@@ -30,8 +29,6 @@
         </div>
         <h2>@isCorrect</h2>
         <div class="answer-container">
-
-
             @foreach (FlagsModel gameList in playListCompleted)
             {
                 <div class="question-card">
@@ -39,58 +36,51 @@
                     <button class="btn-submit" @onclick="() => CheckAnswer(gameList.Id)">Answer</button>
                 </div>
             }
-
-
-
-
         </div>
     }
     else
     {
         <div class="scoreBoard">
-
-
             <h1 class ="Quiz-Completed">Quiz Completed</h1>
             <h2 class ="Points">Points for each correct flag: @flagPoints</h2>
             <h2 class ="Time">Time remaining points: @convertedToTimePonts</h2>
             <h2 class="Summary">Summary of points: @finalResult </h2>
 
-            <div>
-
-                <input type="text" @bind="playerName" />
-
-
-                <!-- Registration button -->
+            <div class="registration-container">
+                <h2 class=""> Do you want to record your score?</h2>
+                <input type="text" class="playername-input" @bind="playerName" placeholder="Type your name...." />
                 @if (isRegistred == false)
                 {
-                    <button @onclick="RegisterScoreAsync">Register</button>
-                    if (wrongRegisterTypo == true)
+                    @if (wrongRegisterTypo)
                     {
-                        <div style="display:flex; flex-direction:row; margin-top:15px; align-items:center; justify-content:center; width:320px; gap:10px; background-color:blanchedalmond; border-radius:20px; ">
-
-                            <h2 style="margin-top:10px;">@errorMessageDisplay</h2>
-                            <img width="50px" height="50px" style="border-radius:30px; border:solid;" src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" />
+                        <div class="error-message">
+                            <p class="error-message">@errorMessageDisplay</p>
+                            <img src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" alt="Error Image" />
                         </div>
                     }
-                    if (failedToRegister == true)
+                    @if (nameAlreadyExist)
                     {
-
+                        <div class="error-message">
+                            <p class="error-message">Sorry, that name already exists.</p>
+                            <img src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" alt="Error Image" />
+                        </div>
                     }
+                    <button class="registration-button" @onclick="RegisterScoreAsync">Save Your Highscore!</button>
                 }
-                else if (isRegistred == true)
+                else
                 {
-                    <div style="color: green; display: @responsemessage">Registration successful!</div>
-
-                    <button @onclick=" ToMenu">Go back to Menu</button>
+                    <div class="success-message">
+                        <p class="succes-message">Registration successful!</p>
+                        <img src="https://media.giphy.com/media/SXsLOcNhhDCCfHJpcD/giphy.gif" alt="Succes Image" />
+                        
+                    </div>
+                    <button class="backtomenu-button" @onclick="ToMenu">Go back to Menu</button>
                 }
             </div>
-
         </div>
     }
-
-
-
 </div>
+
     
 
 

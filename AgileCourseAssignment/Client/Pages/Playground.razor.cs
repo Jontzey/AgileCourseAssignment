@@ -43,11 +43,11 @@ namespace AgileCourseAssignment.Client.Pages
         private FlagsModel randomTestFlag = new();
         private FlagsModel randomTestFlag2 = new();
 
-        private bool failedToRegister = false;
+
         private bool isRegistred = false;
         private string responsemessage;
-        private string nameAlreadyExist;
         private bool wrongRegisterTypo = false;
+        private bool nameAlreadyExist = false;
 
         List<FlagsModel> playListCompleted = new List<FlagsModel>();
 
@@ -57,7 +57,6 @@ namespace AgileCourseAssignment.Client.Pages
         // 3. Save that list to a field variable that has access in the file.
         // 4. To Use a object in list we need the single version of the object the class of the list, so we have the index and can iterate through it with each button press
         // 5. 
-
 
         protected override async void OnInitialized()
         {
@@ -78,10 +77,6 @@ namespace AgileCourseAssignment.Client.Pages
             // Take out a single object from the list and convert it to the class assiociated with
             // also we need index to get where we are at the moment in the list and the standard value 0
             CurrentQuestion = CompletedList[currentQuestionIndex];
-
-
-
-
 
             test = new Random().Next(1, 25);
 
@@ -156,10 +151,7 @@ namespace AgileCourseAssignment.Client.Pages
                 isGameOver = true;
                 // re renders ui
                 StateHasChanged();
-
-
             }
-            ////
             test = new Random().Next(1, 25);
 
             while (currentQuestionIndex == test)
@@ -223,37 +215,16 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine($"Correct flagspoints = {flagPoints}points");
         }
 
-        /// <summary> Mihaela </summary>
+        /// <summary> Insert score in the database  </summary>
 
         private string playerName = "";
         private string errorMessageDisplay = "";
-        private string succesfullyMessageDisplay = "none";
-
-        //private HighScoreModel score { get; set; }
-        //private bool IsInputValid()
-        //{
-        //    // Check if the input is empty, is less than 3 characters long or or contains special characters like "#@" 
-        //    if (string.IsNullOrWhiteSpace(playerName) ||  playerName.Length < 3 || playerName.Contains("@") || playerName.Contains("#"))
-        //    {
-        //        errorMessageDisplay = "block"; // Show the error message
-        //        succesfullyMessageDisplay = "none";
-        //        return false; // Invalid input
-        //    }
-        //    else
-        //    {
-        //        succesfullyMessageDisplay = "block"; // Show the message
-        //        errorMessageDisplay = "none";
-        //        return true; // Valid input
-        //    }
-        //}
 
 
         private async Task RegisterScoreAsync()
         {
             wrongRegisterTypo = false;
-            //if (IsInputValid())
-            //{
-            //}
+            nameAlreadyExist = false;
             var playerScore = new HighScoreModel
             {
                 Name = playerName,
@@ -285,7 +256,9 @@ namespace AgileCourseAssignment.Client.Pages
                 }
                 else
                 {
-                    nameAlreadyExist = "Sorry that name already exist";
+                    nameAlreadyExist = true; // Set the flag to true if the name already exists.
+                    responsemessage = "Sorry, that name already exists.";
+
                 }
             }
 
