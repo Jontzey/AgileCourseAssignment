@@ -13,14 +13,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddBlazoredModal();
+builder.Services.AddScoped<IFlagRepo, FlagRepo>();
+builder.Services.AddScoped<IHighScoreRepo, HighScoreRepo>();
 
 var ConnectionString = builder.Configuration.GetConnectionString("FlagScapeConnection") ?? throw new InvalidOperationException("Connection string 'FlagScapeConnection' not found.");
 builder.Services.AddDbContext<FlagScapeDb>(options =>
     options.UseSqlServer(ConnectionString));
-builder.Services.AddScoped<IFlagRepo, FlagRepo>();
-builder.Services.AddScoped<IHighScoreRepo, HighScoreRepo>();
+using (var serviceProvider = builder.Services.BuildServiceProvider())
+{
 
-var app = builder.Build();
+    var FlagScapeDb = serviceProvider.GetRequiredService<FlagScapeDb>();
+
+    // Create database if it doesn't already exist 
+    FlagScapeDb.Database.Migrate();
+
+   
+}
+
+    var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
