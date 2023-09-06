@@ -173,4 +173,46 @@ h2#isCorrect {
 
 button:hover {
     background-color: #0056b3;
+    
 }
+.scoreBoard {
+    background-color: blanchedalmond;
+    opacity: 0.9;
+    text-align: center;
+    margin-top: 100px;
+    padding: 75px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+}
+
+
+    .scoreBoard .Quiz-Completed {
+        color: steelblue;
+        /*text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;*/
+        font-weight: bold;
+        font-size: 3em;
+    }
+
+    .scoreBoard .Points {
+        margin-top: 40px;
+        color: midnightblue;
+        font-weight:bold;
+        font-size:20px;
+        /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
+    }
+
+    .scoreBoard .Time {
+        text-align: center;
+        color: midnightblue;
+        font-weight: bold;
+        font-size: 20px;
+       /* text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
+    }
+
+    .scoreBoard .Summary {
+        text-align: center;
+        color: midnightblue;
+        font-weight: bold;
+        font-size: 25px;
+        /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
+    }
