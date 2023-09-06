@@ -176,26 +176,31 @@ button:hover {
     
 }
 .scoreBoard {
-    background-color: blanchedalmond;
-    opacity: 0.9;
+ 
     text-align: center;
     margin-top: 100px;
     padding: 75px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    height: 70vh auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: azure;
+    align-items: center;
+    justify-content: center;
 }
 
 
     .scoreBoard .Quiz-Completed {
-        color: steelblue;
-        /*text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;*/
+        color: white;
         font-weight: bold;
         font-size: 3em;
     }
 
     .scoreBoard .Points {
         margin-top: 40px;
-        color: midnightblue;
+        color: black;
         font-weight:bold;
         font-size:20px;
         /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
@@ -203,15 +208,15 @@ button:hover {
 
     .scoreBoard .Time {
         text-align: center;
-        color: midnightblue;
+        color: black;
         font-weight: bold;
         font-size: 20px;
-       /* text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
+        /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
     }
 
     .scoreBoard .Summary {
         text-align: center;
-        color: midnightblue;
+        color: navy;
         font-weight: bold;
         font-size: 25px;
         /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
