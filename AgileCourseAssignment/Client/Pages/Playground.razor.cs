@@ -51,13 +51,15 @@ namespace AgileCourseAssignment.Client.Pages
 
         List<FlagsModel> playListCompleted = new List<FlagsModel>();
 
+
         // TODO flowchart
         // 1. Get data from server and save in List variable
         // 2. Make the order in list random
         // 3. Save that list to a field variable that has access in the file.
         // 4. To Use a object in list we need the single version of the object the class of the list, so we have the index and can iterate through it with each button press
         // 5. 
-
+        private List<string> chosenCountries = new List<string>();
+        private List<string> userAnswers = new List<string>();
         protected override async void OnInitialized()
         {
 
@@ -134,10 +136,13 @@ namespace AgileCourseAssignment.Client.Pages
                     // each time we guess correctly add current flagpoint to itself
                     // it can be written like this also(means the same thing)//  flagpoints = flagpoints + 25;    which means take current value of variable add 25 and then update the variable;
                     flagPoints += 25;
+                    userAnswers.Add($"Question {currentQuestionNumber}: Correct");
+                    chosenCountries.Add(CurrentQuestion.CountryName);
                 }
                 else
                 {
                     Console.WriteLine($"Wrong answer{randomFlag1}");
+                    userAnswers.Add($"Question {currentQuestionNumber}: Wrong");
                 }
                 currentQuestionIndex++;
                 CurrentQuestion = CompletedList[currentQuestionIndex];
@@ -186,6 +191,9 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine(playListCompleted.Count);
             pressed++;
             Console.WriteLine($"pressed {pressed}");
+
+            var correctCountryName = CompletedList[currentQuestionIndex].CountryName;
+
         }
         private void CountdownTick(object sender, ElapsedEventArgs e)
         {
