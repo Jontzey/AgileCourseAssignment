@@ -79,11 +79,9 @@ h2 {
     transition: all 0.4s;
 }
 
-    .submit-btn:hover {
+.submit-btn:hover {
         transform: translateY(-4px);
-    }
-
-
+}
 
 
 .grid-container {
@@ -103,9 +101,9 @@ h2 {
     transition: background-color 0.3s;
 }
 
-    .grid-item:hover {
-        background-color: #0056b3;
-    }
+.grid-item:hover {
+     background-color: #0056b3;
+ }
 
 /* Style for the isCorrect element */
 h2#isCorrect {
@@ -221,3 +219,65 @@ button:hover {
         font-size: 25px;
         /*text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;*/
     }
+
+/* Style for score-registration container - Mihaela */
+
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playername-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.registration-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #1b286d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-message, .success-message {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.error-message {
+    font-size: 15px;
+    margin-top: 10px;
+    color: red;
+    background-color: #007bff;
+}
+
+.success-message {
+    color: green;
+}
+
+
+.error-message img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.backtomenu-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1b286d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
