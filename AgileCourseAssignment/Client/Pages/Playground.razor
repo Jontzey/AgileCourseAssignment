@@ -47,7 +47,8 @@
             <h2 class="Summary">Summary of points: @finalResult </h2>
 
             <div class="registration-container">
-                <input type="text" class="playername-input" @bind="playerName" placeholder="Type your name:" />
+                <h2 class=""> Do you want to record your score?</h2>
+                <input type="text" class="playername-input" @bind="playerName" placeholder="Type your name...." />
                 @if (isRegistred == false)
                 {
                     @if (wrongRegisterTypo)
@@ -57,7 +58,7 @@
                             <img src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" alt="Error Image" />
                         </div>
                     }
-                    @if (nameAlreadyExists)
+                    @if (nameAlreadyExist)
                     {
                         <div class="error-message">
                             <p class="error-message">Sorry, that name already exists.</p>
@@ -69,7 +70,9 @@
                 else
                 {
                     <div class="success-message">
-                        <p>Registration successful!</p>
+                        <p class="succes-message">Registration successful!</p>
+                        <img src="https://media.giphy.com/media/SXsLOcNhhDCCfHJpcD/giphy.gif" alt="Succes Image" />
+                        
                     </div>
                     <button class="backtomenu-button" @onclick="ToMenu">Go back to Menu</button>
                 }

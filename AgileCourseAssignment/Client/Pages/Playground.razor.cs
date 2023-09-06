@@ -43,7 +43,7 @@ namespace AgileCourseAssignment.Client.Pages
         private FlagsModel randomTestFlag = new();
         private FlagsModel randomTestFlag2 = new();
 
-        private bool failedToRegister = false;
+
         private bool isRegistred = false;
         private string responsemessage;
         private bool wrongRegisterTypo = false;
@@ -219,7 +219,7 @@ namespace AgileCourseAssignment.Client.Pages
 
         private string playerName = "";
         private string errorMessageDisplay = "";
-        private string succesfullyMessageDisplay = "none";
+
 
         private async Task RegisterScoreAsync()
         {
