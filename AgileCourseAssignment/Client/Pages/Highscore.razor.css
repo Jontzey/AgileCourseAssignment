@@ -1,0 +1,57 @@
+﻿.highscore-background {
+    background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+    background-size: cover;
+    background-repeat: round;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+       
+}
+.table-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+table{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    border-radius: 10px;
+    text-align:center;
+    border-spacing:0;
+    
+}
+.T-Head {
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    
+    
+
+}
+td{
+    
+    padding: 10px 20px;
+}
+.score-board-columns {
+    background: #f9f9f9;
+}
+th:first-child{
+    border-top-left-radius: 10px;
+}
+th:last-child{
+    border-top-right-radius:10px;
+}
+.highscore-search{
+    margin-bottom:10px;
+    border-radius: 10px;
+    text-align:center;
+    
+}
+.h1-title{
+
+}
+
+
+
