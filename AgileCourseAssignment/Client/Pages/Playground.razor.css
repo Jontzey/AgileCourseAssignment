@@ -148,7 +148,6 @@ h2#isCorrect {
     margin-bottom: 10px;
 }
 
-
 #playerName {
     padding: 10px;
     font-size: 16px;
@@ -187,7 +186,6 @@ button:hover {
     justify-content: center;
 }
 
-
 .scoreBoard .Quiz-Completed {
     color: #0b192e;
     font-weight: bold;
@@ -219,8 +217,38 @@ button:hover {
      text-shadow: 2px 2px 4px rgb(249 239 239 / 85%);
 }
 
-/* Style for score-registration container - Mihaela */
+/* Style for score-modal - Mihaela */
+.answers-text {
+    text-align: center;
+    color: #0b192e;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgb(249 239 239 / 85%);
+}
 
+.btn-checkAnswers{
+color: white;
+font-size: 20px;
+font-weight: bold;
+width: 250px;
+cursor: pointer;
+background-color: rgb(108 117 125 / 61%);
+border: 1px solid gray;
+
+text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.5); /* Start with the normal size */
+    }
+
+    100% {
+        transform: scale(1.1); /* Grow to 1.1 times the normal size */
+    }
+}
+/* Style for score-registration container - Mihaela */
 .registration-container {
     display: flex;
     flex-direction: column;
@@ -260,8 +288,6 @@ button:hover {
     transform: translateY(-4px);
     
 }
-
-
 
 .error-message, .success-message {
     display: flex;
@@ -346,5 +372,4 @@ button:hover {
         margin-top: 30px;
         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     }
-    
 }
