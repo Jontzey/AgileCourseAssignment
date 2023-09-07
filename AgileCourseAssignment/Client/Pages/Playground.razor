@@ -7,6 +7,9 @@
 @inject IFlagService scoreService;
 @inject NavigationManager navigation;
 
+@inject IModalService Modal
+@using Blazored.Modal
+
 
 <div class="background-container">
     @if (isGameOver == false)
@@ -47,6 +50,7 @@
             <h2 class="Summary">Summary of points: @finalResult </h2>
 
             <h3>User Choices:</h3>
+            <button class="btn-about" @onclick="ShowScoreTableModal">View Score Table</button>
             <table border="1">
                 <tr>
                     <th>Question Number</th>
@@ -103,7 +107,15 @@
 </div>
 
     
+@code {
+    private void ShowScoreTableModal()
+    {
+        var parameters = new ModalParameters();
+        parameters.Add(nameof(AboutFlagscapeModal.UserAnswers), userAnswers);
 
+        Modal.Show<AboutFlagscapeModal>("View Score Table", parameters);
+    }
+}
 
 
 
