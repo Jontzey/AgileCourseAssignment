@@ -64,7 +64,6 @@ h2 {
 .answer-container {
     margin-top: 20px;
     justify-content: space-between;
-    align-items: center;
     display: flex;
     text-align: center;
     border-radius: 10px;

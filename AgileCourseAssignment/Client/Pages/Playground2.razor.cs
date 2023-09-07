@@ -58,6 +58,9 @@ namespace AgileCourseAssignment.Client.Pages
         // 5. 
 
 
+        private List<string> chosenCountries = new List<string>();
+        private List<string> userAnswers = new List<string>();
+
         protected override async void OnInitialized()
         {
 
@@ -113,6 +116,8 @@ namespace AgileCourseAssignment.Client.Pages
             countdownTimer = new System.Timers.Timer(1000);
             countdownTimer.Elapsed += CountdownTick;
             countdownTimer.Enabled = true;
+
+            StateHasChanged();
         }
 
         // This method is connected to button with the "Onclick"
@@ -122,20 +127,25 @@ namespace AgileCourseAssignment.Client.Pages
             playListCompleted.Clear();
             List<FlagsModel> shuffleThePlayList = new List<FlagsModel>();
             currentQuestionNumber++;
-            
+
             // if statement to to make sure the index of currentquestionIndex does not go out of bounds
             if (currentQuestionNumber < 26)
+
             {
+
                 if (getAnswer == CurrentQuestion.Id)
                 {
                     Console.WriteLine($"Correct answer {randomFlag1}");
                     // each time we guess correctly add current flagpoint to itself
                     // it can be written like this also(means the same thing)//  flagpoints = flagpoints + 25;    which means take current value of variable add 25 and then update the variable;
                     flagPoints += 25;
+                    userAnswers.Add(CurrentQuestion.CountryName);
+                    chosenCountries.Add(CurrentQuestion.CountryName);
                 }
                 else
                 {
                     Console.WriteLine($"Wrong answer{randomFlag1}");
+                    userAnswers.Add(CurrentQuestion.CountryName);
                 }
                 currentQuestionIndex++;
                 CurrentQuestion = CompletedList[currentQuestionIndex];
@@ -149,9 +159,7 @@ namespace AgileCourseAssignment.Client.Pages
                 isGameOver = true;
                 // re renders ui
                 StateHasChanged();
-
             }
-            ////
             test = new Random().Next(1, 25);
 
             while (currentQuestionIndex == test)
@@ -176,7 +184,7 @@ namespace AgileCourseAssignment.Client.Pages
             }
             randomTestFlag2 = CompletedList[test2];
 
-            
+
             shuffleThePlayList.Add(randomTestFlag);
             shuffleThePlayList.Add(randomTestFlag2);
 
@@ -186,6 +194,11 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine(playListCompleted.Count);
             pressed++;
             Console.WriteLine($"pressed {pressed}");
+
+            var correctCountryName = CompletedList[currentQuestionIndex].CountryName;
+
+            StateHasChanged();
+
         }
         private void CountdownTick(object sender, ElapsedEventArgs e)
         {

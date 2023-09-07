@@ -242,14 +242,26 @@ button:hover {
 }
 
 .registration-button {
-    padding: 10px 20px;
-    font-size: 14px;
-    background-color: #1b286d;
+ 
+    margin-top: 20px;
+    padding: 0,875em 2em;
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    transition: background-color 0.2s, all 0.4s;
+    width: 170px;
+    margin-bottom:20px;
+    height:30px;
 }
+
+.registration-button:hover, registration-button:focus {
+    background-color: #e91e63;
+    color: #fff;
+    transform: translateY(-4px);
+    
+}
+
+
 
 .error-message, .success-message {
     display: flex;
@@ -286,15 +298,22 @@ button:hover {
     border-radius: 50%;
 }
 
-.backtomenu-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #1b286d;
+.backtomenu-button1 {
+    margin-top: 20px;
+    padding: 0,875em 2em;
+    background: linear-gradient(90deg, #e91e63, transparent) #3f51b5;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    transition: background-color 0.2s, all 0.4s;
+    width: 170px;
+    margin-bottom: 30px;
+    height: 40px;
 }
+    .backtomenu-button1:hover, backtomenu-button1:focus {
+        background-color: #2196f3;
+        color: #fff;
+        transform: translateY(-4px);
+    }
 
 @media only screen and (max-width: 650px) {
     .answer-container {
@@ -327,4 +346,5 @@ button:hover {
         margin-top: 30px;
         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     }
+    
 }
