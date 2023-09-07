@@ -136,13 +136,13 @@ namespace AgileCourseAssignment.Client.Pages
                     // each time we guess correctly add current flagpoint to itself
                     // it can be written like this also(means the same thing)//  flagpoints = flagpoints + 25;    which means take current value of variable add 25 and then update the variable;
                     flagPoints += 25;
-                    userAnswers.Add($"Question {currentQuestionNumber}: Correct");
+                    userAnswers.Add(CurrentQuestion.CountryName);
                     chosenCountries.Add(CurrentQuestion.CountryName);
                 }
                 else
                 {
                     Console.WriteLine($"Wrong answer{randomFlag1}");
-                    userAnswers.Add($"Question {currentQuestionNumber}: Wrong");
+                    userAnswers.Add(CurrentQuestion.CountryName);
                 }
                 currentQuestionIndex++;
                 CurrentQuestion = CompletedList[currentQuestionIndex];
@@ -193,6 +193,8 @@ namespace AgileCourseAssignment.Client.Pages
             Console.WriteLine($"pressed {pressed}");
 
             var correctCountryName = CompletedList[currentQuestionIndex].CountryName;
+
+            StateHasChanged();
 
         }
         private void CountdownTick(object sender, ElapsedEventArgs e)

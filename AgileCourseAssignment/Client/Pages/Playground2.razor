@@ -46,6 +46,23 @@
                 <h2>Time remaining points: @convertedToTimePonts</h2>
                 <h2>Summary of points: @finalResult </h2>
 
+            <h3>User Choices:</h3>
+            <table border="1">
+                <tr>
+                    <th>Question Number</th>
+                    <th>Your Answer</th>
+                    <th>Correct Country</th>
+                </tr>
+                @for (var i = 0; i < userAnswers.Count; i++)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@userAnswers[i]</td>
+                        <td>@(i < chosenCountries.Count ? chosenCountries[i] : "")</td>
+                    </tr>
+                }
+            </table>
+
                 <div class="registration-container">
                     <h2 class=""> Do you want to record your score?</h2>
                     @if (!isRegistred)
@@ -61,14 +78,15 @@
                                 <img src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" alt="Error Image" />
                             </div>
                         }
-                        @if (nameAlreadyExist)
-                        {
-                            <div class="error-message">
-                                <p class="error-message">Sorry, that name already exists.</p>
-                                <img src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" alt="Error Image" />
-                            </div>
-                        }
-                        <button class="registration-button" @onclick="RegisterScoreAsync">Save Your Highscore!</button>
+                    @if (nameAlreadyExist)
+                    {
+                        <div class="error-message">
+                            <p class="error-message">Sorry, that name already exists.</p>
+                            <img src="https://media.giphy.com/media/3ov9k0ExnKPTAfbOww/giphy.gif" alt="Error Image" />
+                        </div>
+                    }
+                    <button class="registration-button" @onclick="RegisterScoreAsync">Save Your Highscore!</button>
+                    <button class="backtomenu-button1" @onclick="ToMenu">Go back to Menu</button>
                     }
                     else
                     {
