@@ -144,6 +144,8 @@ namespace AgileCourseAssignment.Client.Pages
                 }
                 else
                 {
+                    FlagsModel wrongFlag = CompletedList.Where(x => x.Id == getAnswer).FirstOrDefault();
+                    chosenCountries.Add(wrongFlag.CountryName);
                     Console.WriteLine($"Wrong answer{randomFlag1}");
                     userAnswers.Add(CurrentQuestion.CountryName);
                 }

@@ -49,23 +49,10 @@
             <h2 class ="Time">Time remaining points: @convertedToTimePonts</h2>
             <h2 class="Summary">Summary of points: @finalResult </h2>
 
-            <h3>User Choices:</h3>
-            <button class="btn-about" @onclick="ShowScoreTableModal">View Score Table</button>
-            <table border="1">
-                <tr>
-                    <th>Question Number</th>
-                    <th>Your Answer</th>
-                    <th>Correct Country</th>
-                </tr>
-                @for (var i = 0; i < userAnswers.Count; i++)
-                {
-                    <tr>
-                        <td>@(i + 1)</td>
-                        <td>@userAnswers[i]</td>
-                        <td>@(i < chosenCountries.Count ? chosenCountries[i] : "")</td>
-                    </tr>
-                }
-            </table>
+            <div class="answers-text">
+                <h1>View Your Answers</h1>
+            </div>
+            <button class="btn-checkAnswers" @onclick="ShowScoreTableModal">Check Your Answers</button>
 
             <div class="registration-container">
                 <h2 class=""> Do you want to record your score?</h2>
@@ -112,8 +99,9 @@
     {
         var parameters = new ModalParameters();
         parameters.Add(nameof(AboutFlagscapeModal.UserAnswers), userAnswers);
+        parameters.Add(nameof(AboutFlagscapeModal.ChosenCountries), chosenCountries);
 
-        Modal.Show<AboutFlagscapeModal>("View Score Table", parameters);
+        Modal.Show<AboutFlagscapeModal>("", parameters);
     }
 }
 

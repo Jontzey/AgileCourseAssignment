@@ -1,21 +1,28 @@
 ﻿
-<h1>Test</h1>
-<table border="1">
-    <tr>
-        <th>Question Number</th>
-        <th>Your Answer</th>
-        <th>Correct Country</th>
-    </tr>
-    @for (var i = 0; i < UserAnswers.Count; i++)
-    {
+<div class="modal-container">
+    <div class="modal-header">
+        <h1>Check Your Answers</h1>
+    </div>
+    <table border="1">
         <tr>
-            <td>@(i + 1)</td>
-            <td>@UserAnswers[i]</td>
+            <th>Question Nr.</th>
+            <th>Your Answer</th>
+            <th>Correct Country</th>
         </tr>
-    }
-</table>
+        @for (var i = 0; i < UserAnswers.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@UserAnswers[i]</td>
+                <td>@(i < ChosenCountries.Count ? ChosenCountries[i] : "")</td>
+            </tr>
+        }
+    </table>
+</div>
 
 @code {
     [Parameter]
     public List<string> UserAnswers { get; set; }
+    [Parameter]
+    public List<string> ChosenCountries { get; set; }
 }

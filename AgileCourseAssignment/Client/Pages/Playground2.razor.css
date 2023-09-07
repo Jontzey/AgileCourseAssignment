@@ -267,6 +267,36 @@ button:hover {
         text-shadow: 2px 2px 4px rgb(249 239 239 / 85%);
     }
 
+.answers-text {
+    text-align: center;
+    color: #0b192e;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgb(249 239 239 / 85%);
+}
+/* Style for score-modal - Mihaela */
+.btn-checkAnswers {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 250px;
+    cursor: pointer;
+    background-color: rgb(108 117 125 / 61%);
+    border: 1px solid gray;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.5); /* Start with the normal size */
+    }
+
+    100% {
+        transform: scale(1.1); /* Grow to 1.1 times the normal size */
+    }
+}
+
 /* Style for score-registration container - Mihaela */
 
 .registration-container {
@@ -290,13 +320,15 @@ button:hover {
 }
 
 .registration-button {
-    padding: 10px 20px;
-    font-size: 14px;
-    background-color: #1b286d;
+    margin-top: 20px;
+    padding: 0,875em 2em;
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    transition: background-color 0.2s, all 0.4s;
+    width: 170px;
+    margin-bottom: 20px;
+    height: 30px;
 }
 
 .error-message, .success-message {
@@ -334,16 +366,23 @@ button:hover {
     border-radius: 50%;
  }
 
-.backtomenu-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #1b286d;
+.backtomenu-button1 {
+    margin-top: 20px;
+    padding: 0,875em 2em;
+    background: linear-gradient(90deg, #e91e63, transparent) #3f51b5;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    transition: background-color 0.2s, all 0.4s;
+    width: 170px;
+    margin-bottom: 30px;
+    height: 40px;
 }
 
+    .backtomenu-button1:hover, backtomenu-button1:focus {
+        background-color: #2196f3;
+        color: #fff;
+        transform: translateY(-4px);
+    }
 
 
 @media only screen and (max-width: 650px) {
