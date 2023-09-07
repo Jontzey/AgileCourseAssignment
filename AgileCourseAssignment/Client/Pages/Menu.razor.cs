@@ -23,8 +23,10 @@ namespace AgileCourseAssignment.Client.Pages
         {
             try
             {
-                allNews = await News.GetNews();
-                Console.WriteLine(allNews.Count);
+                List<News> getList = new();
+                getList = await News.GetNews();
+                getList.Reverse();
+                allNews = getList;
                 StateHasChanged();
             }
             catch (Exception ex)
