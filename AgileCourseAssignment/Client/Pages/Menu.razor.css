@@ -74,12 +74,13 @@ img-holder {
     display: flex;
     flex-direction: column;
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    height: 70vh auto;
+    height: 589.6px;
+    width:345px;
     overflow: hidden;
     border-radius: 20px;
     background-color: azure;
     align-items: center;
-    justify-content: center;
+    
 }
 
 .button-style {
@@ -94,3 +95,67 @@ img-holder {
         color: #fff;
         transform: translateY(-4px);
     }
+
+
+
+.news-holder{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:100%;
+    gap:10px;
+}
+
+.news-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border:solid;
+    width:100%;
+    height:50px;
+    overflow:hidden;
+    cursor:pointer;
+}
+    .news-container:hover {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+        border: solid;
+        border-radius:10px;
+        height:auto;
+        overflow: hidden;
+    }
+.news-body{
+    width:60%;
+}
+
+@media only screen and (max-width: 1460px) {
+    .menu-container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        gap: 120px;
+        align-items: center;
+        justify-content: center;
+        background-color: cornflowerblue;
+        background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+        background-size: cover;
+        background-repeat: round;
+    }
+}
+
+@media only screen and (max-width: 1310px) {
+    .menu-container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        gap: 60px;
+        align-items: center;
+        justify-content: center;
+        background-color: cornflowerblue;
+        background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+        background-size: cover;
+        background-repeat: round;
+    }
+}

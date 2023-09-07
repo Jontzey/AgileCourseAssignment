@@ -21,7 +21,7 @@ namespace AgileCourseAssignment.Server.Controllers
 
         // upload data to json
         [HttpGet]
-        public async Task<List<News>?> GetNews()
+        public async Task<List<News>?> GetAllNews()
         {
             return await _NewsRepo.GetAllNewsAsync();
         }

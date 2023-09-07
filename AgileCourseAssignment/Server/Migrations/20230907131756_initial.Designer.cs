@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgileCourseAssignment.Server.Migrations
 {
     [DbContext(typeof(FlagScapeDb))]
-    [Migration("20230907124229_initial")]
+    [Migration("20230907131756_initial")]
     partial class initial
     {
         /// <inheritdoc />

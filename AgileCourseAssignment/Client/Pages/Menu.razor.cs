@@ -1,25 +1,37 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using AgileCourseAssignment.Client.Services;
+using AgileCourseAssignment.Shared.Models;
+using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Xml.Serialization;
 
 namespace AgileCourseAssignment.Client.Pages
 {
     public partial class Menu
     {
-        public Menu()
-        {
-
-        }
-
-
-
-
+        [Inject]
+        private INewsService News { get; set; } 
+ 
+        private List<News> allNews = new List<News>();
+        private News CurrentNews;
         //TEST
         private bool isImg;
         private string imgTop = "0px";
 
+        // NEWS container
+        private bool isHovering = false;
         protected override async void OnInitialized()
         {
-
+            try
+            {
+                allNews = await News.GetNews();
+                Console.WriteLine(allNews.Count);
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                // Handle the exception gracefully, e.g., display an error message.
+            }
         }
 
 
@@ -63,6 +75,5 @@ namespace AgileCourseAssignment.Client.Pages
         {
             isImg = false;
         }
-
     }
 }
