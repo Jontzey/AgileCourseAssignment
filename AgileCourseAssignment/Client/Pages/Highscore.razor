@@ -8,13 +8,69 @@
 @inject IHighScoreService scoreService;
 
 
-<div>
-    <h1>HighScore List:</h1>
-    <div>
-        @foreach (var score in highscorelist)
-        {
-            <h1>@score.Name</h1>
-        }
-    </div>
+<div class="highscore-background">
+    <h1>Hall of Knowledge</h1>
+    <h3>Total Players: @playerCount </h3>
+    <input class="highscore-search" type="search" placeholder="Search for players" @bind-value="Searcher" @oninput="searchHighScoreList" />
+    
+    @if(filteredHighScoreList != null && filteredHighScoreList.Any())
+    {
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr class="T-Head">
+
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Time</th>
+                </tr>
+
+
+
+                @foreach (var score in filteredHighScoreList)
+                {
+                    <tr class="score-board-columns">
+
+                        <td>@score.Name</td>
+                        <td>@score.Score</td>
+                        <td>@score.Time Seconds</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+    }
+    else
+    {
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr class="T-Head">
+
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Time</th>
+                </tr>
+
+
+
+                @foreach (var score in filteredHighScoreList)
+                {
+                    <tr class="score-board-columns">
+
+                        <td>@score.Name</td>
+                        <td>@score.Score</td>
+                        <td>@score.Time Seconds</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        
+    }
+
+   
 </div>
 
