@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgileCourseAssignment.Server.Migrations
 {
     [DbContext(typeof(FlagScapeDb))]
-    [Migration("20230906152119_initial")]
+    [Migration("20230907124229_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -310,6 +310,53 @@ namespace AgileCourseAssignment.Server.Migrations
                             Name = "Player5",
                             Score = 280,
                             Time = 130
+                        });
+                });
+
+            modelBuilder.Entity("AgileCourseAssignment.Shared.Models.News", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BodyInformation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("News");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BodyInformation = "Im glad to announce that a project has started for fun learning experience.",
+                            Titel = "Development"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BodyInformation = "There is now a Quiz game where you guess the flag!",
+                            Titel = "Quiz v.1"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BodyInformation = "There is now a highscore page where you can compare results from yourself and others.",
+                            Titel = "Highscore table"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BodyInformation = "A second Quiz game has been added, check it out!",
+                            Titel = "Quiz v.2"
                         });
                 });
 #pragma warning restore 612, 618

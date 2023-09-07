@@ -17,7 +17,10 @@ namespace AgileCourseAssignment.Client.Pages
         private bool isImg;
         private string imgTop = "0px";
 
+        protected override async void OnInitialized()
+        {
 
+        }
 
 
         private void NavigateToPlayground()
