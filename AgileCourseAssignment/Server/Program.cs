@@ -15,6 +15,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddBlazoredModal();
 builder.Services.AddScoped<IFlagRepo, FlagRepo>();
 builder.Services.AddScoped<IHighScoreRepo, HighScoreRepo>();
+builder.Services.AddScoped<INewsRepo, NewsRepo>();
 
 var ConnectionString = builder.Configuration.GetConnectionString("FlagScapeConnection") ?? throw new InvalidOperationException("Connection string 'FlagScapeConnection' not found.");
 builder.Services.AddDbContext<FlagScapeDb>(options =>

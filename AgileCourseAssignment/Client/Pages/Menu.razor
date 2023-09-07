@@ -1,8 +1,41 @@
 ﻿
 @page "/Menu"
-@inject NavigationManager Navigation;
 
+@using AgileCourseAssignment.Shared;
+@using AgileCourseAssignment.Client.Services;
+@using AgileCourseAssignment.Client.Pages
+@using AgileCourseAssignment.Shared.Models
+@inject NavigationManager Navigation;
+@inject INewsService service;
 <div class="menu-container">
+
+
+    <div class="menu-containerV3">
+        <div style="">
+
+            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> News</h1>
+
+        </div>
+
+        <div class="news-holder">
+
+            @foreach(var news in allNews)
+            {
+                <div class="news-container">
+                    <h3>@news.Titel</h3>
+                    <div class="news-body">
+                        <h3 style="font-size:16px;">@news.BodyInformation</h3>
+
+                    </div>
+                </div>
+            }
+
+          
+        </div>
+    </div>
+
+
+
     <div class="menu-containerV2">
             <div style="">
 
@@ -33,6 +66,20 @@
 
                     </div>
             </div>
+    </div>
+
+    <div class="menu-containerV3">
+        <div style="">
+
+            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> Top 3 Scores</h1>
+
+        </div>
+
+        <div class="news-holder">
+
+
+
+        </div>
     </div>
     
 

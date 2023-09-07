@@ -42,6 +42,20 @@ namespace AgileCourseAssignment.Server.Migrations
                     table.PrimaryKey("PK_HighScore", x => x.Id);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "News",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Titel = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BodyInformation = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_News", x => x.Id);
+                });
+
             migrationBuilder.InsertData(
                 table: "Flags",
                 columns: new[] { "Id", "CountryName", "Image", "IsUsed" },
@@ -89,6 +103,17 @@ namespace AgileCourseAssignment.Server.Migrations
                     { 4, "Player4", 200, 110 },
                     { 5, "Player5", 280, 130 }
                 });
+
+            migrationBuilder.InsertData(
+                table: "News",
+                columns: new[] { "Id", "BodyInformation", "Titel" },
+                values: new object[,]
+                {
+                    { 1, "Im glad to announce that a project has started for fun learning experience.", "Development" },
+                    { 2, "There is now a Quiz game where you guess the flag!", "Quiz v.1" },
+                    { 3, "There is now a highscore page where you can compare results from yourself and others.", "Highscore table" },
+                    { 4, "A second Quiz game has been added, check it out!", "Quiz v.2" }
+                });
         }
 
         /// <inheritdoc />
@@ -99,6 +124,9 @@ namespace AgileCourseAssignment.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "HighScore");
+
+            migrationBuilder.DropTable(
+                name: "News");
         }
     }
 }

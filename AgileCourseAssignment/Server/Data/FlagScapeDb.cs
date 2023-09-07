@@ -14,7 +14,7 @@ namespace AgileCourseAssignment.Server.Data
 
         public DbSet<FlagsModel> Flags { get; set; }
         public DbSet<HighScoreModel> HighScore { get; set; }
-
+        public DbSet<News> News { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<FlagsModel>().HasData(
@@ -271,6 +271,34 @@ namespace AgileCourseAssignment.Server.Data
                }
 
                );
+
+            modelBuilder.Entity<News>().HasData(
+                    new News()
+                    {
+                        Id = 1,
+                        Titel = "Development",
+                        BodyInformation = "Im glad to announce that a project has started for fun learning experience."
+                    },
+                    new News()
+                    {
+                         Id = 2,
+                         Titel = "Quiz v.1",
+                         BodyInformation = "There is now a Quiz game where you guess the flag!"
+                    },
+                    new News()
+                    {
+                         Id = 3,
+                         Titel = "Highscore table",
+                         BodyInformation = "There is now a highscore page where you can compare results from yourself and others."
+                    },
+                    new News()
+                    {
+                         Id = 4,
+                         Titel = "Quiz v.2",
+                         BodyInformation = "A second Quiz game has been added, check it out!"
+                    }
+                
+                );
         }
 
     }
