@@ -1,6 +1,6 @@
 ﻿
 .background-container {
-    background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+    background-image: url('../Images/HomePageImage/bgscreen.jpg');
     background-size: cover;
     background-repeat: round;
     min-height: 100vh;
@@ -8,37 +8,53 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+ 
 }
 
 .header-container {
     text-align: center;
+    
 }
 
-.header-container .logo{
-    color: white;
-    font-size: 100px;
-    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
-}
+ .header-container .logo {
+  color: white;
+  font-size: 100px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+  position: relative;
+  margin-top: -30px;
+    }
 
 .header-container .slogan {
     color: #000;
     font-size: 35px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0, 65%);
     padding: 10px;
+    margin-top: 260px;
 }
 
-.header-container .btn-play {
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-    width: 200px;
-    cursor: pointer;
-    background-color: rgb(108 117 125 / 61%);
-    border: 1px solid gray;
-
-    text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
-    animation: pulse 1s infinite alternate; /* Use an animation called "pulse" */
+    .header-container .btn-play {
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        width: 200px;
+        cursor: pointer;
+        border: 1px solid gray;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+        border-radius:12px;
+        display:inline-block;
+        animation: pulse 1s infinite alternate; /* Use an animation called "pulse" */
+        background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
+        transition: background-color 0.2s, all 0.4s
     }
+
+.btn-play:hover, btn-play:focus {
+    background-color: #e91e63;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
 
 @keyframes pulse {
     0% {
@@ -67,38 +83,61 @@
     justify-content: center;
     width: 500px;
     margin-bottom: 20px;
+
+
 }
 
 .info-container .btn-info {
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
+    padding: 0,875em 2em;
     font-size: 14px;
     font-weight: bold;
     width: 80px;
     height: 40px;
-    margin: 10px;
-    background-color: red;
+    margin-right: 150px;
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
     border: 1px solid gray;
     cursor: pointer;
+    border-radius:12px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+    transition: background-color 0.2s, all 0.4s
+    
+}
+.btn-info:hover, .btn-info:focus {
+    background-color: #e91e63;
+    color: #fff;
+    transform: translateY(-4px);
 }
 
 .info-container .btn-about {
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
+    padding: 0,875em 2em;
     font-size: 14px;
     font-weight: bold;
     width: 80px;
     height: 40px;
-    margin: 10px;
-    background-color: yellowgreen;
+    margin-left: 30px;
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
     border: 1px solid gray;
     cursor: pointer;
+    border-radius:12px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+    transition: background-color 0.2s, all 0.4s
+}
+.btn-about:hover, .btn-about:focus {
+    background-color: #e91e63;
+    color: #fff;
+    transform: translateY(-4px);
 }
 
 .img-container img {
+    margin-left: -25px;
     width: 250px;
+    margin-top: -825px;
+    justify-content:center;
+    align-items:center;
+    
+   
 }
 /* Media query for screens with a maximum width of 480px (typical for mobile phones) */
 @media screen and (max-width: 480px) {
@@ -113,8 +152,10 @@
     .text {
         font-size: 20px; 
     }
-    .img-container img  {
+    .img-container img {
         width: 200px;
+        
+        
     }
 
 }
