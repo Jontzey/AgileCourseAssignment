@@ -96,6 +96,23 @@
 
             </table>
 
+            <div>
+                @if (isImg == true)
+                {
+                    <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:0px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
+
+                }
+            </div>
+
+            <div class="btn-div">
+
+                
+
+                <button @onmouseover="() => ActivateImg(4)" @onmouseleave="DeactivateImg" @onclick="NavigateToHighScore" class="button-highscore-route">See All HighScores lal alla</button>
+            </div>
+           
+
+
         </div>
 
         <div class="news-holder">

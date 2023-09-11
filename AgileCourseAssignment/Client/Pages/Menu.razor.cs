@@ -61,6 +61,10 @@ namespace AgileCourseAssignment.Client.Pages
         {
             Navigation.NavigateTo("/");
         }
+        private void NavigateToHighScore()
+        {
+            Navigation.NavigateTo("/highscore");
+        }
         private void ActivateImg(int currentButon)
         {
             if (currentButon == 1)
@@ -80,6 +84,12 @@ namespace AgileCourseAssignment.Client.Pages
                 isImg = true;
                 imgTop = "81px";
             }
+            else if(currentButon == 4)
+            {
+                isImg = true;
+                imgTop = "10px";
+                
+            }
 
         }
 
@@ -87,11 +97,11 @@ namespace AgileCourseAssignment.Client.Pages
         {
             isImg = false;
         }
-        private void GetTopScores()
+        private void TestinatorCommit()
         {
-
-
+            Console.WriteLine("lasdasdsadasdsadsadsadsadsadsadsadasd");
         }
+        
 
 
     }
