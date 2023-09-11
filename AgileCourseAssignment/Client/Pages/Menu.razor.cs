@@ -17,6 +17,7 @@ namespace AgileCourseAssignment.Client.Pages
         private List<HighScoreModel> highScores = new();
         //TEST
         private bool isImg;
+        private bool isImg2;
         private string imgTop = "0px";
 
         // NEWS container
@@ -86,8 +87,8 @@ namespace AgileCourseAssignment.Client.Pages
             }
             else if(currentButon == 4)
             {
-                isImg = true;
-                imgTop = "10px";
+                isImg2 = true;
+                imgTop = "465px";
                 
             }
 
@@ -96,6 +97,7 @@ namespace AgileCourseAssignment.Client.Pages
         private void DeactivateImg()
         {
             isImg = false;
+            isImg2= false;
         }
         private void TestinatorCommit()
         {
