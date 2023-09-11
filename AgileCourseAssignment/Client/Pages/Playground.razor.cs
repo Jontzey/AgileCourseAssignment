@@ -208,6 +208,7 @@ namespace AgileCourseAssignment.Client.Pages
             {
                 countdownTimer.Enabled = false;
                 countdownComplete = true;
+                isGameOver = true;
             }
 
             // Update the UI
