@@ -76,18 +76,30 @@ namespace AgileCourseAssignment.Client.Pages
             // Save the changes to a list that will have accsess everywhere in the file
             CompletedList = randomFlags;
 
+            RandomizeMethod();
+
+            countdownTimer = new System.Timers.Timer(1000);
+            countdownTimer.Elapsed += CountdownTick;
+            countdownTimer.Enabled = true;
+        }
+
+        private void RandomizeMethod()
+        {
             // Take out a single object from the list and convert it to the class assiociated with
             // also we need index to get where we are at the moment in the list and the standard value 0
             CurrentQuestion = CompletedList[currentQuestionIndex];
 
+            // int variable to get a random number between 1-25
             test = new Random().Next(1, 25);
-
+            // if that Int variable is same number as the current index of the correct answer, randomize that number again
             while (currentQuestionIndex == test)
             {
                 test = new Random().Next(1, 25);
             }
+            // now we have a random number use that as a index and get that Flag from the List
             randomTestFlag = CompletedList[test];
 
+            // same method above but this is the second random flag and this will check so that its not the same as the correct flag aswell the first random flag
             test2 = new Random().Next(1, 25);
             while (currentQuestionIndex == test2 || test == test2)
             {
@@ -103,20 +115,15 @@ namespace AgileCourseAssignment.Client.Pages
                 }
             }
             randomTestFlag2 = CompletedList[test2];
-
+            // Adds all the flag to a new list, to randomize the position in the list
             List<FlagsModel> shuffleThePlayList = new List<FlagsModel>();
             shuffleThePlayList.Add(CurrentQuestion);
             shuffleThePlayList.Add(randomTestFlag);
             shuffleThePlayList.Add(randomTestFlag2);
-
+            //code to randomize the index in the list
             List<FlagsModel> randomizePlayList = shuffleThePlayList.OrderBy(x => Guid.NewGuid()).ToList();
             playListCompleted = randomizePlayList;
-
-            countdownTimer = new System.Timers.Timer(1000);
-            countdownTimer.Elapsed += CountdownTick;
-            countdownTimer.Enabled = true;
         }
-
         // This method is connected to button with the "Onclick"
         private void CheckAnswer(int getAnswer)
         {

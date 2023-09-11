@@ -12,7 +12,18 @@
     flex-direction: column;
  
 }
-
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width:750px;
+    height: 720px;
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
 .header-container {
     text-align: center;
     
