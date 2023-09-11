@@ -133,7 +133,7 @@ namespace AgileCourseAssignment.Client.Pages
             currentQuestionNumber++;
 
             // if statement to to make sure the index of currentquestionIndex does not go out of bounds
-            if (currentQuestionNumber < 26)
+            if (currentQuestionNumber < 27)
 
             {
 
@@ -150,15 +150,15 @@ namespace AgileCourseAssignment.Client.Pages
                 {
                     FlagsModel wrongFlag = CompletedList.Where(x => x.Id == getAnswer).FirstOrDefault();
                     chosenCountries.Add(wrongFlag.CountryName);
-                    Console.WriteLine($"Wrong answer{randomFlag1}");
                     userAnswers.Add(CurrentQuestion.CountryName);
+                    Console.WriteLine($"Wrong answer{randomFlag1}");
                 }
                 currentQuestionIndex++;
                 CurrentQuestion = CompletedList[currentQuestionIndex];
                 shuffleThePlayList.Add(CurrentQuestion);
             }
 
-            else if (currentQuestionNumber == 26)
+            if (currentQuestionNumber == 26)
             {
 
                 EndTimer();
@@ -199,7 +199,7 @@ namespace AgileCourseAssignment.Client.Pages
 
             Console.WriteLine(playListCompleted.Count);
             pressed++;
-            Console.WriteLine($"pressed {pressed}");
+            Console.WriteLine($"pressed {pressed}, choosen countris count {chosenCountries.Count}");
 
             var correctCountryName = CompletedList[currentQuestionIndex].CountryName;
 
