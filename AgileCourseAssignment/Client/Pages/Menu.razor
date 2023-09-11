@@ -7,6 +7,7 @@
 @using AgileCourseAssignment.Shared.Models
 @inject NavigationManager Navigation;
 @inject INewsService service;
+@inject IHighScoreService hService;
 <div class="menu-container">
 
 
@@ -71,7 +72,29 @@
     <div class="menu-containerV3">
         <div style="">
 
-            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> Top 3 Scores</h1>
+            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px; text-align:center"> Top 3 Scores</h1>
+
+            <table>
+                <tr class="table-head">
+                    <td>Name</td>
+                    <td>Score</td>
+                    <td>Time</td>
+                </tr>
+                
+           
+
+            @foreach(var top3 in highScores)
+            {   <tr class="table-score-columns">
+
+                    <td>@top3.Name</td>
+                    <td>@top3.Score Points</td>
+                    <td>@top3.Time Seconds</td>
+               
+               
+                </tr>
+            }
+
+            </table>
 
         </div>
 
