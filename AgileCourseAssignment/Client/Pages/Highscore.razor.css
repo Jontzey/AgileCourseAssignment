@@ -57,7 +57,9 @@ th:last-child{
 
 .sticky-btn-container {
     overflow: auto;
-    position: relative;
+    position: sticky;
+    top:10px;
+    
 }
 .sticky-btn {
     position: sticky;
