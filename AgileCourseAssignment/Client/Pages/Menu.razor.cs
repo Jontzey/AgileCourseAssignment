@@ -10,11 +10,14 @@ namespace AgileCourseAssignment.Client.Pages
     {
         [Inject]
         private INewsService News { get; set; } 
+        private IHighScoreService _highscore { get; set; }
  
         private List<News> allNews = new List<News>();
         private News CurrentNews;
+        private List<HighScoreModel> highScores = new();
         //TEST
         private bool isImg;
+        private bool isImg2;
         private string imgTop = "0px";
 
         // NEWS container
@@ -25,6 +28,14 @@ namespace AgileCourseAssignment.Client.Pages
             {
                 List<News> getList = new();
                 getList = await News.GetNews();
+
+                List<HighScoreModel> scoreList = new();
+                scoreList = await hService.GetAllScore();
+
+                highScores = scoreList;
+
+                highScores = scoreList.OrderByDescending(x => x.Score).Take(3).ToList();
+
                 getList.Reverse();
                 allNews = getList;
                 StateHasChanged();
@@ -51,6 +62,10 @@ namespace AgileCourseAssignment.Client.Pages
         {
             Navigation.NavigateTo("/");
         }
+        private void NavigateToHighScore()
+        {
+            Navigation.NavigateTo("/highscore");
+        }
         private void ActivateImg(int currentButon)
         {
             if (currentButon == 1)
@@ -70,12 +85,23 @@ namespace AgileCourseAssignment.Client.Pages
                 isImg = true;
                 imgTop = "81px";
             }
+            else if(currentButon == 4)
+            {
+                isImg2 = true;
+                imgTop = "215px";
+                
+            }
 
         }
 
         private void DeactivateImg()
         {
             isImg = false;
+            isImg2= false;
         }
+        
+        
+
+
     }
 }

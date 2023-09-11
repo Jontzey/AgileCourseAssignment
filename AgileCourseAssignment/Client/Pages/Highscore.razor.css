@@ -1,14 +1,16 @@
 ﻿.highscore-background {
-    background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+    background-image: url('../Images/HomePageImage/bgscreen.jpg');
     background-size: cover;
     background-repeat: round;
     min-height: 100vh;
+}
+
+.highscore-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-       
+   
 }
 .table-wrapper{
     display:flex;
@@ -52,6 +54,28 @@ th:last-child{
 .h1-title{
 
 }
+
+.sticky-btn-container {
+    overflow: auto;
+    position: relative;
+}
+.sticky-btn {
+    position: sticky;
+    top: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 60px;
+    height: 80px;
+    width: 80px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: url(/wwwroot/Images/Buttons/Back.png);
+    background-size: cover;
+}
+.back{
+    height:70px;
+}
+
 
 
 
