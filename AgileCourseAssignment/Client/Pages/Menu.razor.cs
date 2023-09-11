@@ -99,10 +99,7 @@ namespace AgileCourseAssignment.Client.Pages
             isImg = false;
             isImg2= false;
         }
-        private void TestinatorCommit()
-        {
-            Console.WriteLine("lasdasdsadasdsadsadsadsadsadsadsadasd");
-        }
+        
         
 
 

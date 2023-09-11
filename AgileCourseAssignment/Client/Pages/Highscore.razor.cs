@@ -58,6 +58,11 @@ namespace AgileCourseAssignment.Client.Pages
 
 
         }
+
+        private void NavigateToHome()
+        {
+            Navigation.NavigateTo("/");
+        }
     
     
     }
