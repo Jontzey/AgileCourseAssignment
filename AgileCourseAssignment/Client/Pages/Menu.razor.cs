@@ -58,13 +58,14 @@ namespace AgileCourseAssignment.Client.Pages
             Navigation.NavigateTo("/playground2");
         }
 
-        private void NavigateToHome()
-        {
-            Navigation.NavigateTo("/");
-        }
         private void NavigateToHighScore()
         {
             Navigation.NavigateTo("/highscore");
+        }
+
+        private void NavigateToHome()
+        {
+            Navigation.NavigateTo("/");
         }
         private void ActivateImg(int currentButon)
         {

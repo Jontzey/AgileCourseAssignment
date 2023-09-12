@@ -153,6 +153,31 @@ h2#isCorrect {
     margin-bottom: 10px;
 }
 
+.sticky-btn-container {
+    overflow: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-bottom: 20px;
+}
+
+.sticky-btn {
+    cursor: pointer;
+    border: none;
+    height: 50px;
+    width: 50px;
+    /*background: linear-gradient(0deg, rgb(34, 193, 195) 0%, rgb(253, 187, 45) 100%);*/
+    background: #22c1c3;
+    border-radius: 50px;
+    background-size: cover;
+}
+
+.back {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
 @media only screen and (max-width: 1180px) {
     .answer-container {
         margin-top: 20px;
