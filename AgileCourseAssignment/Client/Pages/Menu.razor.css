@@ -12,13 +12,13 @@
     justify-content: center;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column;
-    margin-right: 65px;
-    gap: 20px;
-    margin-bottom: 100px;
-}
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 65px;
+        gap: 20px;
+        margin-bottom: 100px;
+    }
 
 
 .button-style {
@@ -76,6 +76,13 @@ img-holder {
     background-color: azure;
     align-items: center;
 }
+    .menu-containerV2 h1,
+    .menu-containerV3 h1 {
+        color: white;
+        font-size: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95);
+    }
+
 
 .button-style {
     padding: 0,875em 2em;
