@@ -7,7 +7,6 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    user-select: none;
     align-items: center;
 }
 
@@ -41,6 +40,7 @@
 }
 
 .quest-container {
+
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
@@ -366,19 +366,20 @@ animation: pulse 1.5s infinite alternate;
 }
 
 
-@media only screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
     .answer-container {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: column; 
+        align-items: center; 
         text-align: center;
-        width: 433px;
+        gap: 10px;
     }
 
     .question-card {
-        width: 300px;
-        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        height: 180px;
         gap: 5px;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
         margin-top: 5px;
@@ -397,4 +398,25 @@ animation: pulse 1.5s infinite alternate;
         margin-top: 30px;
         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     }
+
+    .scoreBoard {
+        width: 90%;
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .information-container {
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .quest-container {
+        width: 100%;
+    }
+
+        .quest-container h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
 }

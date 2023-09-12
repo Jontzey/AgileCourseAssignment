@@ -1,27 +1,27 @@
-﻿.highscore-background {
+﻿.background-container {
     background-image: url('../Images/HomePageImage/bgscreen.jpg');
     background-size: cover;
     background-repeat: round;
     min-height: 100vh;
-}
-
-.highscore-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    padding: 40px;
-    text-align: center;
-    position: absolute;
-    left: 40%;
-    border: 1px solid #e6e6e6;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
 }
 
-
+.highscore-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: azure;
+    align-items: center;
+    justify-content: center;
+}
 table {
     
     border: 1px solid #e6e6e6; 
@@ -34,7 +34,6 @@ th {
     padding: 8px;
     border: 1px solid #e6e6e6;
     
-    
 }
 
 
@@ -42,7 +41,6 @@ td {
     padding: 8px;
     border: 1px solid #e6e6e6; 
     gap: 10px;
-    
     
 }
 
@@ -59,11 +57,12 @@ tr:nth-child(odd) {
 .h1-title{
 
 }
-
 .sticky-btn-container {
     overflow: auto;
-    position: sticky;
+    position: absolute;
     top: 10px;
+    left: 10px;
+    margin-bottom: 20px;
 }
 
 .sticky-btn {
@@ -74,8 +73,6 @@ tr:nth-child(odd) {
     /*background: linear-gradient(0deg, rgb(34, 193, 195) 0%, rgb(253, 187, 45) 100%);*/
     background: #22c1c3;
     border-radius: 50px;
-    margin-left: 10px;
-    margin-top: 10px;
     background-size: cover;
 }
 
@@ -84,6 +81,13 @@ tr:nth-child(odd) {
     max-height: 100%;
 }
 
+@media (max-width: 768px) {
 
+    .highscore-container {
+        width: 100%;
+        height: auto;
+        padding: 70px;
+    }
 
+}
 

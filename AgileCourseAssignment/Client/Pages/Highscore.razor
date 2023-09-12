@@ -7,86 +7,72 @@
 @using AgileCourseAssignment.Shared.Models
 @inject IHighScoreService scoreService;
 
-
-
-<div class="highscore-background">
-     
+<div class="background-container">
     <div class="sticky-btn-container">
         <button class="sticky-btn" @onclick="() => NavigateToHome()">
             <img class="back" src="/Images/Buttons/Back.png" />
         </button>
     </div>
 
-   <div class="highscore-container">
+    <div class="main-container">
+       <div class="highscore-container">
 
-   
-
-    <h1>Hall of Knowledge</h1>
-    <h3>Total Players: @playerCount </h3>
-    <input class="highscore-search" type="search" placeholder="Search for players" @bind-value="Searcher" @oninput="searchHighScoreList" />
+        <h1>Hall of Knowledge</h1>
+        <h3>Total Players: @playerCount </h3>
+        <input class="highscore-search" type="search" placeholder="Search for players" @bind-value="Searcher" @oninput="searchHighScoreList" />
     
-    @if(filteredHighScoreList != null && filteredHighScoreList.Any())
-    {
-        <div class="table-wrapper">
+        @if(filteredHighScoreList != null && filteredHighScoreList.Any())
+        {
+            <div class="table-wrapper">
+                <table border="1">
 
-            <table border="1">
-
-                <tr >
-
-                    <th>Name</th>
-                    <th>Score</th>
-                    <th>Time</th>
-                </tr>
-
-
-
-                @foreach (var score in filteredHighScoreList)
-                {
-                    <tr class="score-board-columns">
-
-                        <td>@score.Name</td>
-                        <td>@score.Score</td>
-                        <td>@score.Time Seconds</td>
+                    <tr >
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Time</th>
                     </tr>
-                }
-            </table>
-        </div>
+                    @foreach (var score in filteredHighScoreList)
+                    {
+                        <tr class="score-board-columns">
 
-    }
-    else
-    {
+                            <td>@score.Name</td>
+                            <td>@score.Score</td>
+                            <td>@score.Time Seconds</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="table-wrapper">
 
-        <div class="table-wrapper">
+                <table>
 
-            <table>
+                    <tr class="T-Head">
 
-                <tr class="T-Head">
-
-                    <th>Name</th>
-                    <th>Score</th>
-                    <th>Time</th>
-                </tr>
-
-
-
-                @foreach (var score in filteredHighScoreList)
-                {
-                    <tr class="score-board-columns">
-
-                        <td>@score.Name</td>
-                        <td>@score.Score</td>
-                        <td>@score.Time Seconds</td>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Time</th>
                     </tr>
-                }
-            </table>
-            
 
+                    @foreach (var score in filteredHighScoreList)
+                    {
+                        <tr class="score-board-columns">
 
-        </div>
+                            <td>@score.Name</td>
+                            <td>@score.Score</td>
+                            <td>@score.Time Seconds</td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
        
-    }
+        }
    
-    </div>
+        </div>
+      </div>
    
 </div>
 

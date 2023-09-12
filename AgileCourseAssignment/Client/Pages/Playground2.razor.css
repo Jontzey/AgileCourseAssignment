@@ -6,7 +6,6 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    user-select: none;
     align-items: center;
 }
 
@@ -190,51 +189,6 @@ h2#isCorrect {
 }
 
 
-@media only screen and (max-width: 1180px) {
-    .answer-container {
-        margin-top: 20px;
-        justify-content: space-between;
-        align-items: center;
-        display: flex;
-        text-align: center;
-        border-radius: 10px;
-        gap: 60px;
-    }
-}
-
-@media only screen and (max-width: 1140px) {
-    .answer-container {
-        justify-content: space-between;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        text-align: center;
-        border-radius: 10px;
-        gap: 5px;
-    }
-}
-
-@media only screen and (max-width: 910px) {
-    .answer-container {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        text-align: center;
-        width: 650px;
-    }
-
-    .question-card {
-        width: 300px;
-        height: 160px;
-        gap: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        margin-top: 5px;
-        border-radius: 40px;
-    }
-}
-
 #playerName {
     padding: 10px;
     font-size: 16px;
@@ -404,25 +358,27 @@ button:hover {
     border-radius: 50%;
  }
 
-@media only screen and (max-width: 650px) {
-.answer-container {
+@media only screen and (max-width: 768px) {
+    .answer-container {
         align-items: center;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         text-align: center;
-        width: 433px;}
+        width: 433px;
+        gap: 10px;
+    }
 
-.question-card {
-        width: 300px;
-        height: 120px;
+    .question-card {
+        width: 350px;
+        height: 180px;
         gap: 5px;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
         margin-top: 5px;
         border-radius: 40px;
-}
+    }
 
-.information-container {
+    .information-container {
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
@@ -433,5 +389,26 @@ button:hover {
         width: 80%;
         margin-top: 30px;
         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
- }
+    }
+
+    .scoreBoard {
+        width: 90%;
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .information-container {
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .quest-container {
+        width: 100%;
+    }
+
+        .quest-container h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
 }

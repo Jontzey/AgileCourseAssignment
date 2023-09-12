@@ -111,10 +111,8 @@
 .info-container .button-container {
     display: flex;
     justify-content: center;
-    width: 500px;
+    width: 100%; /* Ensure the buttons span the full width on small screens */
     margin-bottom: 20px;
-
-
 }
 
 .info-container .btn-info {
@@ -122,11 +120,11 @@
     padding: 0,875em 2em;
     font-size: 14px;
     font-weight: bold;
-    width: 80px;
-    height: 40px;
+    width: 100px;
+    height: 30px;
     margin-right: 150px;
     background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
-    border: 1px solid gray;
+    border: 1px solid white;
     cursor: pointer;
     border-radius:12px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
@@ -144,11 +142,11 @@
     padding: 0,875em 2em;
     font-size: 14px;
     font-weight: bold;
-    width: 80px;
-    height: 40px;
+    width: 100px;
+    height: 30px;
     margin-left: 30px;
     background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
-    border: 1px solid gray;
+    border: 1px solid white;
     cursor: pointer;
     border-radius:12px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
@@ -167,25 +165,27 @@
     justify-content:center;
     align-items:center;
     
-   
-}
-/* Media query for screens with a maximum width of 480px (typical for mobile phones) */
-@media screen and (max-width: 480px) {
-    .header-container .logo {
-        font-size: 50px;
-    }
+   }
 
-    .header-container .slogan {
-        font-size: 30px;
+@media screen and (max-width: 768px) {
+
+    .btn-play {
+        margin-bottom: 15px;
     }
 
     .text {
-        font-size: 20px; 
-    }
-    .img-container img {
-        width: 200px;
-        
-        
+        font-size: 20px;
     }
 
+    .header-container .logo {
+        margin-top: 20px;
+        font-size: 50px;
+    }
+
+    .home-container {
+        width: 90%;
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+    }
 }
