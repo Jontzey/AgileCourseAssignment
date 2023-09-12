@@ -47,25 +47,44 @@
 
     .header-container .btn-play {
         color: white;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold;
         width: 200px;
         cursor: pointer;
         border: 1px solid gray;
         text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
-        border-radius:12px;
-        display:inline-block;
+        border-radius: 12px;
+        display: inline-block;
         animation: pulse 1s infinite alternate; /* Use an animation called "pulse" */
-        background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
-        transition: background-color 0.2s, all 0.4s
+        background: linear-gradient(90deg, #3f51b5, transparent) #e91e63;
+        transition: background-color 0.2s, all 0.4s,
+    }
+
+    .header-container .btn-wiki {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        width: 200px;
+        cursor: pointer;
+        border: 1px solid gray;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0, 95%);
+        border-radius: 12px;
+        display: inline-block;
+        animation: pulse 1s infinite alternate; /* Use an animation called "pulse" */
+        background: linear-gradient(90deg, #3f51b5, transparent) #3f51b5;
+        transition: background-color 0.2s, all 0.4s,
     }
 
 .btn-play:hover, btn-play:focus {
-    background-color: #e91e63;
+    background-color: #3f51b5;
     color: #fff;
     transform: translateY(-4px);
 }
-
+.btn-wiki:hover, .btn-wiki:focus {
+    background-color: rgba(253,187,45,1);
+    color: #fff;
+    transform: translateY(-4px);
+}
 
 @keyframes pulse {
     0% {

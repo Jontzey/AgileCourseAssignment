@@ -14,7 +14,7 @@ namespace AgileCourseAssignment.Shared.Models
         public int Id { get; set; }
 
         public string CountryName { get; set; } = null!;
-
+        public string Description { get; set; }
         public string Image { get; set; }
 
         public bool IsUsed { get; set; }

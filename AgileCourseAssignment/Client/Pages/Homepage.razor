@@ -14,6 +14,7 @@
                 <h2 class="slogan">Guess to success</h2>
 
                 <button class="btn-play" @onclick="NavigateToPlayground">Let's go!</button>
+                <button class="btn-wiki" @onclick="NavigateToWikiFlags">Go to Wiki Flags!</button>
             </div>
 
             <div class="info-container">
@@ -21,7 +22,7 @@
 
                 <div class="button-container">
                     <button class="btn-info" @onclick="@(()=>Modal.Show<InfoFlagscapeModal>())">Info</button>
-                    <button class="btn-about" @onclick="@(()=>Modal.Show<AboutFlagscapeModal>())">About</button>
+                    <button class="btn-about" @onclick="@(()=>Modal.Show<AboutFlagScape>())">About</button>
                 </div>
             </div>
 

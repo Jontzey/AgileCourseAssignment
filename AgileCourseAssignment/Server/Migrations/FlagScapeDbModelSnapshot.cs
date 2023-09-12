@@ -33,6 +33,10 @@ namespace AgileCourseAssignment.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -49,6 +53,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 1,
                             CountryName = "Germany",
+                            Description = "The tricolour flag was designed in 1832, and the black, red, and gold colours were taken from the uniforms of German soldiers during the Napoleonic Wars.",
                             Image = "Germany.png",
                             IsUsed = false
                         },
@@ -56,6 +61,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 2,
                             CountryName = "Austria",
+                            Description = "Stripes of red and white have been a collective emblem of Austria for over 800 years, and they were first used on the flag in 1191.",
                             Image = "Austria.png",
                             IsUsed = false
                         },
@@ -63,6 +69,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 3,
                             CountryName = "Spain",
+                            Description = "The flag of Spain was officially adopted on 19 July 1927 as the merchant naval flag, and on 29 December 1978 as the national flag in order to easily differentiate his ships from those of other European nations. ",
                             Image = "spain.png",
                             IsUsed = false
                         },
@@ -70,6 +77,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 4,
                             CountryName = "Belgium",
+                            Description = "4",
                             Image = "Belgium.png",
                             IsUsed = false
                         },
@@ -77,6 +85,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 5,
                             CountryName = "Bulgaria",
+                            Description = "5",
                             Image = "Bulgaria.png",
                             IsUsed = false
                         },
@@ -84,6 +93,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 6,
                             CountryName = "Croatia",
+                            Description = "6",
                             Image = "Croatia.png",
                             IsUsed = false
                         },
@@ -91,6 +101,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 7,
                             CountryName = "Denmark",
+                            Description = "7",
                             Image = "Denmark.png",
                             IsUsed = false
                         },
@@ -98,6 +109,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 8,
                             CountryName = "Estonia",
+                            Description = "8",
                             Image = "Estonia.png",
                             IsUsed = false
                         },
@@ -105,6 +117,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 9,
                             CountryName = "Finland",
+                            Description = "9",
                             Image = "Finland.png",
                             IsUsed = false
                         },
@@ -112,6 +125,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 10,
                             CountryName = "Iceland",
+                            Description = "10",
                             Image = "Iceland.png",
                             IsUsed = false
                         },
@@ -119,6 +133,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 11,
                             CountryName = "Italy",
+                            Description = "11",
                             Image = "Italy.png",
                             IsUsed = false
                         },
@@ -126,6 +141,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 12,
                             CountryName = "Lithuania",
+                            Description = "12",
                             Image = "Lithuania.png",
                             IsUsed = false
                         },
@@ -133,6 +149,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 13,
                             CountryName = "Poland",
+                            Description = "13",
                             Image = "Poland.png",
                             IsUsed = false
                         },
@@ -140,6 +157,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 14,
                             CountryName = "Slovakia",
+                            Description = "14",
                             Image = "Slovakia.png",
                             IsUsed = false
                         },
@@ -147,6 +165,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 15,
                             CountryName = "Slovenia",
+                            Description = "15",
                             Image = "Slovenia.png",
                             IsUsed = false
                         },
@@ -154,6 +173,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 16,
                             CountryName = "Sweden",
+                            Description = "16",
                             Image = "Sweden.png",
                             IsUsed = false
                         },
@@ -161,6 +181,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 17,
                             CountryName = "Turkey",
+                            Description = "17",
                             Image = "Turkey.png",
                             IsUsed = false
                         },
@@ -168,6 +189,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 18,
                             CountryName = "Albania",
+                            Description = "18",
                             Image = "Albania.png",
                             IsUsed = false
                         },
@@ -175,6 +197,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 19,
                             CountryName = "Czech Republic",
+                            Description = "19",
                             Image = "Czech.png",
                             IsUsed = false
                         },
@@ -182,6 +205,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 20,
                             CountryName = "Hungary",
+                            Description = "20",
                             Image = "Hungary.png",
                             IsUsed = false
                         },
@@ -189,6 +213,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 21,
                             CountryName = "Ireland",
+                            Description = "21",
                             Image = "Ireland.png",
                             IsUsed = false
                         },
@@ -196,6 +221,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 22,
                             CountryName = "Latvia",
+                            Description = "22",
                             Image = "Latvia.png",
                             IsUsed = false
                         },
@@ -203,6 +229,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 23,
                             CountryName = "Norway",
+                            Description = "23",
                             Image = "Norway.png",
                             IsUsed = false
                         },
@@ -210,6 +237,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 24,
                             CountryName = "Ukraine",
+                            Description = "24",
                             Image = "Ukraine.png",
                             IsUsed = false
                         },
@@ -217,6 +245,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 25,
                             CountryName = "France",
+                            Description = "25",
                             Image = "France.png",
                             IsUsed = false
                         },
@@ -224,6 +253,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 26,
                             CountryName = "Greece",
+                            Description = "26",
                             Image = "Greece.png",
                             IsUsed = false
                         },
@@ -231,6 +261,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 27,
                             CountryName = "Portugal",
+                            Description = "27",
                             Image = "Portugal.png",
                             IsUsed = false
                         },
@@ -238,6 +269,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 28,
                             CountryName = "Netherlands",
+                            Description = "28",
                             Image = "Netherlands.png",
                             IsUsed = false
                         },
@@ -245,6 +277,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 29,
                             CountryName = "Switzerland",
+                            Description = "29",
                             Image = "Switzerland.png",
                             IsUsed = false
                         });

@@ -1,0 +1,43 @@
+﻿@page "/WikiFlags"
+@using AgileCourseAssignment.Shared;
+@using AgileCourseAssignment.Client.Services;
+@using AgileCourseAssignment.Client.Pages
+@using AgileCourseAssignment.Shared.Models
+@inject IFlagService wikiService;
+
+
+
+<div class="background-container">
+    <h3>WikiFlags</h3>
+    <div class="card-container">
+        @foreach (var flag in flagList)
+        {
+            <div class="flip-card" @onclick="ToggleCard">
+                <div class="flip-card-inner @flipClass">
+                    <div class="flip-card-front">
+                        <p class="countryName">@flag.CountryName</p>
+                        <img src="/Images/Flags/@flag.Image" alt="Flag" class="country-flag" />
+                    </div>
+                    <div class="flip-card-back large">
+                        <div class="description-container">
+                            <p class="description">@flag.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@code {
+
+    private bool isFlipped = false;
+
+    private string flipClass => isFlipped ? "flipped" : "";
+
+    private void ToggleCard()
+    {
+        isFlipped = !isFlipped;
+    }
+}

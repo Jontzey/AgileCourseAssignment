@@ -7,7 +7,7 @@
 namespace AgileCourseAssignment.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,6 +19,7 @@ namespace AgileCourseAssignment.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CountryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsUsed = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -58,38 +59,38 @@ namespace AgileCourseAssignment.Server.Migrations
 
             migrationBuilder.InsertData(
                 table: "Flags",
-                columns: new[] { "Id", "CountryName", "Image", "IsUsed" },
+                columns: new[] { "Id", "CountryName", "Description", "Image", "IsUsed" },
                 values: new object[,]
                 {
-                    { 1, "Germany", "Germany.png", false },
-                    { 2, "Austria", "Austria.png", false },
-                    { 3, "Spain", "spain.png", false },
-                    { 4, "Belgium", "Belgium.png", false },
-                    { 5, "Bulgaria", "Bulgaria.png", false },
-                    { 6, "Croatia", "Croatia.png", false },
-                    { 7, "Denmark", "Denmark.png", false },
-                    { 8, "Estonia", "Estonia.png", false },
-                    { 9, "Finland", "Finland.png", false },
-                    { 10, "Iceland", "Iceland.png", false },
-                    { 11, "Italy", "Italy.png", false },
-                    { 12, "Lithuania", "Lithuania.png", false },
-                    { 13, "Poland", "Poland.png", false },
-                    { 14, "Slovakia", "Slovakia.png", false },
-                    { 15, "Slovenia", "Slovenia.png", false },
-                    { 16, "Sweden", "Sweden.png", false },
-                    { 17, "Turkey", "Turkey.png", false },
-                    { 18, "Albania", "Albania.png", false },
-                    { 19, "Czech Republic", "Czech.png", false },
-                    { 20, "Hungary", "Hungary.png", false },
-                    { 21, "Ireland", "Ireland.png", false },
-                    { 22, "Latvia", "Latvia.png", false },
-                    { 23, "Norway", "Norway.png", false },
-                    { 24, "Ukraine", "Ukraine.png", false },
-                    { 25, "France", "France.png", false },
-                    { 26, "Greece", "Greece.png", false },
-                    { 27, "Portugal", "Portugal.png", false },
-                    { 28, "Netherlands", "Netherlands.png", false },
-                    { 29, "Switzerland", "Switzerland.png", false }
+                    { 1, "Germany", "The tricolour flag was designed in 1832, and the black, red, and gold colours were taken from the uniforms of German soldiers during the Napoleonic Wars.", "Germany.png", false },
+                    { 2, "Austria", "Stripes of red and white have been a collective emblem of Austria for over 800 years, and they were first used on the flag in 1191.", "Austria.png", false },
+                    { 3, "Spain", "The flag of Spain was officially adopted on 19 July 1927 as the merchant naval flag, and on 29 December 1978 as the national flag in order to easily differentiate his ships from those of other European nations. ", "spain.png", false },
+                    { 4, "Belgium", "4", "Belgium.png", false },
+                    { 5, "Bulgaria", "5", "Bulgaria.png", false },
+                    { 6, "Croatia", "6", "Croatia.png", false },
+                    { 7, "Denmark", "7", "Denmark.png", false },
+                    { 8, "Estonia", "8", "Estonia.png", false },
+                    { 9, "Finland", "9", "Finland.png", false },
+                    { 10, "Iceland", "10", "Iceland.png", false },
+                    { 11, "Italy", "11", "Italy.png", false },
+                    { 12, "Lithuania", "12", "Lithuania.png", false },
+                    { 13, "Poland", "13", "Poland.png", false },
+                    { 14, "Slovakia", "14", "Slovakia.png", false },
+                    { 15, "Slovenia", "15", "Slovenia.png", false },
+                    { 16, "Sweden", "16", "Sweden.png", false },
+                    { 17, "Turkey", "17", "Turkey.png", false },
+                    { 18, "Albania", "18", "Albania.png", false },
+                    { 19, "Czech Republic", "19", "Czech.png", false },
+                    { 20, "Hungary", "20", "Hungary.png", false },
+                    { 21, "Ireland", "21", "Ireland.png", false },
+                    { 22, "Latvia", "22", "Latvia.png", false },
+                    { 23, "Norway", "23", "Norway.png", false },
+                    { 24, "Ukraine", "24", "Ukraine.png", false },
+                    { 25, "France", "25", "France.png", false },
+                    { 26, "Greece", "26", "Greece.png", false },
+                    { 27, "Portugal", "27", "Portugal.png", false },
+                    { 28, "Netherlands", "28", "Netherlands.png", false },
+                    { 29, "Switzerland", "29", "Switzerland.png", false }
                 });
 
             migrationBuilder.InsertData(

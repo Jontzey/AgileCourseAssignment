@@ -6,5 +6,10 @@
         {
             Navigation.NavigateTo("/Menu");
         }
+
+        private void NavigateToWikiFlags()
+        {
+            Navigation.NavigateTo("/WikiFlags");
+        }
     }
 }
