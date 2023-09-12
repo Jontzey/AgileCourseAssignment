@@ -3,12 +3,19 @@
 @using AgileCourseAssignment.Client.Services;
 @using AgileCourseAssignment.Client.Pages
 @using AgileCourseAssignment.Shared.Models
+@inject NavigationManager Navigation;
 @inject IFlagService wikiService;
 
 
 
 <div class="background-container">
+
     <h3>WikiFlags</h3>
+    
+    <button class="sticky-btn2" @onclick="() => NavigateToHome()">
+        <img class="back" src="/Images/Buttons/Back.png" />
+    </button>
+   
     <div class="card-container">
         @foreach (var flag in flagList)
         {
@@ -27,6 +34,9 @@
             </div>
         }
     </div>
+        <button class="sticky-btn" @onclick="() => NavigateToHome()">
+            <img class="back" src="/Images/Buttons/Back.png" />
+        </button>
 </div>
 
 
