@@ -1,6 +1,7 @@
 ﻿using AgileCourseAssignment.Client.Services;
 using AgileCourseAssignment.Shared.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace AgileCourseAssignment.Client.Pages
 {
@@ -34,6 +35,11 @@ namespace AgileCourseAssignment.Client.Pages
                 // Handle the index out of range error gracefully.
                 // You can display an error message or take appropriate action.
             }
+        }
+
+        private void NavigateToHome()
+        {
+            Navigation.NavigateTo("/");
         }
 
     }

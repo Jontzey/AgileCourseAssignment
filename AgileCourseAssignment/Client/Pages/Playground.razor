@@ -12,6 +12,13 @@
 
 
 <div class="background-container">
+
+    <div class="sticky-btn-container">
+        <button class="sticky-btn" @onclick="() => ToMenu()">
+            <img class="back" src="/Images/Buttons/Back.png" />
+        </button>
+    </div>
+
     @if (isGameOver == false)
     {
         <div class="information-container">
