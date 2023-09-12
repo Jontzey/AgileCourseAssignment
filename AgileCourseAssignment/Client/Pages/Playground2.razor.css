@@ -1,8 +1,6 @@
 ﻿
-
-
 .background-container {
-    background-image: url('../Images/HomePageImage/quizbackground1.jpg');
+    background-image: url('../Images/HomePageImage/bgscreen.jpg');
     background-size: cover;
     background-repeat: round;
     min-height: 100vh;
@@ -85,7 +83,21 @@ h2 {
     }
 
 
+.backtomenu-button {
+    padding: 0,875em 2em;
+    background: linear-gradient(90deg, #2196f3, transparent) #e91e63;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.2s, all 0.4s;
+    padding: 3px;
+    border: solid 1px;
+    width: 150px;
+}
 
+    .backtomenu-button:hover {
+        color: #fff;
+        transform: translateY(-4px);
+    }
 
 .grid-container {
     display: grid;
@@ -349,9 +361,10 @@ button:hover {
     padding: 0,875em 2em;
     background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
     color: #fff;
-    border: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     transition: background-color 0.2s, all 0.4s;
-    width: 170px;
+    width: 190px;
     margin-bottom: 20px;
     height: 30px;
 }
@@ -390,25 +403,6 @@ button:hover {
     padding: 5px;
     border-radius: 50%;
  }
-
-.backtomenu-button1 {
-    margin-top: 20px;
-    padding: 0,875em 2em;
-    background: linear-gradient(90deg, #e91e63, transparent) #3f51b5;
-    color: #fff;
-    border: none;
-    transition: background-color 0.2s, all 0.4s;
-    width: 170px;
-    margin-bottom: 30px;
-    height: 40px;
-}
-
-    .backtomenu-button1:hover, backtomenu-button1:focus {
-        background-color: #2196f3;
-        color: #fff;
-        transform: translateY(-4px);
-    }
-
 
 @media only screen and (max-width: 650px) {
 .answer-container {
