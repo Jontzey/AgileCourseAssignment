@@ -372,25 +372,7 @@ button:hover {
     .question-card {
         width: 350px;
         height: 180px;
-        gap: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        margin-top: 5px;
-        border-radius: 40px;
     }
-
-    .information-container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        margin-top: 30px;
-        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    }
-
     .scoreBoard {
         width: 90%;
         max-width: 100%;
@@ -400,11 +382,11 @@ button:hover {
 
     .information-container {
         margin-top: 40px;
-        width: 100%;
+        width: 99%;
     }
 
     .quest-container {
-        width: 100%;
+        width: 99%;
     }
 
         .quest-container h2 {
