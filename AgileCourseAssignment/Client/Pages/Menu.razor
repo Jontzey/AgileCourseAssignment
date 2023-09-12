@@ -8,131 +8,103 @@
 @inject NavigationManager Navigation;
 @inject INewsService service;
 @inject IHighScoreService hService;
-<div class="menu-container">
-    <div class="sticky-btn-container">
-        <button class="sticky-btn" @onclick="() => NavigateToHome()">
-            <img class="back" src="/Images/Buttons/Back.png" />
-        </button>
-    </div>
 
-    <div class="menu-containerV3">
-        <div style="">
-
-            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> News</h1>
-
+<div class="main-container">
+    <div class="menu-container">
+        <div class="sticky-btn-container">
+            <button class="sticky-btn" @onclick="() => NavigateToHome()">
+                <img class="back" src="/Images/Buttons/Back.png" />
+            </button>
         </div>
-
-        <div class="news-holder">
-
-            @foreach(var news in allNews)
-            {
-                <div class="news-container">
-                    <h3>@news.Titel</h3>
-                    <div class="news-body">
-                        <h3 style="font-size:16px;">@news.BodyInformation</h3>
-
+        <div class="menu-containerV3">
+            <div style="">
+                <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> News</h1>
+            </div>
+            <div class="news-holder">
+                @foreach (var news in allNews)
+                {
+                    <div class="news-container">
+                        <div class="news-header">
+                            <h3>@news.Titel</h3>
+                        </div>
+                        <div class="news-body">
+                            <p>@news.BodyInformation</p>
+                        </div>
                     </div>
-                </div>
-            }
-
-          
+                }
+            </div>
         </div>
-    </div>
 
+        <div class="menu-containerV2">
+                <div style="">
 
+                <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> Select Quiz</h1>
 
-    <div class="menu-containerV2">
+                </div>
+            <img src="https://media.giphy.com/media/rcSLJHmBdAMfRJ67bs/giphy.gif" width="300px" style="margin:0px;" />
+
+                <div class="menu-holder">
+                        <div class="test">
+                            @if (isImg == true)
+                            {
+                                <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:5px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
+                            }
+                        </div>
+                        <div class="button-container">
+                            <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(1)" @onmouseleave="DeactivateImg">Guess the Flag</button>
+                            <button class="button-style" @onclick="NavigateToPlayground2" @onmouseover="() => ActivateImg(2)" @onmouseleave="DeactivateImg">Guess the Country</button>
+                        </div>
+                </div>
+        </div>
+
+        <div class="menu-containerV3">
             <div style="">
 
-            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> Select Quiz</h1>
+                <h1 style="font-family:'Times New Roman', Times, serif; margin:0px; text-align:center"> Top 3 Scores</h1>
 
-            </div>
-        <img src="https://media.giphy.com/media/rcSLJHmBdAMfRJ67bs/giphy.gif" width="300px" style="margin:0px;" />
+                <table>
+                    <tr class="table-head">
+                        <td>Name</td>
+                        <td>Score</td>
+                        <td>Time</td>
+                    </tr>
+                    
+                @foreach(var top3 in highScores)
+                {   <tr class="table-score-columns">
 
-            <div class="menu-holder">
-
-
-                    <div class="test">
-
-
-                        @if (isImg == true)
-                        {
-                            <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:5px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
-
-                        }
-
-                    </div>
-
-                    <div class="button-container">
-                        <button class="button-style" @onclick="NavigateToPlayground" @onmouseover="() => ActivateImg(1)" @onmouseleave="DeactivateImg">Guess the Flag</button>
-                        <button class="button-style" @onclick="NavigateToPlayground2" @onmouseover="() => ActivateImg(2)" @onmouseleave="DeactivateImg">Guess the Country</button>
-                    </div>
-            </div>
-    </div>
-
-    <div class="menu-containerV3">
-        <div style="">
-
-            <h1 style="font-family:'Times New Roman', Times, serif; margin:0px; text-align:center"> Top 3 Scores</h1>
-
-            <table>
-                <tr class="table-head">
-                    <td>Name</td>
-                    <td>Score</td>
-                    <td>Time</td>
-                </tr>
-                
-           
-
-            @foreach(var top3 in highScores)
-            {   <tr class="table-score-columns">
-
-                    <td>@top3.Name</td>
-                    <td>@top3.Score Points</td>
-                    <td>@top3.Time Seconds</td>
+                        <td>@top3.Name</td>
+                        <td>@top3.Score Points</td>
+                        <td>@top3.Time Seconds</td>
                
-               
-                </tr>
-            }
+                    </tr>
+                }
 
-            </table>
+                </table>
 
-            <div class="menu-holder">
-                    <div class="test">
-                        @if (isImg2 == true)
-                        {
-                            <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:0px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
+                <div class="menu-holder">
+                        <div class="test">
+                            @if (isImg2 == true)
+                            {
+                                <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:0px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
 
-                        }
-                    </div>
+                            }
+                        </div>
 
-                    <div class="btn-div">
-
-
-
-                        <button @onmouseover="() => ActivateImg(4)" @onmouseleave="DeactivateImg" @onclick="NavigateToHighScore" class="button-highscore-route" style="margin-right:40px;"> See All HighScores </button>
-                    </div>
-            </div>
+                        <div class="btn-div">
+                            <button @onmouseover="() => ActivateImg(4)" @onmouseleave="DeactivateImg" @onclick="NavigateToHighScore" class="button-highscore-route" style="margin-right:40px;"> See All HighScores </button>
+                        </div>
+                </div>
                 
-           
-            
-           
+            </div>
 
-
+            <div class="news-holder">
+            </div>
         </div>
-
-        <div class="news-holder">
-
-
-
-        </div>
-    </div>
     
-
+    </div>
 </div>
 
 
+    @code {
 
-@code {
-
-}
+    }

@@ -1,4 +1,8 @@
-﻿
+﻿.main-container {
+    background-image: url('../Images/HomePageImage/bgscreen.jpg');
+    background-size: cover;
+    background-repeat: round;
+}
 .menu-container {
     display: flex;
     flex-direction: row;
@@ -6,19 +10,15 @@
     gap: 200px;
     align-items: center;
     justify-content: center;
-    background-color: cornflowerblue;
-    background-image: url('../Images/HomePageImage/bgscreen.jpg');
-    background-size: cover;
-    background-repeat: round;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column;
-    margin-right: 65px;
-    gap: 20px;
-    margin-bottom: 100px;
-}
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 65px;
+        gap: 20px;
+        margin-bottom: 100px;
+    }
 
 
 .button-style {
@@ -58,7 +58,7 @@ img-holder {
     display: flex;
     flex-direction: column;
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    height: 70vh auto;
+    height: 70vh;
     overflow: hidden;
     border-radius: 20px;
     background-color: azure;
@@ -69,14 +69,20 @@ img-holder {
     display: flex;
     flex-direction: column;
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    height: 589.6px;
-    width:345px;
+    height: 70vh;
+    width: 345px;
     overflow: hidden;
     border-radius: 20px;
     background-color: azure;
     align-items: center;
-    
 }
+    .menu-containerV2 h1,
+    .menu-containerV3 h1 {
+        color: white;
+        font-size: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95);
+    }
+
 
 .button-style {
     padding: 0,875em 2em;
@@ -91,31 +97,32 @@ img-holder {
         transform: translateY(-4px);
     }
 
-
-
-.news-holder{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    height:100%;
-    gap:10px;
+.news-holder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
-
 .news-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid;
-    width: 90%;
-    height: 50px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    height: 40px;
     overflow: hidden;
     cursor: pointer;
     background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
     color: #fff;
     transition: background-color 0.2s, all 0.4s;
-    border-radius:20px;
+    border-radius: 20px;
 }
-    .news-container:hover {
+.news-container:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -128,21 +135,29 @@ img-holder {
 .news-body{
     width:60%;
 }
-table{
-    
-    border-collapse:separate;
-    text-align:center;
-    border-spacing:7px;
-}
-.table-head {
-    font-size: 35px;
-    font-family: 'Times New Roman', Times, serif
-}
-.table-score-columns {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+table {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    color: white;
 }
 
+th {
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #e6e6e6;
+
+}
+
+td {
+    padding: 8px;
+    border: 1px solid #e6e6e6;
+}
+tr:nth-child(odd) {
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
+    color:white;
+}
 
 .td {
     padding: 10px 20px;
@@ -196,87 +211,32 @@ table{
     max-height: 100%;
 }
 
-
-@media only screen and (max-width: 1460px) {
+@media screen and (max-width: 768px) {
     .menu-container {
-        display: flex;
-        flex-direction: row;
-        height: 100vh;
-        gap: 120px;
-        align-items: center;
-        justify-content: center;
-        background-color: cornflowerblue;
-        background-image: url('../Images/HomePageImage/quizbackground1.jpg');
-        background-size: cover;
-        background-repeat: round;
-    }
-}
-
-@media only screen and (max-width: 1310px) {
-    .menu-container {
-        display: flex;
-        flex-direction: row;
-        height: 100vh;
-        gap: 60px;
-        align-items: center;
-        justify-content: center;
-        background-color: cornflowerblue;
-        background-image: url('../Images/HomePageImage/quizbackground1.jpg');
-        background-size: cover;
-        background-repeat: round;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .menu-container {
-        display: flex;
-        flex-direction: row;
-        height: 100vh;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        background-color: cornflowerblue;
-        background-image: url('../Images/HomePageImage/quizbackground1.jpg');
-        background-size: cover;
-        background-repeat: round;
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    .menu-container {
-        display: flex;
-        flex-direction: row;
-        height: 100vh;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        background-color: cornflowerblue;
-        background-image: url('../Images/HomePageImage/quizbackground1.jpg');
-        background-size: cover;
-        background-repeat: round;
-    }
-    .menu-containerV2 {
-        display: flex;
         flex-direction: column;
-        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-        height: 50vh auto;
-        width:245px;
-        overflow: hidden;
-        border-radius: 20px;
-        background-color: azure;
-        align-items: center;
-        justify-content: center;
+        height: 99%;
+        gap: 10px;
+        padding:20px;
+    }
+
+    .menu-containerV2 {
+        flex-direction: column;
+        max-width: 99%;
+        order: 2;
     }
 
     .menu-containerV3 {
-        display: flex;
         flex-direction: column;
-        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-        height: 589.6px;
-        width: 245px;
-        overflow: hidden;
-        border-radius: 20px;
-        background-color: azure;
-        align-items: center;
+        max-width: 99%;
+        order: 3;
+        margin-top: 20px;
     }
+
+    .news-container {
+        flex-direction: column;
+        max-width: 99%;
+        order: 1;
+        margin-top:20px;
+    }
+
 }
