@@ -3,6 +3,10 @@
     <div class="modal-header">
         <h1>Check Your Answers</h1>
     </div>
+    <div class="modal-body">
+        <h3>Quiz Summary</h3>
+        <p>Number of Correct Answers: @CalculateCorrectAnswers()</p>
+    </div>
     <table border="1">
         <tr>
             <th>Question Nr.</th>
@@ -25,4 +29,19 @@
     public List<string> UserAnswers { get; set; }
     [Parameter]
     public List<string> ChosenCountries { get; set; }
+
+    private int CalculateCorrectAnswers()
+    {
+        int correctAnswers = 0;
+
+        for (int i = 0; i < UserAnswers.Count; i++)
+        {
+            if (UserAnswers[i] == ChosenCountries[i])
+            {
+                correctAnswers++;
+            }
+        }
+
+        return correctAnswers;
+    }
 }

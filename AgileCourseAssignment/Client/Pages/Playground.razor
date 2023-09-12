@@ -98,10 +98,10 @@
     private void ShowScoreTableModal()
     {
         var parameters = new ModalParameters();
-        parameters.Add(nameof(AboutFlagscapeModal.UserAnswers), userAnswers);
-        parameters.Add(nameof(AboutFlagscapeModal.ChosenCountries), chosenCountries);
+        parameters.Add(nameof(CheckYourGameModal.UserAnswers), userAnswers);
+        parameters.Add(nameof(CheckYourGameModal.ChosenCountries), chosenCountries);
 
-        Modal.Show<AboutFlagscapeModal>("", parameters);
+        Modal.Show<CheckYourGameModal>("", parameters);
     }
 }
 
