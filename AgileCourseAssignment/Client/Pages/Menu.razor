@@ -41,7 +41,7 @@
                 <h1 style="font-family:'Times New Roman', Times, serif; margin:0px;"> Select Quiz</h1>
 
                 </div>
-            <img src="https://media.giphy.com/media/rcSLJHmBdAMfRJ67bs/giphy.gif" width="300px" style="margin:0px;" />
+            <img src="https://media.giphy.com/media/rcSLJHmBdAMfRJ67bs/giphy.gif" class="img-globe" width="300px" style="margin:0px;" />
 
                 <div class="menu-holder">
                         <div class="test">
@@ -58,42 +58,46 @@
         </div>
 
         <div class="menu-containerV3">
-            <div style="">
+            <div class="top3-card">
 
                 <h1 style="font-family:'Times New Roman', Times, serif; margin:0px; text-align:center"> Top 3 Scores</h1>
+                <div class="scoreboard-card-btn">
 
-                <table>
-                    <tr class="table-head">
-                        <td>Name</td>
-                        <td>Score</td>
-                        <td>Time</td>
-                    </tr>
-                    
-                @foreach(var top3 in highScores)
-                {   <tr class="table-score-columns">
+                                <table>
+                                    <tr class="table-head">
+                                        <td>Name</td>
+                                        <td>Score</td>
+                                        <td>Time</td>
+                                    </tr>
 
-                        <td>@top3.Name</td>
-                        <td>@top3.Score Points</td>
-                        <td>@top3.Time Seconds</td>
-               
-                    </tr>
-                }
+                                    @foreach (var top3 in highScores)
+                                    {
+                                        <tr class="table-score-columns">
 
-                </table>
+                                            <td>@top3.Name</td>
+                                            <td>@top3.Score Points</td>
+                                            <td>@top3.Time Seconds</td>
 
-                <div class="menu-holder">
-                        <div class="test">
-                            @if (isImg2 == true)
-                            {
-                                <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:0px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
+                                        </tr>
+                                    }
 
-                            }
-                        </div>
+                                </table>
 
-                        <div class="btn-div">
-                            <button @onmouseover="() => ActivateImg(4)" @onmouseleave="DeactivateImg" @onclick="NavigateToHighScore" class="button-highscore-route" style="margin-right:40px;"> See All HighScores </button>
-                        </div>
+                                <div class="menu-holder">
+                                    <div class="test">
+                                        @if (isImg2 == true)
+                                        {
+                                            <img class="img-selector" width="50px" height="50px" style="position:relative; top: @imgTop; left:0px;" src="https://media.giphy.com/media/G81kkYeexA9QvBwVwr/giphy.gif" />
+
+                                        }
+                                    </div>
+
+                                    <div class="btn-div">
+                                        <button @onmouseover="() => ActivateImg(4)" @onmouseleave="DeactivateImg" @onclick="NavigateToHighScore" class="button-highscore-route" style="margin-right:40px;"> See All HighScores </button>
+                                    </div>
+                                </div>
                 </div>
+               
                 
             </div>
 
