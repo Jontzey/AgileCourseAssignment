@@ -37,6 +37,7 @@ h3 {
     transform-style: preserve-3d;
     gap: inherit;
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    border-radius: 10px;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -49,6 +50,7 @@ h3 {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 10px;
 }
 
 .flip-card-front {
@@ -131,7 +133,11 @@ h3 {
 
 
 @media screen and (max-width: 768px) {
+    .background-container {
 
+        background-size:auto;
+        background-repeat:inherit;
+    }
     h3 {
         font-size: 40px;
         margin-bottom: 20px;
