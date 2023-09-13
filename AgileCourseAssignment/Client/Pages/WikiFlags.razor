@@ -20,7 +20,7 @@
         @foreach (var flag in flagList)
         {
             <div class="flip-card" @onclick="ToggleCard">
-                <div class="flip-card-inner @flipClass">
+                <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <p class="countryName">@flag.CountryName</p>
                         <img src="/Images/Flags/@flag.Image" alt="Flag" class="country-flag" />
@@ -38,11 +38,10 @@
 
 
 @code {
-
+    // Boolean flag to track the card flip state. When isFlipped is true, it indicates that the card is in the flipped state (showing the back of the card).
     private bool isFlipped = false;
 
-    private string flipClass => isFlipped ? "flipped" : "";
-
+    // Called when a flip-card element is touched my the mouse. This function flips the card between its front and back states when the associated card is clicked.
     private void ToggleCard()
     {
         isFlipped = !isFlipped;
