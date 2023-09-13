@@ -16,6 +16,8 @@ namespace AgileCourseAssignment.Client.Pages
         {
             flagList = await wikiService.GetAllFlags();
 
+            StateHasChanged();
+
         }
       
         private void NavigateToHome()
