@@ -261,6 +261,11 @@ namespace AgileCourseAssignment.Client.Pages
                 wrongRegisterTypo = true;
                 errorMessageDisplay = "Must be more than three characters!";
             }
+            else if(playerName.Length > 14)
+            {
+                wrongRegisterTypo = true;
+                errorMessageDisplay = "Field can not contain more then 14 characters";
+            }
             else if (playerName.Contains("@") || playerName.Contains("#"))
             {
                 wrongRegisterTypo = true;
