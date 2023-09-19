@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgileCourseAssignment.Server.Migrations
 {
     [DbContext(typeof(FlagScapeDb))]
-    [Migration("20230912103014_Initial")]
+    [Migration("20230919073549_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -80,7 +80,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 4,
                             CountryName = "Belgium",
-                            Description = "4",
+                            Description = "Black, gold and red are symbolic of the country's coat of arms. The three-striped vertical layout was inspired by the French Tricolour. Black and gold were chosen where the Belgian Revolution started and red was added as a symbol of the blood spilled during the uprising.",
                             Image = "Belgium.png",
                             IsUsed = false
                         },
@@ -88,7 +88,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 5,
                             CountryName = "Bulgaria",
-                            Description = "5",
+                            Description = "The flag of Bulgaria was adopted in 1989 and consists of three horizontal bands of white, green and red.",
                             Image = "Bulgaria.png",
                             IsUsed = false
                         },
@@ -96,7 +96,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 6,
                             CountryName = "Croatia",
-                            Description = "6",
+                            Description = "The flag of Croatia, adopted in December 1990, consists of three equal horizontal stripes of red, white and blue and the coat of arms of Croatia in the center.",
                             Image = "Croatia.png",
                             IsUsed = false
                         },
@@ -104,7 +104,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 7,
                             CountryName = "Denmark",
-                            Description = "7",
+                            Description = "It is the world's oldest state flag still in use. Legend has it that it appeared as a sign from heaven to King Valdemar II in 1219. This blood-red flag with an off-centred white cross became a model for other regional flags.",
                             Image = "Denmark.png",
                             IsUsed = false
                         },
@@ -112,7 +112,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 8,
                             CountryName = "Estonia",
-                            Description = "8",
+                            Description = "It was officially re-adopted on May 8, 1990.Blue represents loyalty, and the country's beautiful blue skies, seas and lakes; black is symbolic of past oppression and the fertile soil; and white represents virtue, winter snows",
                             Image = "Estonia.png",
                             IsUsed = false
                         },
@@ -120,7 +120,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 9,
                             CountryName = "Finland",
-                            Description = "9",
+                            Description = "The off-centred blue cross is based on the Nordic Cross, widely used on Nordic national flags. The blue colour is symbolic of blue skies, and the thousands of lakes in Finland. The white represents the winter snows.",
                             Image = "Finland.png",
                             IsUsed = false
                         },
@@ -128,7 +128,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 10,
                             CountryName = "Iceland",
-                            Description = "10",
+                            Description = "The flag of Iceland was adopted in June 1915 to represent Iceland. It is a reverse colour image of the Flag of Norway. The blue represents the sea, the white represents the snow and glaciers and the red symbolises volcanic lava.",
                             Image = "Iceland.png",
                             IsUsed = false
                         },
@@ -136,7 +136,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 11,
                             CountryName = "Italy",
-                            Description = "11",
+                            Description = "Derived from an original design by Napoleon, it consists of three vertical bands of equal width, displaying the national colours of Italy: green, white, and red. Green stands for hope, white for loyalty and red represents the blood spread to unify the country.",
                             Image = "Italy.png",
                             IsUsed = false
                         },
@@ -144,7 +144,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 12,
                             CountryName = "Lithuania",
-                            Description = "12",
+                            Description = "Yellow is symbolic of the country's wheat fields, green symbolic of the forests, and red symbolises patriotism. Collectively the colours represent hope for the future, freedom from oppression, and the courage",
                             Image = "Lithuania.png",
                             IsUsed = false
                         },
@@ -152,7 +152,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 13,
                             CountryName = "Poland",
-                            Description = "13",
+                            Description = "The flag of Poland was officially adopted on August 1, 1919. The colours red and white have long been associated with Poland and its coat of arms, at least since 3 May 1791.",
                             Image = "Poland.png",
                             IsUsed = false
                         },
@@ -160,7 +160,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 14,
                             CountryName = "Slovakia",
-                            Description = "14",
+                            Description = "Adopted on September 1, 1992. White, blue and red are traditional Pan-Slavic colours. The superimposed Slovakian arms feature a dominant white cross atop a blue symbolic reference to the European country's mountains.",
                             Image = "Slovakia.png",
                             IsUsed = false
                         },
@@ -168,7 +168,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 15,
                             CountryName = "Slovenia",
-                            Description = "15",
+                            Description = "Adopted on June 24, 1991. Red, white, and blue are taken from the Carniolan coat of arms. The mountains shown in white are representative of the Alps, and Mount Triglav, Slovenia's national symbol, in particular",
                             Image = "Slovenia.png",
                             IsUsed = false
                         },
@@ -176,7 +176,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 16,
                             CountryName = "Sweden",
-                            Description = "16",
+                            Description = "Was officially adopted on June 22, 1906. The off-centre yellow cross (the Nordic Cross) is taken from the Danish flag. The yellow and blue colours are taken from the national coat of arms.",
                             Image = "Sweden.png",
                             IsUsed = false
                         },
@@ -184,7 +184,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 17,
                             CountryName = "Turkey",
-                            Description = "17",
+                            Description = "The flag of Turkey is a red flag with a white crescent moon and a star in its centre. The flag is called Ay Yıldız ( Moon Star) or Red flag. It was adopted in 1844 with the Tanzimat reforms; though the shape, placement and shade of the colour .",
                             Image = "Turkey.png",
                             IsUsed = false
                         },
@@ -192,7 +192,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 18,
                             CountryName = "Albania",
-                            Description = "18",
+                            Description = "The flag of Albania, adopted in April 1912, is a red flag with a black two-headed eagle in the centre. It is derived from the seal of Gjergj Skanderbeg, on 15th-century  who led a revolt against the Ottoman Empire that resulted in brief independence for Albania from 1443 ",
                             Image = "Albania.png",
                             IsUsed = false
                         },
@@ -200,7 +200,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 19,
                             CountryName = "Czech Republic",
-                            Description = "19",
+                            Description = "The first flag of Czechoslovakia was white over red, and those colours are the heraldic colours of Bohemia. The blue triangle was added to the flag to distinguish it from the flag of Poland, and blue is said to represent the State of Moravia.",
                             Image = "Czech.png",
                             IsUsed = false
                         },
@@ -208,7 +208,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 20,
                             CountryName = "Hungary",
-                            Description = "20",
+                            Description = "The flag of Hungary was officially adopted in 1848.\r\nThe colors of the tricolour design are derived from the historical Hungarian coat of arms. Red is said to symbolise strength, white faithfulness, and green hope.",
                             Image = "Hungary.png",
                             IsUsed = false
                         },
@@ -216,7 +216,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 21,
                             CountryName = "Ireland",
-                            Description = "21",
+                            Description = "Dating from the 19th century and officially adopted in 1937. the colours of the Irish tricolour symbolise two communities. Green represents the Roman Catholic nationalist tradition. Orange represents the Protestant unionist community.",
                             Image = "Ireland.png",
                             IsUsed = false
                         },
@@ -224,7 +224,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 22,
                             CountryName = "Latvia",
-                            Description = "22",
+                            Description = "The flag of Latvia was officially re-adopted on February 27, 1990.The design is adopted from a 13th-century chronicle where \"red divided by white\" is said to be a Latvian flag.",
                             Image = "Latvia.png",
                             IsUsed = false
                         },
@@ -232,7 +232,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 23,
                             CountryName = "Norway",
-                            Description = "23",
+                            Description = "The flag of Norway is red with a blue Nordic cross outlined in white; the vertical part of the cross is shifted to the hoist side in the style of the Dannebrog, the flag of Denmark. It was adopted in 1821.",
                             Image = "Norway.png",
                             IsUsed = false
                         },
@@ -240,7 +240,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 24,
                             CountryName = "Ukraine",
-                            Description = "24",
+                            Description = "Was adopted in 1991, shortly after the collapse of the former Soviet Union. The shade of blue is said to be symbolic of the sky, while the yellow represents Ukraine's golden wheat fields.",
                             Image = "Ukraine.png",
                             IsUsed = false
                         },
@@ -248,7 +248,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 25,
                             CountryName = "France",
-                            Description = "25",
+                            Description = "Officially adopted on February 15, 1794. Red, white and blue have come to represent liberty, equality and fraternity—the ideals of the French Revolution. ",
                             Image = "France.png",
                             IsUsed = false
                         },
@@ -256,7 +256,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 26,
                             CountryName = "Greece",
-                            Description = "26",
+                            Description = "Adopted as the national flag in 1978. The alternating white and blue stripes are said to represent the nine syllables of the phrase \"Eleftheria i thanatos\" (\"Freedom or Death\"), a popular motto during the Greek War of Independence.",
                             Image = "Greece.png",
                             IsUsed = false
                         },
@@ -264,7 +264,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 27,
                             CountryName = "Portugal",
-                            Description = "27",
+                            Description = "Adopted in 1911. The colours representing the hope of the nation (green) and the blood (red) of those who died defending it.",
                             Image = "Portugal.png",
                             IsUsed = false
                         },
@@ -272,7 +272,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 28,
                             CountryName = "Netherlands",
-                            Description = "28",
+                            Description = "The flag of Luxembourg was officially adopted in 1972 and uses a combination of red, white, and blue that dates to the 13th century",
                             Image = "Netherlands.png",
                             IsUsed = false
                         },
@@ -280,7 +280,7 @@ namespace AgileCourseAssignment.Server.Migrations
                         {
                             Id = 29,
                             CountryName = "Switzerland",
-                            Description = "29",
+                            Description = "The flag of Switzerland consists of a red square with a bold, equilateral white Greek cross in the centre. It is one of only two square flags, the other being that of the Vatican City.",
                             Image = "Switzerland.png",
                             IsUsed = false
                         });
