@@ -28,6 +28,7 @@ h3 {
     height: 200px;
     perspective: 1000px;
     margin: 10px;
+    margin-bottom: 50px;
 }
 
 .flip-card-inner {
